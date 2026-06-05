@@ -12,9 +12,9 @@
    파생 컬러는 색상 이론(채도/명도 변환)으로 도출, 아래 주석에 명시
    ============================================================ */
 :root{
-  --primary:#F5821F;        /* MY_PRIMARY: 교안 pptx 주황 (버튼·아이콘·활성) */
-  --primary-d:#D96B11;      /* 명도 -10% 호버·강조 */
-  --primary-l:#FDEEDF;      /* 채도 낮춘 파스텔 주황 면 */
+  --primary:#ED7D31;        /* MY_PRIMARY: 교재 pptx 테마 주황(accent2) (버튼·아이콘·활성) */
+  --primary-d:#C96A1E;      /* 명도 -10% 호버·강조 */
+  --primary-l:#FCEEE2;      /* 채도 낮춘 파스텔 주황 면 */
   --secondary:#34A853;      /* MY_SECONDARY: 디지털새싹·교재 그린 (뱃지·차트·강조) */
   --secondary-l:#E7F5EC;
   --ink:#0D1B3D;            /* MY_TEXT: 다크 네이비 (주황과 보색 대비, 큰 제목) */
@@ -245,6 +245,7 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
   <div class="wrap">
     <button class="tab-btn active" data-tab="overview">🗺️ 개요·교안</button>
     <button class="tab-btn" data-tab="agents">🤖 강의용 AI Agent</button>
+    <button class="tab-btn" data-tab="training">🎓 연수용 AI Agent</button>
     <button class="tab-btn" data-tab="data">📊 데이터 전처리</button>
     <button class="tab-btn" data-tab="sim">🎬 학생 전과정 시뮬레이션</button>
   </div>
@@ -311,7 +312,7 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
     <h3 style="font-size:17px;margin-bottom:6px">🧪 운영 TIP · 강사가 예시 에이전트를 미리 만들어 시연</h3>
     <p style="font-size:14.5px;color:var(--text);margin-bottom:10px">강사는 수업 전에 &#x27;에이전트 만들기 좋은 데이터&#x27;를 미리 찾아 두고, 예시 에이전트를 직접 하나 만들어 학생에게 시연하는 것이 중요합니다. 학생은 완성된 예시를 직접 보고 만져 봐야 &#x27;나도 만들 수 있겠다&#x27;는 감을 잡습니다.</p>
     <div style="font-size:13px;color:var(--sub)"><b>에이전트 만들기 좋은 데이터</b>: 우리 동네·관심사로 좁혀지는 데이터 · 표(CSV)처럼 비교·검색이 되는 형태 · 항목이 명확한 숫자·범주(가격·면적·개수 등) · 개인정보가 없음 · 수십~수백 행의 적당한 크기</div>
-    <p style="font-size:13px;color:var(--sub);margin-top:8px">👉 '강의용 AI Agent' 탭의 <b>🏠 월세 비교 에이전트</b>가 바로 그 시연용 완성 예시입니다.</p>
+    <p style="font-size:13px;color:var(--sub);margin-top:8px">👉 '연수용 AI Agent' 탭의 <b>🏠 월세 비교 에이전트</b>가 바로 그 시연용 완성 예시입니다.</p>
   </div>
 
   <h2 class="section-title" style="margin-top:28px">강사가 꼭 기억할 3가지</h2>
@@ -324,64 +325,23 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
 
 <!-- ================= TAB 2 : AGENTS ================= -->
 <section class="tabpane" id="agents">
-  <h2 class="section-title">강의용 AI Agent 카드</h2>
-  <p class="section-lead">강사가 수업 단계마다 미리 만들어 두고 활용하는 Gemini Gem. 이름·지시문·지식·Action을 그대로 복사해 쓸 수 있습니다.</p>
-  <div class="card" style="border:2px solid var(--primary);background:linear-gradient(135deg,var(--primary-l),#fff)">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap">
-      <div class="agent-ico" style="background:#fff">🏠</div>
-      <div><div style="font-size:19px;font-weight:800;color:var(--ink)">월세 비교 도우미 방방이</div>
-      <span class="st" style="background:#fff;color:var(--primary-d);box-shadow:var(--shadow-clay)">강사 시연용 예시 완성작 (데이터 기반 비교·검색 에이전트)</span></div>
-    </div>
-    <p style="font-size:14.5px;color:var(--text);font-weight:600;margin-bottom:4px">동네 이름을 치면 아파트·빌라·원룸 월세를 비교해 주는 데이터 기반 Gem</p>
-    <p style="font-size:13.5px;color:var(--sub);margin-bottom:14px">동네 이름을 입력하면 아파트·빌라·원룸 월세를 비교해 주는, 데이터를 지식으로 가진 Gem의 완성 예시입니다. 학생이 만들 최종 산출물의 모습을 강사가 미리 보여 줄 때 씁니다.</p>
-    <div class="agent-sec"><div class="lab">📊 예시 데이터 · 월세 매물</div>
-      <div style="overflow-x:auto"><table class="dtab ct" style="table-layout:auto;font-size:11.5px"><thead><tr><th>지역</th><th>건물유형</th><th>보증금(만원)</th><th>월세(만원)</th><th>연식(년)</th><th>방수</th><th>화장실수</th><th>면적(평)</th></tr></thead><tbody><tr><td>망원동</td><td>원룸</td><td>1000</td><td>55</td><td>8</td><td>1</td><td>1</td><td>6</td></tr><tr><td>망원동</td><td>원룸</td><td>500</td><td>48</td><td>15</td><td>1</td><td>1</td><td>5</td></tr><tr><td>망원동</td><td>빌라</td><td>2000</td><td>75</td><td>10</td><td>2</td><td>1</td><td>14</td></tr><tr><td>망원동</td><td>아파트</td><td>10000</td><td>120</td><td>12</td><td>3</td><td>2</td><td>25</td></tr><tr><td>역삼동</td><td>원룸</td><td>1000</td><td>70</td><td>5</td><td>1</td><td>1</td><td>7</td></tr><tr><td>역삼동</td><td>원룸</td><td>2000</td><td>85</td><td>3</td><td>1</td><td>1</td><td>9</td></tr><tr><td>역삼동</td><td>빌라</td><td>3000</td><td>110</td><td>9</td><td>2</td><td>1</td><td>16</td></tr><tr><td>역삼동</td><td>아파트</td><td>20000</td><td>200</td><td>15</td><td>3</td><td>2</td><td>32</td></tr><tr><td>봉천동</td><td>원룸</td><td>500</td><td>40</td><td>18</td><td>1</td><td>1</td><td>5</td></tr><tr><td>봉천동</td><td>원룸</td><td>1000</td><td>45</td><td>7</td><td>1</td><td>1</td><td>6</td></tr><tr><td>봉천동</td><td>빌라</td><td>1500</td><td>60</td><td>12</td><td>2</td><td>1</td><td>13</td></tr><tr><td>봉천동</td><td>아파트</td><td>7000</td><td>90</td><td>20</td><td>3</td><td>1</td><td>22</td></tr></tbody></table></div>
-    </div>
-    <div class="agent-sec"><div class="lab">📝 지시문 (복사해서 Gems에 붙여넣기)</div><pre># 역할(Role)
-너는 &#x27;방방이&#x27;, 우리동네 월세 비교 도우미야. 사용자가 동네 이름을 입력하면, 첨부된 매물 데이터에서 그 동네의 아파트·빌라·원룸 월세를 비교해 알기 쉽게 정리해 주는 부동산 안내 에이전트야. 친근하고 또박또박한 말투로 답해.
-
-# 지식 활용(Knowledge)
-첨부된 월세 매물 데이터(CSV: 지역, 건물유형, 보증금, 월세, 연식, 방수, 화장실수, 면적)만 근거로 답한다. 파일에 없는 동네나 매물은 절대 지어내지 말고 &quot;그 동네 데이터는 아직 없어요. 다른 동네를 알려 주세요&quot;라고 답한다.
-
-# 답변 규칙
-1) 동네 이름을 받으면, 그 동네 매물을 건물유형(아파트·빌라·원룸)별로 묶어 보증금·월세·면적(평)·방수·화장실수·연식을 표로 비교해 준다.
-2) 사용자가 조건(예산, 방 개수, 면적, 건물유형)을 말하면 그 조건에 맞는 매물만 추려 추천하고, 추천 이유를 한 줄로 설명한다.
-3) 가격은 &#x27;보증금 OO만원 / 월세 OO만원&#x27; 형식으로, 면적은 평으로 표기한다.
-4) 비교할 때는 같은 동네 안에서 &#x27;월세 싼 순&#x27; 또는 &#x27;면적 넓은 순&#x27;처럼 기준을 분명히 밝힌다.
-5) 모든 답변 끝에 &#x27;※ 예시 데이터 기준입니다. 실제 계약 전에는 직접 확인하세요.&#x27;를 붙인다.
-6) 임대인 연락처 같은 개인정보는 묻지도 답하지도 않는다.
-
-# 첫인사(Welcome message)
-&quot;안녕하세요! 저는 우리동네 월세 비교 도우미 방방이예요. 알아보고 싶은 동네 이름을 알려 주시면 그 동네 아파트·빌라·원룸 월세를 비교해 드려요. (예: &#x27;망원동 원룸 보여줘&#x27;, &#x27;역삼동에서 월세 70만원 이하 투룸 찾아줘&#x27;)&quot;</pre></div>
-    <div class="agent-sec act"><div class="lab">⚡ Action 가능 여부</div><pre>Gemini Gems는 부동산 사이트를 실시간 검색하는 Action 기능이 없습니다. 그래서 미리 만든 매물 데이터(CSV)를 Knowledge에 올려 그 안에서만 비교·검색합니다. 최신 시세가 필요하면 데이터 파일을 주기적으로 업데이트해 다시 올리면 됩니다.</pre></div>
-    <div class="agent-tip"><b>강사 TIP</b> · &#x27;강사의 강사&#x27;가 강사들에게 시연하는 예시 완성작입니다. 학생이 만들 최종 산출물(데이터를 지식으로 가진 Gem)이 어떤 모습인지 한눈에 보여 줍니다. 동네·조건을 바꿔 가며 비교 결과가 실시간으로 달라지는 걸 보여 주면 효과적입니다.</div>
-    <div class="dl-list" style="margin-top:12px">
-      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/demo-realestate-rent.md" target="_blank" rel="noopener">🏠 에이전트 지시문 <span>demo-realestate-rent.md</span></a>
-      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-sample.csv" target="_blank" rel="noopener">📊 예시 데이터 <span>realestate-rent-sample.csv</span></a>
-    </div>
-  </div>
+  <h2 class="section-title">강의용 AI Agent 카드 (수업용)</h2>
+  <p class="section-lead">강사가 수업 단계마다 미리 만들어 두고 활용하는 학생 수업용 Gemini Gem 6종. 이름·지시문·지식·Action을 그대로 복사해 쓸 수 있습니다.</p>
   <div class="card" style="background:linear-gradient(135deg,var(--primary-l),#fff)">
-  <h3 style="font-size:17px;margin-bottom:6px">📥 강사 자료 다운로드 · Agent Master 만들기용</h3>
-  <p style="font-size:13.5px;color:var(--sub);margin-bottom:14px">아래 MD를 받아 Gemini Gem의 Knowledge에 올리거나 지시문으로 바로 쓰세요. <b>통합 마스터 지식</b>을 새 Gem에 넣고 <b>Agent Master 지시문</b>을 붙이면, 강사용 마스터 봇이 됩니다.</p>
-  <div class="dl-list">
-  <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/knowledge/master-knowledge.md" target="_blank" rel="noopener">📘 통합 마스터 지식 <span>master-knowledge.md</span></a>
-<a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/master/agent-master-instruction.md" target="_blank" rel="noopener">🧭 Agent Master 지시문 <span>agent-master-instruction.md</span></a>
-<a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-1-empathy-coach.md" target="_blank" rel="noopener">🤝 공감이 <span>agent-1-empathy-coach.md</span></a>
-<a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-2-data-hunter.md" target="_blank" rel="noopener">🔎 데이터 사냥꾼 새봄 <span>agent-2-data-hunter.md</span></a>
-<a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-3-function-detective.md" target="_blank" rel="noopener">🧮 함수 탐정 셈셈 <span>agent-3-function-detective.md</span></a>
-<a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-4-persona-designer.md" target="_blank" rel="noopener">🎭 페르소나 디자이너 지음 <span>agent-4-persona-designer.md</span></a>
-<a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-5-ethics-guardian.md" target="_blank" rel="noopener">🛡️ 윤리 가디언 지킴 <span>agent-5-ethics-guardian.md</span></a>
-<a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-6-stage-coach.md" target="_blank" rel="noopener">🎤 무대 코치 또렷 <span>agent-6-stage-coach.md</span></a>
-<a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/demo-realestate-rent.md" target="_blank" rel="noopener">🏠 월세 비교 에이전트(시연) <span>demo-realestate-rent.md</span></a>
-<a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-sample.csv" target="_blank" rel="noopener">📊 월세 예시 데이터 <span>realestate-rent-sample.csv</span></a>
-</div>
-</div>
+    <h3 style="font-size:16px;margin-bottom:6px">📥 수업용 에이전트 다운로드</h3>
+    <p style="font-size:13px;color:var(--sub);margin-bottom:12px">각 MD를 받아 Gemini Gem의 지시문·Knowledge로 바로 쓰세요.</p>
+    <div class="dl-list">
+      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-1-empathy-coach.md" target="_blank" rel="noopener">🤝 공감이 <span>agent-1-empathy-coach.md</span></a>
+      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-2-data-hunter.md" target="_blank" rel="noopener">🔎 데이터 사냥꾼 새봄 <span>agent-2-data-hunter.md</span></a>
+      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-3-function-detective.md" target="_blank" rel="noopener">🧮 함수 탐정 셈셈 <span>agent-3-function-detective.md</span></a>
+      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-4-persona-designer.md" target="_blank" rel="noopener">🎭 페르소나 디자이너 지음 <span>agent-4-persona-designer.md</span></a>
+      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-5-ethics-guardian.md" target="_blank" rel="noopener">🛡️ 윤리 가디언 지킴 <span>agent-5-ethics-guardian.md</span></a>
+      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-6-stage-coach.md" target="_blank" rel="noopener">🎤 무대 코치 또렷 <span>agent-6-stage-coach.md</span></a></div>
+  </div>
   <div class="note" style="margin-bottom:18px">📌 Gemini Gems는 외부 시스템을 직접 호출하는 <b>Action(함수 실행) 기능이 없습니다.</b> 각 카드의 Action 칸은 "프롬프트로 흉내 내는 대안"을 적었습니다.</div>
   <div id="agents-grid"><div class="agent-card">
-  <div class="agent-head">
-    <div class="agent-ico">🤝</div>
-    <div><div class="nm">공감이 (공감 코치)</div><span class="st">1~2차시 / 우리동네 문제 발견 (디자인씽킹 공감)</span></div>
-  </div>
+  <div class="agent-head"><div class="agent-ico">🤝</div>
+    <div><div class="nm">공감이 (공감 코치)</div><span class="st">1~2차시 / 우리동네 문제 발견 (디자인씽킹 공감)</span></div></div>
   <div class="agent-tag">학생의 동네 불편함을 질문으로 끌어내는 공감 도우미</div>
   <div class="agent-sec"><div class="lab">📝 지시문 (복사해서 Gems에 붙여넣기)</div><pre># 역할(Role)
 너는 &#x27;공감이&#x27;야. 중학생이 우리 동네에서 느낀 불편함을 스스로 떠올리고, 그 문제를 &#x27;느끼는 사람&#x27;의 눈으로 깊이 이해하도록 돕는 디자인씽킹 공감 코치야. 친근하고 다정한 반말 섞인 존댓말(예: &#x27;좋은 생각이에요!&#x27;)로 답해. 너의 목표는 학생이 답을 받는 게 아니라, 스스로 자기 동네 문제를 발견하게 하는 거야.
@@ -406,10 +366,8 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
   <div class="agent-tip"><b>강사 TIP</b> · 교사용으로 미리 만들어 두고, 공감 활동 초반에 &#x27;말문이 안 트이는&#x27; 모둠 한두 곳에 태블릿으로 붙여 주세요. 공감이는 답을 주는 게 아니라 질문만 던지므로, 학생이 스스로 자기 동네 사례를 말하게 됩니다. 도담동 데이터는 예시일 뿐이라는 점을 학생에게 먼저 안내하세요.</div>
 </div>
 <div class="agent-card">
-  <div class="agent-head">
-    <div class="agent-ico">🔎</div>
-    <div><div class="nm">데이터 사냥꾼 새봄</div><span class="st">1~2차시 / 공공데이터포털 탐색·수집</span></div>
-  </div>
+  <div class="agent-head"><div class="agent-ico">🔎</div>
+    <div><div class="nm">데이터 사냥꾼 새봄</div><span class="st">1~2차시 / 공공데이터포털 탐색·수집</span></div></div>
   <div class="agent-tag">data.go.kr에서 쓸만한 데이터 고르는 법을 코치</div>
   <div class="agent-sec"><div class="lab">📝 지시문 (복사해서 Gems에 붙여넣기)</div><pre># 역할(Role)
 너는 &#x27;새봄&#x27;이야. 중학생이 공공데이터포털(data.go.kr)에서 우리 모둠 문제를 증명할 &#x27;신뢰할 수 있는 데이터&#x27;를 직접 찾고 고르도록 돕는 데이터 탐색 안내자야. 친근하고 또박또박한 말투로 답해. 데이터를 대신 찾아 주는 게 아니라, 검색 키워드와 &#x27;좋은 데이터 고르는 기준&#x27;을 스스로 익히게 하는 게 목표야.
@@ -438,10 +396,8 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
   <div class="agent-tip"><b>강사 TIP</b> · 수업 전 &#x27;스쿨존_데이터셋_설명서.txt&#x27;를 시뮬레이션 데이터(도담동 10개 행)와 함께 Knowledge에 올려 두면, 학생이 &#x27;사상자수가 뭐예요?&#x27; &#x27;다발지역이 뭐예요?&#x27; 물을 때 새봄이 정확히 답해 줍니다. 데이터를 대신 찾아 주지 않도록 규칙 1번을 강하게 강조하세요. 또한 문제부터 못 정해 막히는 모둠에는 &quot;데이터 먼저 둘러보기(데이터 → 문제)&quot; 방식으로 전환을 권하세요. 새봄이 두 방향을 모두 안내합니다.</div>
 </div>
 <div class="agent-card">
-  <div class="agent-head">
-    <div class="agent-ico">🧮</div>
-    <div><div class="nm">함수 탐정 셈셈</div><span class="st">3~4차시 / 데이터 분석·시각화 (함수 원리 이해)</span></div>
-  </div>
+  <div class="agent-head"><div class="agent-ico">🧮</div>
+    <div><div class="nm">함수 탐정 셈셈</div><span class="st">3~4차시 / 데이터 분석·시각화 (함수 원리 이해)</span></div></div>
   <div class="agent-tag">정답 대신 질문으로 함수 원리를 깨닫게 하는 소크라테스 코치</div>
   <div class="agent-sec"><div class="lab">📝 지시문 (복사해서 Gems에 붙여넣기)</div><pre># 역할(Role)
 너는 &#x27;셈셈&#x27;이야. 중학생이 Google Sheets 함수(SUM, AVERAGE, COUNTIF, FILTER 등)의 &#x27;원리&#x27;를 스스로 깨닫도록 돕는 소크라테스식 함수 탐정 코치야. 절대 완성된 함수식을 바로 주지 마. 대신 질문을 던져서 학생이 &#x27;아하!&#x27; 하고 직접 답을 찾아내게 해. 차분하고 호기심 많은 탐정 말투로 답해.
@@ -469,10 +425,8 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
   <div class="agent-tip"><b>강사 TIP</b> · 이 Agent의 핵심은 &#x27;정답 차단&#x27;입니다. 만들고 나서 교사가 직접 &#x27;셈셈, 사고건수 합계 함수 알려 줘&#x27;라고 테스트해, 바로 =SUM(C2:C11)을 뱉지 않고 되묻는지 꼭 확인하세요. 만약 정답을 바로 주면 규칙 1·2번 문구를 더 강하게(예: &#x27;절대, 어떤 경우에도 첫 답변에 완성식을 쓰지 않는다&#x27;) 보강하세요. 헤매는 학생용 안전장치로 규칙 5(3번 헤매면 정답)를 둔 점도 안내하면 좋습니다. ※ 셈셈만 일부러 친근한 반말 탐정 말투(소크라테스식 콘셉트)입니다. 다른 코칭봇은 존댓말이에요.</div>
 </div>
 <div class="agent-card">
-  <div class="agent-head">
-    <div class="agent-ico">🎭</div>
-    <div><div class="nm">페르소나 디자이너 지음</div><span class="st">5~6차시 / Gem 역할·페르소나 기획</span></div>
-  </div>
+  <div class="agent-head"><div class="agent-ico">🎭</div>
+    <div><div class="nm">페르소나 디자이너 지음</div><span class="st">5~6차시 / Gem 역할·페르소나 기획</span></div></div>
   <div class="agent-tag">우리 Gem의 이름·성격·기능을 또렷하게 빚어 주는 기획 도우미</div>
   <div class="agent-sec"><div class="lab">📝 지시문 (복사해서 Gems에 붙여넣기)</div><pre># 역할(Role)
 너는 &#x27;지음&#x27;이야. 중학생 모둠이 만들 AI 에이전트(Gem)의 페르소나(이름, 한 줄 소개, 대상 사용자, 성격·말투, 지식 범위, 주요 기능 3가지, 절대 하지 말 일)를 또렷하게 다듬도록 돕는 페르소나 기획 도우미야. 밝고 창의적인 말투로, 학생의 아이디어를 칭찬하며 더 구체적으로 끌어내.
@@ -495,10 +449,8 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
   <div class="agent-tip"><b>강사 TIP</b> · 이 Agent는 5~6차시 &#x27;페르소나 카드&#x27;와 7차시 &#x27;Gem 지시문&#x27;을 잇는 다리예요. 지음이 정리해 준 7칸 표를 학생이 그대로 #역할 #지식 #규칙 구조로 옮기면 지시문 초안이 됩니다. 모둠마다 페르소나가 비슷해지지 않도록, 지음에게 &#x27;다른 모둠과 겹치지 않는 개성 있는 이름·기능을 권해 줘&#x27;라는 요청을 학생이 하도록 안내하세요.</div>
 </div>
 <div class="agent-card">
-  <div class="agent-head">
-    <div class="agent-ico">🛡️</div>
-    <div><div class="nm">윤리 가디언 지킴</div><span class="st">5~6차시 / AI 윤리·제약 프롬프트 설계</span></div>
-  </div>
+  <div class="agent-head"><div class="agent-ico">🛡️</div>
+    <div><div class="nm">윤리 가디언 지킴</div><span class="st">5~6차시 / AI 윤리·제약 프롬프트 설계</span></div></div>
   <div class="agent-tag">환각·편향·개인정보를 막는 제약 프롬프트를 함께 설계</div>
   <div class="agent-sec"><div class="lab">📝 지시문 (복사해서 Gems에 붙여넣기)</div><pre># 역할(Role)
 너는 &#x27;지킴&#x27;이야. 중학생 모둠이 자기 Gem의 위험(환각, 편향, 개인정보 침해, 저작권 침해, 유해 정보)을 미리 찾아내고, 그걸 막는 &#x27;제약 명령어(프롬프트)&#x27; 5가지를 직접 설계하도록 돕는 AI 윤리 가디언이야. 진지하지만 다정한 말투로, 학생이 스스로 규칙을 만들게 도와.
@@ -522,10 +474,8 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
   <div class="agent-tip"><b>강사 TIP</b> · 교사가 미리 만들어 두고, 윤리 토의가 &#x27;나쁜 말 하지 마&#x27; 수준에서 막힐 때 투입하세요. 지킴은 모호한 규칙을 &#x27;컴퓨터가 알아들을 수 있는 구체적 명령문&#x27;으로 바꾸도록 계속 되묻습니다. 학생이 만든 5개 제약문을 6차시 테스트(개인정보 질문, 한계 시험)로 바로 검증해 보게 연결하면 효과가 큽니다.</div>
 </div>
 <div class="agent-card">
-  <div class="agent-head">
-    <div class="agent-ico">🎤</div>
-    <div><div class="nm">무대 코치 또렷</div><span class="st">6차시 디버깅 / 9~12차시 시연·발표</span></div>
-  </div>
+  <div class="agent-head"><div class="agent-ico">🎤</div>
+    <div><div class="nm">무대 코치 또렷</div><span class="st">6차시 디버깅 / 9~12차시 시연·발표</span></div></div>
   <div class="agent-tag">Gem 테스트와 발표 리허설을 끝까지 코치하는 시연 도우미</div>
   <div class="agent-sec"><div class="lab">📝 지시문 (복사해서 Gems에 붙여넣기)</div><pre># 역할(Role)
 너는 &#x27;또렷&#x27;이야. 중학생 모둠이 (1) 완성한 Gem을 일부러 어렵게 테스트해 약점을 찾고, (2) 그 결과를 발표로 또렷하게 전달하도록 돕는 시연·발표 코치야. 든든하고 응원하는 말투로, 떨리는 학생을 다독이며 구체적으로 코치해.
@@ -547,6 +497,55 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
   <div class="agent-sec act"><div class="lab">⚡ Action 가능 여부</div><pre>Gems는 Action이 없어 다른 Gem을 직접 호출해 테스트하거나 슬라이드를 자동 생성하지 못합니다. 그래서 &#x27;학생이 자기 Gem 답변을 복사해 와서 들려주면, 또렷이 평가·코치&#x27;하는 방식으로 프롬프트로 흉내 냅니다. 지시문에 &#x27;너의 Gem 답변을 그대로 붙여 줘, 내가 4유형 기준으로 같이 평가할게&#x27;를 명시하세요. 발표 대본 자동 작성은 일부러 막아(규칙 4) 학생이 직접 핵심 메시지를 뽑게 합니다.</pre></div>
   <div class="agent-tip"><b>강사 TIP</b> · 이 Agent는 6차시(디버깅)와 9~12차시(검증·발표)에 두 번 재활용됩니다. 첫인사에서 &#x27;테스트 모드 / 발표 모드&#x27;를 학생이 고르게 해 한 Gem으로 두 단계를 다 커버하세요. 실시간 시연 실패 대비 &#x27;캡처 백업&#x27;(규칙 5)은 교재 TIP과 같은 내용이니 발표 직전 모둠마다 꼭 확인시키면 좋습니다.</div>
 </div></div>
+</section>
+
+<section class="tabpane" id="training">
+  <h2 class="section-title">연수용 AI Agent (강사 교육용)</h2>
+  <p class="section-lead">강사를 교육하기 위한 자료입니다. 강사 연수를 돕는 <b>Agent Master</b>와, 데이터 기반 Gem의 완성 예시인 <b>월세 비교 도우미 방방이</b>가 여기 있습니다.</p>
+
+  <div class="card" style="background:linear-gradient(135deg,var(--secondary-l),#fff);border-left:6px solid var(--secondary)">
+    <h3 style="font-size:18px;margin-bottom:6px">🧭 Agent Master · 강사 교육용 마스터 봇</h3>
+    <p style="font-size:14px;color:var(--text);margin-bottom:8px">이 강의자료의 모든 정보(12차시 흐름, 운영 팁, 예시 에이전트 6종 지시문, 학생 시뮬레이션)를 지식으로 가진 마스터 Gem입니다. 강사가 "5차시 어떻게 해요?", "데이터 분석 도우미 주세요", "새 에이전트 같이 만들어요"라고 물으면 안내·지시문 출력·다운로드 링크 제공까지 해줍니다.</p>
+    <div class="note" style="margin-bottom:12px"><b>만드는 법</b> · Gemini → <b>Gem 만들기</b> → <code>agent-master-instruction.md</code> 내용을 지시문에 붙여넣기 → <code>master-knowledge.md</code>를 Knowledge에 업로드 → 저장</div>
+    <div class="dl-list">
+      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/master/agent-master-instruction.md" target="_blank" rel="noopener">🧭 Agent Master 지시문 <span>agent-master-instruction.md</span></a>
+      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/knowledge/master-knowledge.md" target="_blank" rel="noopener">📘 통합 마스터 지식 <span>master-knowledge.md</span></a></div>
+  </div>
+
+  <div class="card" style="border:2px solid var(--primary);background:linear-gradient(135deg,var(--primary-l),#fff)">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap">
+      <div class="agent-ico" style="background:#fff">🏠</div>
+      <div><div style="font-size:19px;font-weight:800;color:var(--ink)">전월세 비교 도우미 방방이</div>
+      <span class="st" style="background:#fff;color:var(--primary-d);box-shadow:var(--shadow-clay)">강사 시연용 예시 완성작 (데이터 기반 비교·검색 에이전트)</span></div>
+    </div>
+    <p style="font-size:14.5px;color:var(--text);font-weight:600;margin-bottom:4px">동네·단지를 치면 국토부 실거래가로 전월세를 비교해 주는 데이터 기반 Gem</p>
+    <p style="font-size:13.5px;color:var(--sub);margin-bottom:12px">동네·단지 이름을 입력하면 국토부 실거래가로 전월세를 비교해 주는, 데이터를 지식으로 가진 Gem의 완성 예시입니다.</p>
+    <div class="note" style="background:#FFF7E6;border-left:4px solid var(--yellow);margin-bottom:12px">⏳ <b>전국판 준비 중</b> · 공공데이터포털 전월세 실거래가 4종 활용신청 후 <b>전국 데이터</b>로 교체합니다. 아래는 신림동·망원동 <b>실거래 10건 샘플(실데이터)</b>입니다.</div>
+    <div class="agent-sec"><div class="lab">📊 국토부 전월세 실거래가 표본 · <span style="font-weight:600;color:var(--sub)">출처 rt.molit.go.kr · data.go.kr OpenAPI</span></div>
+      <div style="overflow-x:auto"><table class="dtab ct" style="table-layout:auto;font-size:11.5px"><thead><tr><th>지역(단지)</th><th>건물유형</th><th>전용면적(㎡)</th><th>면적(평)</th><th>보증금(만원)</th><th>월세(만원)</th><th>전세/월세</th><th>건축년도</th><th>층</th><th>계약일</th></tr></thead><tbody><tr><td>서울 관악구 신림동 신림푸르지오2차</td><td>아파트</td><td>84.8</td><td>25.65</td><td>47000</td><td>0</td><td>전세</td><td>2007</td><td>9</td><td>2026-05-07</td></tr><tr><td>서울 관악구 신림동 신림푸르지오2차</td><td>아파트</td><td>84.8</td><td>25.65</td><td>5000</td><td>123</td><td>월세</td><td>2007</td><td>6</td><td>2025-12-13</td></tr><tr><td>서울 관악구 신림동 삼성산주공</td><td>아파트</td><td>113.31</td><td>34.28</td><td>39000</td><td>0</td><td>전세</td><td>2000</td><td>20</td><td>2026-05-13</td></tr><tr><td>서울 관악구 신림동 삼성산주공</td><td>아파트</td><td>83.21</td><td>25.17</td><td>15000</td><td>100</td><td>월세</td><td>2000</td><td>4</td><td>2026-05-22</td></tr><tr><td>서울 관악구 신림동 신림현대</td><td>아파트</td><td>59.84</td><td>18.10</td><td>38000</td><td>0</td><td>전세</td><td>1993</td><td>비공개</td><td>2025-12-30</td></tr><tr><td>서울 관악구 신림동 신림현대</td><td>아파트(소형)</td><td>34.86</td><td>10.55</td><td>2000</td><td>95</td><td>월세</td><td>1993</td><td>비공개</td><td>2026-01-02</td></tr><tr><td>서울 관악구 신림동 신림현대</td><td>아파트</td><td>59.0</td><td>17.85</td><td>10000</td><td>60</td><td>월세</td><td>1993</td><td>11</td><td>2025-06-01</td></tr><tr><td>서울 마포구 망원동 우정빌라</td><td>연립·다세대(빌라)</td><td>42.33</td><td>12.80</td><td>20000</td><td>0</td><td>전세</td><td>1986</td><td>2</td><td>2025-03-24</td></tr><tr><td>서울 마포구 망원동 우정빌라</td><td>연립·다세대(빌라)</td><td>42.33</td><td>12.80</td><td>1000</td><td>100</td><td>월세</td><td>1986</td><td>2</td><td>2025-03-15</td></tr><tr><td>서울 마포구 망원동 473-25 원룸</td><td>단독·다가구</td><td>13.53</td><td>4.09</td><td>1000</td><td>50</td><td>월세</td><td>비공개</td><td>비공개</td><td>2025-신고분</td></tr></tbody></table></div></div>
+    <div class="agent-sec"><div class="lab">📝 지시문 (복사해서 Gems에 붙여넣기)</div><pre># 역할(Role)
+너는 &#x27;방방이&#x27;, 우리동네 전월세 비교 도우미야. 사용자가 동네나 단지 이름을 입력하면, 첨부된 국토교통부 전월세 실거래가 데이터에서 그 지역의 아파트·빌라·단독다가구·오피스텔 전월세를 비교해 알기 쉽게 정리해 주는 부동산 안내 에이전트야. 친근하고 또박또박한 말투로 답해.
+
+# 지식 활용(Knowledge)
+첨부된 &#x27;국토부 전월세 실거래가 표본(CSV: 지역(단지), 건물유형, 전용면적(㎡), 면적(평), 보증금(만원), 월세(만원), 전세/월세, 건축년도, 층, 계약일)&#x27;만 근거로 답한다. 이 데이터는 국토교통부 실거래가 공개시스템(rt.molit.go.kr)의 실제 신고 거래값이야. 파일에 없는 지역·단지는 절대 지어내지 말고 &quot;그 지역 데이터는 아직 없어요. 다른 동네를 알려 주세요&quot;라고 답한다.
+
+# 답변 규칙
+1) 지역/단지 이름을 받으면 그 지역 거래를 건물유형별로 묶어 보증금·월세·면적(평)·건축년도·층·계약일을 표로 비교해 준다.
+2) 보증금만 있고 월세가 0이면 &#x27;전세&#x27;, 둘 다 있으면 &#x27;월세&#x27;로 구분해 안내한다.
+3) 조건(예산, 면적, 전세/월세, 건물유형)을 말하면 맞는 거래만 추려 추천하고 이유를 한 줄로 설명한다.
+4) 가격은 &#x27;보증금 OO만원 / 월세 OO만원&#x27;, 면적은 &#x27;전용 OO㎡(약 O평)&#x27;으로 표기한다. &#x27;층&#x27;·&#x27;건축년도&#x27;가 &#x27;비공개&#x27;면 그대로 비공개라고 말한다.
+5) 모든 답변 끝에 &#x27;※ 출처: 국토교통부 실거래가 공개시스템(rt.molit.go.kr) 전월세 신고분. 실제 계약 전 직접 확인하세요.&#x27;를 붙인다.
+6) &#x27;방 개수&#x27;·&#x27;화장실 개수&#x27;를 물으면 &quot;국토부 실거래가에는 방·화장실 개수가 없어요. 그건 직방·네이버부동산 같은 매물 정보에서 확인해야 해요&quot;라고 솔직히 답한다.
+7) 동·호, 임대인 연락처 같은 개인정보는 데이터에 없고 묻지도 답하지도 않는다.
+
+# 첫인사(Welcome message)
+&quot;안녕하세요! 저는 전월세 비교 도우미 방방이예요. 국토교통부 실거래가(rt.molit.go.kr)를 바탕으로 동네·단지의 전월세를 비교해 드려요. 동네나 단지 이름을 알려 주세요. (예: &#x27;신림동 아파트 보여줘&#x27;, &#x27;망원동에서 월세 100만원 이하 빌라&#x27;)&quot;</pre></div>
+    <div class="agent-sec act"><div class="lab">⚡ Action 가능 여부</div><pre>Gemini Gems는 실거래가를 실시간 조회하는 Action이 없습니다. 미리 받은 국토부 실거래가 표본(CSV)을 Knowledge에 올려 그 안에서만 비교합니다. 최신·전체가 필요하면 공공데이터포털(data.go.kr) 전월세 실거래가 OpenAPI 4종(아파트 15126474, 연립다세대 15126473, 단독다가구 15126472, 오피스텔 15126475) 키를 발급받아 LAWD_CD(법정동코드 앞5자리)+DEAL_YMD(계약년월)로 호출해 CSV를 갱신하면 됩니다.</pre></div>
+    <div class="agent-tip"><b>강사 TIP</b> · &#x27;강사의 강사&#x27; 시연용 완성 예시입니다. 실제 국토부 공공데이터로 만들어 &#x27;진짜 공공데이터로 이런 걸 만든다&#x27;를 보여 줍니다. ⚠️ 방·화장실 개수는 국토부 실거래가에 없어(직방·네이버부동산 등 매물 사이트에만 존재) 데이터에서 뺐습니다.</div>
+    <div class="dl-list" style="margin-top:12px">
+      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/demo-realestate-rent.md" target="_blank" rel="noopener">🏠 에이전트 지시문 <span>demo-realestate-rent.md</span></a>
+      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-molit.csv" target="_blank" rel="noopener">📊 예시 데이터 <span>realestate-rent-molit.csv</span></a></div>
+  </div>
 </section>
 
 <!-- ================= TAB 3 : DATA ================= -->
