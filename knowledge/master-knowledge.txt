@@ -89,7 +89,7 @@ Gem이 한 번에 읽는 한도는 약 100만 토큰(약 1,500쪽)이다. 표(CS
 ### 🤝 공감이 (공감 코치)
 - **단계**: 1~2차시 / 우리동네 문제 발견 (디자인씽킹 공감)
 - **한 줄**: 학생의 동네 불편함을 질문으로 끌어내는 공감 도우미
-- **다운로드**: `agent-1-empathy-coach.md` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-1-empathy-coach.md
+- **다운로드**: `agent-1-empathy-coach.txt` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-1-empathy-coach.txt
 
 **Gems 지시문**
 ```
@@ -124,7 +124,7 @@ Gem이 한 번에 읽는 한도는 약 100만 토큰(약 1,500쪽)이다. 표(CS
 ### 🔎 데이터 사냥꾼 새봄
 - **단계**: 1~2차시 / 공공데이터포털 탐색·수집
 - **한 줄**: data.go.kr에서 쓸만한 데이터 고르는 법을 코치
-- **다운로드**: `agent-2-data-hunter.md` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-2-data-hunter.md
+- **다운로드**: `agent-2-data-hunter.txt` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-2-data-hunter.txt
 
 **Gems 지시문**
 ```
@@ -164,7 +164,7 @@ Gem이 한 번에 읽는 한도는 약 100만 토큰(약 1,500쪽)이다. 표(CS
 ### 🧮 함수 탐정 셈셈
 - **단계**: 3~4차시 / 데이터 분석·시각화 (함수 원리 이해)
 - **한 줄**: 정답 대신 질문으로 함수 원리를 깨닫게 하는 소크라테스 코치
-- **다운로드**: `agent-3-function-detective.md` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-3-function-detective.md
+- **다운로드**: `agent-3-function-detective.txt` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-3-function-detective.txt
 
 **Gems 지시문**
 ```
@@ -202,7 +202,7 @@ Gem이 한 번에 읽는 한도는 약 100만 토큰(약 1,500쪽)이다. 표(CS
 ### 🎭 페르소나 디자이너 지음
 - **단계**: 5~6차시 / Gem 역할·페르소나 기획
 - **한 줄**: 우리 Gem의 이름·성격·기능을 또렷하게 빚어 주는 기획 도우미
-- **다운로드**: `agent-4-persona-designer.md` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-4-persona-designer.md
+- **다운로드**: `agent-4-persona-designer.txt` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-4-persona-designer.txt
 
 **Gems 지시문**
 ```
@@ -235,7 +235,7 @@ Gem이 한 번에 읽는 한도는 약 100만 토큰(약 1,500쪽)이다. 표(CS
 ### 🛡️ 윤리 가디언 지킴
 - **단계**: 5~6차시 / AI 윤리·제약 프롬프트 설계
 - **한 줄**: 환각·편향·개인정보를 막는 제약 프롬프트를 함께 설계
-- **다운로드**: `agent-5-ethics-guardian.md` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-5-ethics-guardian.md
+- **다운로드**: `agent-5-ethics-guardian.txt` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-5-ethics-guardian.txt
 
 **Gems 지시문**
 ```
@@ -269,7 +269,7 @@ Gem이 한 번에 읽는 한도는 약 100만 토큰(약 1,500쪽)이다. 표(CS
 ### 🎤 무대 코치 또렷
 - **단계**: 6차시 디버깅 / 9~12차시 시연·발표
 - **한 줄**: Gem 테스트와 발표 리허설을 끝까지 코치하는 시연 도우미
-- **다운로드**: `agent-6-stage-coach.md` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-6-stage-coach.md
+- **다운로드**: `agent-6-stage-coach.txt` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-6-stage-coach.txt
 
 **Gems 지시문**
 ```
@@ -306,7 +306,7 @@ Gem이 한 번에 읽는 한도는 약 100만 토큰(약 1,500쪽)이다. 표(CS
 ### 🏠 전국 전월세 비교 도우미 방방이 (강사 시연용 예시 완성작)
 - **유형**: 강사 시연용 예시 완성작 (데이터 기반 비교·검색 에이전트)
 - **한 줄**: 지역을 치면 국토부 실거래가 전국 시세로 전월세를 비교해 주는 데이터 기반 Gem
-- **다운로드**: `demo-realestate-rent.md` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/demo-realestate-rent.md
+- **다운로드**: `demo-realestate-rent.txt` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/demo-realestate-rent.txt
 - **데이터**: `realestate-rent-national-summary.csv` → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-national-summary.csv
 
 **Gems 지시문**
@@ -670,15 +670,15 @@ Gem이 한 번에 읽는 한도는 약 100만 토큰(약 1,500쪽)이다. 표(CS
 
 | 자료 | 파일명 | 다운로드 링크 |
 |---|---|---|
-| 🤝 공감이 (공감 코치) | `agent-1-empathy-coach.md` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-1-empathy-coach.md |
-| 🔎 데이터 사냥꾼 새봄 | `agent-2-data-hunter.md` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-2-data-hunter.md |
-| 🧮 함수 탐정 셈셈 | `agent-3-function-detective.md` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-3-function-detective.md |
-| 🎭 페르소나 디자이너 지음 | `agent-4-persona-designer.md` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-4-persona-designer.md |
-| 🛡️ 윤리 가디언 지킴 | `agent-5-ethics-guardian.md` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-5-ethics-guardian.md |
-| 🎤 무대 코치 또렷 | `agent-6-stage-coach.md` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-6-stage-coach.md |
-| 📘 통합 마스터 지식 | `master-knowledge.md` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/knowledge/master-knowledge.md |
-| 🧭 Agent Master 지시문 | `agent-master-instruction.md` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/master/agent-master-instruction.md |
-| 🏠 (방방이) 전월세 비교 에이전트 | `demo-realestate-rent.md` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/demo-realestate-rent.md |
+| 🤝 공감이 (공감 코치) | `agent-1-empathy-coach.txt` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-1-empathy-coach.txt |
+| 🔎 데이터 사냥꾼 새봄 | `agent-2-data-hunter.txt` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-2-data-hunter.txt |
+| 🧮 함수 탐정 셈셈 | `agent-3-function-detective.txt` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-3-function-detective.txt |
+| 🎭 페르소나 디자이너 지음 | `agent-4-persona-designer.txt` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-4-persona-designer.txt |
+| 🛡️ 윤리 가디언 지킴 | `agent-5-ethics-guardian.txt` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-5-ethics-guardian.txt |
+| 🎤 무대 코치 또렷 | `agent-6-stage-coach.txt` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-6-stage-coach.txt |
+| 📘 통합 마스터 지식 | `master-knowledge.txt` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/knowledge/master-knowledge.txt |
+| 🧭 Agent Master 지시문 | `agent-master-instruction.txt` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/master/agent-master-instruction.txt |
+| 🏠 (방방이) 전월세 비교 에이전트 | `demo-realestate-rent.txt` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/demo-realestate-rent.txt |
 | 📊 (방방이) 전국 아파트 전월세 시세 | `realestate-rent-national-summary.csv` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-national-summary.csv |
 
 ## 7. 이 마스터(Agent Master)를 쓰는 법
