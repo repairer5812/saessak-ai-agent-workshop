@@ -668,8 +668,7 @@ Gemini Gem은 외부 API 통신은 못 해도 내장 액션을 켤 수 있다. *
 | 📘 통합 마스터 지식 | `master-knowledge.md` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/knowledge/master-knowledge.md |
 | 🧭 Agent Master 지시문 | `agent-master-instruction.md` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/master/agent-master-instruction.md |
 | 🏠 (방방이) 전월세 비교 에이전트 | `demo-realestate-rent.md` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/demo-realestate-rent.md |
-| 📊 (방방이) 전국 시세 요약 | `realestate-rent-national-summary.csv` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-national-summary.csv |
-| 🗂️ (방방이) 원본 전국 23만건(gz) | `realestate-rent-national-202603-202605.csv.gz` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-national-202603-202605.csv.gz |
+| 📊 (방방이) 전국 아파트 전월세 시세 | `realestate-rent-national-summary.csv` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-national-summary.csv |
 
 ## 7. 이 마스터(Agent Master)를 쓰는 법
 1. 강사가 "데이터 분석 도우미 만들고 싶어요"라고 하면, 위 3장에서 맞는 예시 에이전트를 골라 지시문 전체와 다운로드 링크를 안내합니다.

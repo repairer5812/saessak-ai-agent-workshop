@@ -3,8 +3,7 @@
 > 지역을 치면 국토부 실거래가 전국 시세로 전월세를 비교해 주는 데이터 기반 Gem
 
 - **유형**: 강사 시연용 예시 완성작 (데이터 기반 비교·검색 에이전트)
-- **데이터(Knowledge)**: `realestate-rent-national-summary.csv` (전국 시세 요약) → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-national-summary.csv
-- **원본 전체**: `realestate-rent-national-202603-202605.csv.gz` (국토부 전국 23만건 gz) → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-national-202603-202605.csv.gz
+- **데이터(Knowledge)**: `realestate-rent-national-summary.csv` (전국 아파트 전월세 시세, 시군구별 — 이 한 개만 업로드) → https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-national-summary.csv
 
 ## 1. Gems 지시문 (복사해서 그대로 붙여넣기)
 

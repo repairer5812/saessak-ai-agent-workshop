@@ -276,10 +276,8 @@
 - **설명(Description)**: 지역을 치면 국토부 실거래가 전국 시세로 전월세를 비교해 주는 데이터 기반 Gem
 - **기본 도구(Default tool)**: No default tool (Google 검색 그라운딩은 자동)
 - **Knowledge 첨부**:
-  - `realestate-rent-national-summary.csv` — 필수 (전국 시세 요약을 Knowledge에 업로드)
+  - `realestate-rent-national-summary.csv` — 필수 — 이 전국 아파트 전월세 시세 CSV 한 개만 Knowledge에 업로드
     다운로드: https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-national-summary.csv
-  - `realestate-rent-national-202603-202605.csv.gz` — 참고 (원본 전국 23.8만건, 압축)
-    다운로드: https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-national-202603-202605.csv.gz
 - **테스트(direction)**: "강남구랑 마포구 전세 비교"로 테스트 — 요약 표로 답하고, 없는 단지는 검색으로 보강하는지 확인.
 
 **지시사항(Instructions) — 아래 전체를 복사해 붙여넣기:**
@@ -312,6 +310,5 @@
 | 1 마스터 | `master-knowledge.md` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/knowledge/master-knowledge.md |
 | 4 셈셈 | `semsem-practice-data.csv` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/semsem-practice-data.csv |
 | 8 방방이 | `realestate-rent-national-summary.csv` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-national-summary.csv |
-| 8 방방이(원본) | `realestate-rent-national-202603-202605.csv.gz` | https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-national-202603-202605.csv.gz |
 
 _2~3·5~7번 코칭 에이전트는 지시문만으로 동작합니다(Knowledge 선택). 디지털새싹 · 응답하라 AI 에이전트 강사워크숍._
