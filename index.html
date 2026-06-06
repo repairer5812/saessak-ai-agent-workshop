@@ -206,6 +206,27 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
 .logobar img{height:26px;width:auto;display:block;}
 .foot-logos{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:12px;flex-wrap:wrap;}
 .foot-logos img{height:24px;width:auto;opacity:.9;}
+.journey{margin-bottom:8px;}
+.jstage{margin-bottom:14px;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow-clay);padding:18px;border-left:6px solid var(--primary);}
+.jstage.s2{border-left-color:var(--secondary);} .jstage.s3{border-left-color:var(--yellow);}
+.jstage-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+.jstage-head .stg{font-weight:800;font-size:12px;padding:4px 11px;border-radius:999px;background:var(--primary-l);color:var(--primary-d);}
+.jstage.s2 .stg{background:var(--secondary-l);color:#1B7A3A;} .jstage.s3 .stg{background:#FEF7E0;color:#B8860B;}
+.jstage-head h4{font-size:16px;}
+.jrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:12px;}
+.jstep{background:var(--surface-2);border-radius:16px;padding:14px 10px 12px;text-align:center;}
+.jstep .jico{font-size:32px;line-height:1.1;}
+.jstep .jkw{font-weight:800;color:var(--ink);font-size:14px;margin-top:5px;}
+.jstep .jsub{font-size:11.5px;color:var(--sub);margin-top:3px;line-height:1.4;}
+.clz{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow-clay);padding:20px 18px 18px;margin-bottom:16px;border:2px solid var(--primary-l);}
+.clz h4{font-size:18px;margin-bottom:4px;} .clz .clz-lead{font-size:13.5px;color:var(--sub);margin-bottom:14px;}
+.clz-flow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+.clz-chip{flex:1;min-width:118px;background:var(--surface-2);border-radius:14px;padding:12px;}
+.clz-chip .ch-ico{font-size:22px;line-height:1;} .clz-chip .ch-t{font-weight:800;color:var(--ink);font-size:13.5px;margin-top:5px;}
+.clz-chip .ch-d{font-size:12px;color:var(--sub);margin-top:3px;line-height:1.45;}
+.clz-helper{font-size:12.5px;color:var(--primary-d);background:var(--primary-l);border-radius:10px;padding:9px 12px;font-weight:600;}
+details.simdetail{margin-top:26px;} details.simdetail>summary{cursor:pointer;font-weight:700;color:var(--primary-d);font-size:15px;padding:11px 14px;background:var(--surface-2);border-radius:14px;list-style:none;}
+details.simdetail>summary::-webkit-details-marker{display:none;}
 /* ===== responsive ===== */
 @media(max-width:760px){
   header.top h1{font-size:25px;}
@@ -650,8 +671,75 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
 <!-- ================= TAB 4 : SIMULATION ================= -->
 <section class="tabpane" id="sim">
   <h2 class="section-title">학생 전과정 시뮬레이션</h2>
-  <p class="section-lead">강사가 전체 흐름을 머릿속에 그릴 수 있도록, 한 학생이 12차시를 실제로 따라간 결과입니다. <span style="color:var(--answer);font-weight:800">빨간 글씨</span>가 학생이 채운 답입니다.</p>
-  <div id="sim-wrap"><div class="deck" id="sim-deck">
+  <p class="section-lead">강사가 12차시 흐름을 한눈에 그릴 수 있게, 학생 활동을 <b>키워드·그림 중심</b>으로 정리했습니다. 아래 ▸를 펴면 한 학생의 차시별 상세 답안(도담동 예시)도 볼 수 있어요.</p>
+    <div class="journey">
+    <div class="jstage s1">
+      <div class="jstage-head"><span class="stg">진입기 · 1~2차시</span><h4>🔍 우리동네 문제를 찾아라</h4></div>
+      <div class="jrow">
+        <div class="jstep"><div class="jico">😟</div><div class="jkw">① 불편함 발굴</div><div class="jsub">우리 동네 뭐가 불편하지?</div></div>
+        <div class="jstep"><div class="jico">🔎</div><div class="jkw">② 데이터 찾기</div><div class="jsub">공공데이터로 증거 모으기</div></div>
+      </div>
+    </div>
+    <div class="jstage s2">
+      <div class="jstage-head"><span class="stg">도약기 · 3~8차시</span><h4>🛠️ 분석하고 AI 에이전트를 만들어라</h4></div>
+      <div class="jrow">
+        <div class="jstep"><div class="jico">📈</div><div class="jkw">③ 데이터 분석</div><div class="jsub">그래프로 원인 찾기</div></div>
+        <div class="jstep"><div class="jico">🎯</div><div class="jkw">④ 문제 콕 집기</div><div class="jsub">한 줄로 다시 정의</div></div>
+        <div class="jstep"><div class="jico">🎭</div><div class="jkw">⑤ 역할 정하기</div><div class="jsub">어떤 AI가 도울까</div></div>
+        <div class="jstep"><div class="jico">🛡️</div><div class="jkw">⑥ 안전장치</div><div class="jsub">윤리 규칙 5가지</div></div>
+        <div class="jstep"><div class="jico">🤖</div><div class="jkw">⑦ Gem 제작</div><div class="jsub">데이터+지시문 넣기</div></div>
+        <div class="jstep"><div class="jico">🧪</div><div class="jkw">⑧ 테스트</div><div class="jsub">일부러 어렵게 묻기</div></div>
+      </div>
+    </div>
+    <div class="jstage s3">
+      <div class="jstage-head"><span class="stg">성장기 · 9~12차시</span><h4>🎤 검증하고 나눠라</h4></div>
+      <div class="jrow">
+        <div class="jstep"><div class="jico">✅</div><div class="jkw">⑨ 검증·보완</div><div class="jsub">믿을 만한지 확인</div></div>
+        <div class="jstep"><div class="jico">🖥️</div><div class="jkw">⑩ 발표 자료</div><div class="jsub">슬라이드 10장</div></div>
+        <div class="jstep"><div class="jico">🎤</div><div class="jkw">⑪ 시연·발표</div><div class="jsub">보여주고 피드백·성찰</div></div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title" style="font-size:20px;margin:26px 0 12px">🔬 핵심 활동 클로즈업 (학생이 이렇게 합니다)</h3>
+
+  <div class="clz">
+    <h4>🔎 데이터는 어떻게 찾나?</h4>
+    <p class="clz-lead">문제를 숫자로 증명할 '진짜 데이터'를 공공데이터포털(data.go.kr)에서 직접 찾습니다.</p>
+    <div class="clz-flow">
+      <div class="clz-chip"><div class="ch-ico">🔤</div><div class="ch-t">1. 키워드 검색</div><div class="ch-d">문제 관련 단어 (미세먼지·교통사고·도서관)</div></div>
+      <div class="clz-chip"><div class="ch-ico">📄</div><div class="ch-t">2. 파일 우선</div><div class="ch-d">CSV·엑셀 골라 Sheets로 바로</div></div>
+      <div class="clz-chip"><div class="ch-ico">✅</div><div class="ch-t">3. 신뢰 확인</div><div class="ch-d">제공기관·갱신주기·항목 보기</div></div>
+      <div class="clz-chip"><div class="ch-ico">📍</div><div class="ch-t">4. 우리 지역</div><div class="ch-d">전국 말고 시·군·구로 좁히기</div></div>
+    </div>
+    <div class="clz-helper">💡 받은 그대로 말고 '필요한 만큼만' 줄여서. 데이터를 먼저 둘러보고 문제를 발견해도 OK · 도우미 에이전트: 🔎 데이터 사냥꾼 새봄</div>
+  </div>
+
+  <div class="clz">
+    <h4>🎭 AI 에이전트 역할은 어떻게 정하나?</h4>
+    <p class="clz-lead">"누구를 위해 · 무엇을 · 어떻게 도와줄까"를 정해 페르소나 카드 7칸을 채웁니다.</p>
+    <div class="clz-flow">
+      <div class="clz-chip"><div class="ch-ico">👤</div><div class="ch-t">누구를 위해?</div><div class="ch-d">대상 사용자 (우리 학교 학생·학부모)</div></div>
+      <div class="clz-chip"><div class="ch-ico">🛠️</div><div class="ch-t">무엇을?</div><div class="ch-d">주요 기능 3가지 (데이터로 답할 수 있는 것)</div></div>
+      <div class="clz-chip"><div class="ch-ico">💬</div><div class="ch-t">어떻게?</div><div class="ch-d">성격·말투 (친근/정중)</div></div>
+      <div class="clz-chip"><div class="ch-ico">🚫</div><div class="ch-t">안 할 일</div><div class="ch-d">개인정보 묻기 금지 등 → 윤리 규칙</div></div>
+    </div>
+    <div class="clz-helper">🪪 페르소나 카드 7칸: 이름 · 한 줄 소개 · 대상 · 성격 · 지식 범위 · 기능 3 · 절대 안 할 일 · 도우미: 🎭 지음 + 🛡️ 지킴</div>
+  </div>
+
+  <div class="clz">
+    <h4>🤖 Gem(AI 에이전트)은 어떻게 만드나?</h4>
+    <p class="clz-lead">Gemini Gems에 '지시문(역할·규칙)'을 쓰고 '데이터 파일'을 올리면 나만의 AI가 됩니다.</p>
+    <div class="clz-flow">
+      <div class="clz-chip"><div class="ch-ico">✍️</div><div class="ch-t">지시문 쓰기</div><div class="ch-d">역할·지식·답변규칙·첫인사</div></div>
+      <div class="clz-chip"><div class="ch-ico">📎</div><div class="ch-t">데이터 올리기</div><div class="ch-d">우리가 정리한 CSV를 Knowledge에</div></div>
+      <div class="clz-chip"><div class="ch-ico">🧪</div><div class="ch-t">테스트·수정</div><div class="ch-d">어려운 질문으로 약점 찾아 고치기</div></div>
+    </div>
+    <div class="clz-helper">⚠️ 큰 파일은 못 다룸 → 수천 행 이하로 요약해서 올리기 · 제작은 학생이 직접</div>
+  </div>
+
+<details class="simdetail"><summary>▸ 한 학생의 차시별 상세 답안 보기 (도담동 예시, 28장)</summary>
+<div id="sim-wrap"><div class="deck" id="sim-deck">
   <div class="deck-stage">
     <div class="slide active">
   <div class="slide-top"><span class="slide-ch">시작 전</span><span class="slide-ph">시나리오</span></div>
@@ -836,6 +924,7 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
   </div>
 </div>
 <script>document.addEventListener('DOMContentLoaded',function(){initDeck('sim-deck');});</script></div>
+</details>
 </section>
 
 </main>
