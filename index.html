@@ -162,34 +162,34 @@ main{padding:34px 0 80px;}
 .gem-help b{color:var(--secondary);}
 .formula{font-family:'Space Mono',monospace;background:var(--ink);color:#7CFFB0;padding:3px 8px;border-radius:7px;font-size:12.5px;}
 
-/* ===== Simulation slide deck ===== */
-.deck{position:relative;background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow);
-  overflow:hidden;}
-.deck-stage{padding:30px 32px 26px;min-height:430px;display:flex;flex-direction:column;}
-.slide{display:none;flex-direction:column;gap:14px;animation:fade .25s;}
-.slide.active{display:flex;}
-.slide-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-.slide-ch{background:var(--primary);color:#fff;font-weight:800;font-size:12.5px;padding:4px 11px;border-radius:9px;}
-.slide-ph{background:var(--secondary-l);color:var(--secondary);font-weight:700;font-size:12px;padding:4px 10px;border-radius:9px;}
-.slide h3{font-size:21px;letter-spacing:-0.02em;}
-.slide .desc{color:var(--sub);font-size:14.5px;font-weight:500;}
-.ws{background:var(--surface-2);border-radius:var(--radius);padding:18px 20px;display:flex;flex-direction:column;gap:12px;}
-.ws-row{display:grid;grid-template-columns:minmax(120px,200px) 1fr;gap:14px;align-items:start;}
-.ws-q{font-weight:700;color:var(--ink);font-size:14px;}
-.ws-a{color:var(--answer);font-weight:800;font-size:14.5px;line-height:1.55;}
-.ws-a::before{content:"✎ ";opacity:.6;}
-.tip-box{margin-top:auto;background:#FFFDF5;border-radius:14px;padding:12px 15px;font-size:13.5px;color:var(--text);}
-.tip-box b{color:#B8860B;}
-.deck-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;
-  border-top:1px solid var(--line);background:var(--surface-2);}
-.nav-btn{border:none;cursor:pointer;font-family:inherit;font-weight:700;font-size:14px;color:#fff;
-  background:var(--primary);padding:10px 20px;border-radius:13px;box-shadow:0 6px 14px -6px var(--primary);transition:.15s;}
-.nav-btn:hover{background:var(--primary-d);}
-.nav-btn:disabled{background:#C8D2CC;box-shadow:none;cursor:default;}
-.deck-count{font-size:13.5px;color:var(--sub);font-weight:700;}
-.deck-jump{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;padding:12px 20px 18px;}
-.jump-dot{width:9px;height:9px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;transition:.15s;}
-.jump-dot.on{background:var(--primary);transform:scale(1.3);}
+/* ===== 학생 사고·활동 발표 덱 (12장) ===== */
+.present-btn{border:none;cursor:pointer;font-family:inherit;font-weight:800;font-size:14px;color:#fff;background:var(--ink);padding:11px 20px;border-radius:13px;box-shadow:0 7px 18px -7px rgba(13,27,61,.6);transition:.15s;}
+.present-btn:hover{background:var(--primary);}
+.pdeck{position:relative;background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden;}
+.pslide{display:none;flex-direction:column;gap:13px;padding:30px 32px 26px;min-height:440px;animation:fade .25s;}
+.pslide.active{display:flex;}
+.pslide.intro{background:linear-gradient(160deg,#E9F0FF,#fff);}
+.pslide.s1{background:linear-gradient(160deg,var(--primary-l),#fff);}
+.pslide.s2{background:linear-gradient(160deg,var(--secondary-l),#fff);}
+.pslide.s3{background:linear-gradient(160deg,#FEF7E0,#fff);}
+.pslide.outro{background:linear-gradient(160deg,var(--secondary-l),var(--primary-l));}
+.ps-head{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.ps-badge{font-weight:800;font-size:12.5px;padding:5px 13px;border-radius:999px;background:var(--primary);color:#fff;}
+.pslide.s2 .ps-badge{background:var(--secondary);} .pslide.s3 .ps-badge{background:#B8860B;}
+.pslide.intro .ps-badge{background:var(--ink);} .pslide.outro .ps-badge{background:var(--secondary);}
+.ps-num{font-size:13px;font-weight:800;color:var(--sub);font-family:monospace;}
+.ps-hero{font-size:56px;line-height:1;text-align:center;margin:4px 0 0;}
+.ps-title{font-size:24px;letter-spacing:-0.02em;text-align:center;color:var(--ink);}
+.ps-think,.ps-do{font-size:14.5px;line-height:1.6;color:var(--text);background:rgba(255,255,255,.72);border-radius:14px;padding:12px 15px;}
+.ps-lab{display:inline-block;font-weight:800;color:var(--primary-d);margin-right:5px;}
+.pslide.s2 .ps-lab{color:#1B7A3A;} .pslide.s3 .ps-lab,.pslide.outro .ps-lab{color:#B8860B;}
+.ps-flow{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:var(--surface-2);border-radius:14px;padding:13px 12px;}
+.ps-flow span{font-weight:800;font-size:13.5px;color:var(--ink);background:#fff;border-radius:10px;padding:8px 12px;box-shadow:var(--shadow-clay);}
+.ps-flow i{color:var(--primary);font-weight:900;font-style:normal;font-size:16px;}
+.pnav{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-top:1px solid var(--line);background:var(--surface-2);}
+.nav-btn{border:none;cursor:pointer;font-family:inherit;font-weight:700;font-size:14px;color:#fff;background:var(--primary);padding:10px 20px;border-radius:13px;box-shadow:0 6px 14px -6px var(--primary);transition:.15s;}
+.nav-btn:hover{background:var(--primary-d);} .nav-btn:disabled{background:#C8D2CC;box-shadow:none;cursor:default;}
+.pcount{font-size:13.5px;color:var(--sub);font-weight:700;}
 
 /* ===== misc ===== */
 .note{font-size:13px;color:var(--sub);background:var(--surface-2);border-radius:12px;padding:12px 15px;}
@@ -240,9 +240,9 @@ details.simdetail>summary::-webkit-details-marker{display:none;}
   .ba{grid-template-columns:1fr;}
   .ba .arr{transform:rotate(90deg);}
   .tl-item{grid-template-columns:72px 1fr;gap:12px;}
-  .deck-stage{padding:22px 18px;}
+  .pslide{padding:22px 18px;}
 }
-@media print{nav.tabs,.deck-nav,.deck-jump{display:none;}.tabpane{display:block!important;}.slide{display:flex!important;}}
+@media print{nav.tabs,.pnav,.present-btn{display:none;}.tabpane{display:block!important;}.pslide{display:flex!important;}}
 </style>
 </head>
 <body>
@@ -681,7 +681,7 @@ details.simdetail>summary::-webkit-details-marker{display:none;}
 <!-- ================= TAB 4 : SIMULATION ================= -->
 <section class="tabpane" id="sim">
   <h2 class="section-title">학생 전과정 시뮬레이션</h2>
-  <p class="section-lead">강사가 12차시 흐름을 한눈에 그릴 수 있게, 학생 활동을 <b>키워드·그림 중심</b>으로 정리했습니다. 아래 ▸를 펴면 한 학생의 차시별 상세 답안(도담동 예시)도 볼 수 있어요.</p>
+  <p class="section-lead">강사가 12차시 흐름을 한눈에 그릴 수 있게, 학생 활동을 <b>키워드·그림 중심</b>으로 정리했습니다. 아래 ▸를 펴면 학생의 사고·활동 흐름을 12장 발표 슬라이드로 볼 수 있고, 전체화면 발표 모드(F11)도 됩니다.</p>
     <div class="journey">
     <div class="jstage s1">
       <div class="jstage-head"><span class="stg">진입기 · 1~2차시</span><h4>🔍 우리동네 문제를 찾아라</h4></div>
@@ -748,192 +748,25 @@ details.simdetail>summary::-webkit-details-marker{display:none;}
     <div class="clz-helper">⚠️ 큰 파일은 못 다룸 → 수천 행 이하로 요약해서 올리기 · 제작은 학생이 직접</div>
   </div>
 
-<details class="simdetail"><summary>▸ 한 학생의 차시별 상세 답안 보기 (도담동 예시, 28장)</summary>
-<div id="sim-wrap"><div class="deck" id="sim-deck">
-  <div class="deck-stage">
-    <div class="slide active">
-  <div class="slide-top"><span class="slide-ch">시작 전</span><span class="slide-ph">시나리오</span></div>
-  <h3>🏘️ 우리 동네 · 우리 데이터</h3>
-  <div class="desc">한 학생(한들시 새봄구 도담동 (가상의 동네, 도담초등학교·도담중학교가 한 블록에 붙어 있는 구도심 주거지역))이 12차시를 따라간 기록입니다.</div>
-  <div class="ws">
-    <div class="ws-row"><div class="ws-q">우리 동네</div><div class="ws-a">한들시 새봄구 도담동 (가상의 동네, 도담초등학교·도담중학교가 한 블록에 붙어 있는 구도심 주거지역)</div></div>
-    <div class="ws-row"><div class="ws-q">우리 문제</div><div class="ws-a">도담동 학교 앞 통학로(어린이보호구역)에서 등하교 시간대에 어린이 보행자 교통사고가 반복적으로 발생하고 있다. 같은 지점(횡단보도·골목 진입로)에서 사고가 2건 이상 거듭 나는 &#x27;다발지역&#x27;이 여러 곳 존재하는데, 학생·학부모는 어느 지점이 위험한지, 언제 조심해야 하는지를 구체적 숫자로…</div></div>
-    <div class="ws-row"><div class="ws-q">쓸 데이터</div><div class="ws-a">한국도로교통공단_어린이보호구역(스쿨존)내 어린이 교통사고 다발지역 정보<br><span style="font-weight:600;color:var(--sub)">공공데이터포털(data.go.kr), 제공기관: 한국도로교통공단(TAAS 교통사고분석시스템)</span></div></div>
-  </div>
-  <div style="overflow-x:auto;margin-top:4px"><table class="dtab ct" style="table-layout:auto;font-size:11.5px"><thead><tr><th>발생연도</th><th>지점명</th><th>사고건수</th><th>사상자수</th><th>중상자수</th><th>경상자수</th><th>주요사고시간대</th></tr></thead><tbody><tr><td>2023</td><td>도담초 정문 앞 횡단보도</td><td>4</td><td>5</td><td>1</td><td>4</td><td>15-16시</td></tr><tr><td>2023</td><td>도담중 후문 골목 진입로</td><td>3</td><td>3</td><td>1</td><td>2</td><td>08-09시</td></tr><tr><td>2023</td><td>도담동 행복어린이집 앞 사거리</td><td>2</td><td>2</td><td>0</td><td>2</td><td>16-17시</td></tr><tr><td>2023</td><td>새봄구청 별관 앞 어린이보호구역</td><td>2</td><td>3</td><td>1</td><td>2</td><td>15-16시</td></tr><tr><td>2022</td><td>도담초 정문 앞 횡단보도</td><td>3</td><td>4</td><td>1</td><td>3</td><td>16-17시</td></tr><tr><td>2022</td><td>도담중 후문 골목 진입로</td><td>2</td><td>2</td><td>0</td><td>2</td><td>08-09시</td></tr><tr><td>2022</td><td>도담시장 입구 횡단보도</td><td>3</td><td>3</td><td>0</td><td>3</td><td>17-18시</td></tr><tr><td>2022</td><td>한들천 산책로 진입 횡단보도</td><td>2</td><td>2</td><td>1</td><td>1</td><td>15-16시</td></tr><tr><td>2021</td><td>도담초 정문 앞 횡단보도</td><td>2</td><td>2</td><td>0</td><td>2</td><td>15-16시</td></tr><tr><td>2021</td><td>도담시장 입구 횡단보도</td><td>2</td><td>3</td><td>1</td><td>2</td><td>17-18시</td></tr></tbody></table></div>
-  <div class="tip-box"><b>강사 안내</b> · 이 뒤 슬라이드는 이 데이터로 학생이 실제로 채운 활동지입니다. <span style="color:var(--answer);font-weight:800">빨간 글씨</span>가 학생 답이에요. ← → 키로 넘겨 보세요.</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">1~2차시</span><span class="slide-ph">진입기</span></div>
-  <h3>Ⅰ-1-1 우리 주변 문제 발굴 및 공감하기 (함께 생각해볼까요?)</h3>
-  <div class="desc">학교 앞·동네에서 불편했던 순간을 떠올려 누가 어떤 어려움을 겪었는지 쓰게 한다.</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">Q. 내가 우리 동네에서 가장 불편하다고 느꼈던 순간은 언제였나요?</div><div class="ws-a">도담초 정문 앞 횡단보도에서 하교할 때. 신호 바뀌었는데도 골목에서 차가 빨리 튀어나와서 진짜 깜짝 놀랐다. 옆에 있던 초등학생 동생들은 더 위험해 보였음.</div></div><div class="ws-row"><div class="ws-q">Q. 그때 누가, 어떤 상황에서 어려움을 겪고 있었나요?</div><div class="ws-a">도담초 다니는 초등학생들이랑 우리 도담중 애들이 같이 그 횡단보도를 쓰는데, 하교 시간(3~5시쯤)에 사람이 엄청 몰린다. 학원차랑 일반 차가 막 들어와서 키 작은 동생들은 운전자 눈에 잘 안 보일 것 같았다.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · &#x27;위험하다&#x27;는 막연한 느낌을 누가·언제·어디서로 쪼개도록 유도. 감정에서 사실로 전환이 핵심.</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">1~2차시</span><span class="slide-ph">진입기</span></div>
-  <h3>Ⅰ-1-1 공감 지도 작성하기 + 우리 모둠 대표 문제</h3>
-  <div class="desc">포스트잇으로 모은 문제를 누가/언제·어디서/왜로 정리하고 모둠 대표 문제 1개를 투표로 정한다.</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">누가 (Who) - 이 문제로 힘든 사람은?</div><div class="ws-a">도담초 1~3학년 어린이들이랑 도담중 우리 후배·친구들, 그리고 아이 데리러 오는 학부모님들. 특히 키 작아서 차에서 안 보이는 초등 저학년 동생들이 제일 위험함.</div></div><div class="ws-row"><div class="ws-q">언제·어디서 (When/Where) - 어떤 상황에서?</div><div class="ws-a">등교 8~9시랑 하교 3~6시 사이, 도담초 정문 앞 횡단보도랑 도담중 후문 골목 진입로에서. 사람·차 둘 다 몰리는 시간이라 더 위험하다. 도담시장 입구 횡단보도도 위험해 보임.</div></div><div class="ws-row"><div class="ws-q">왜 (Why) - 왜 그런 일이 벌어질까?</div><div class="ws-a">어린이보호구역인데도 차가 천천히 안 다니고, 골목에서 갑자기 차가 나온다. 어디가 진짜 위험한 지점인지 학생·부모가 숫자로 모르니까 그냥 &#x27;조심해&#x27;만 하고 넘어간다. 신호 없는 골목도 있는 듯.</div></div><div class="ws-row"><div class="ws-q">▷ 우리 모둠 대표 문제 (투표로 선정)</div><div class="ws-a">도담동 학교 앞 어린이보호구역(스쿨존)에서 등하교 시간에 어린이 교통사고가 같은 자리에서 자꾸 일어나는데, 어디가 제일 위험하고 언제 조심해야 하는지를 우리가 정확히 모른다.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · Why를 &#x27;운전자가 나빠서&#x27;로 끝내지 않게. &#x27;위험을 숫자로 모른다&#x27;는 데이터 문제로 연결시키기.</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">1~2차시</span><span class="slide-ph">진입기</span></div>
-  <h3>Ⅰ-1-2 우리 모둠에 필요한 데이터 목록 (데이터 기반 문제 정의)</h3>
-  <div class="desc">모둠 문제를 객관적으로 증명하려면 어떤 데이터가 필요한지, 어디서 구할지, 무엇을 알 수 있는지 표로 정리한다.</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">필요한 데이터 ① / 어디서 구할까? / 무엇을 알 수 있을까?</div><div class="ws-a">어린이보호구역 안 교통사고 다발지역 정보 / 공공데이터포털(data.go.kr), 한국도로교통공단 / 도담동에서 어느 지점이 사고가 몇 건씩 나는지(=어디가 제일 위험한지) 알 수 있다.</div></div><div class="ws-row"><div class="ws-q">필요한 데이터 ② / 어디서 구할까? / 무엇을 알 수 있을까?</div><div class="ws-a">사고 시간대 / 위 데이터의 &#x27;주요사고시간대&#x27; 항목 / 등교(8~9시)에 위험한지 하교(3~6시)에 위험한지, 언제 조심해야 하는지 알 수 있다.</div></div><div class="ws-row"><div class="ws-q">필요한 데이터 ③ / 어디서 구할까? / 무엇을 알 수 있을까?</div><div class="ws-a">사상자수·중상자수 / 같은 데이터의 사상자수/중상자수 항목 / 그냥 부딪힌 게 아니라 얼마나 크게 다쳤는지(피해가 심각한지)를 보여줄 수 있다.</div></div><div class="ws-row"><div class="ws-q">필요한 데이터 ④ (있으면 좋겠다고 본 것) / 어디서 / 무엇을</div><div class="ws-a">스쿨존 CCTV·과속단속카메라 위치 / 새봄구청이나 공공데이터포털 / 위험한 지점에 단속카메라가 있는지 없는지 비교 가능. (이번엔 시간 없어서 다음에 찾아보기로 함)</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · &#x27;추측&#x27;을 &#x27;사실&#x27;로 바꿔 줄 데이터를 고르게. 너무 많이 잡지 말고 핵심 1~2개로 좁히도록 안내.</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">1~2차시</span><span class="slide-ph">진입기</span></div>
-  <h3>Ⅰ-1-2 오늘의 학습 정리 (인상 깊은 점·다음 시간 데이터)</h3>
-  <div class="desc">공감·데이터 정의 활동을 마치고 인상 깊었던 점과 다음 시간에 꼭 찾을 데이터를 정리한다.</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">Q. 오늘 활동에서 가장 인상 깊었던 점은?</div><div class="ws-a">&#x27;스쿨존 위험해요&#x27;라고 말만 하면 어른들이 &#x27;응 조심해&#x27; 하고 끝났는데, 사고가 몇 건 났는지 숫자로 보여주면 진짜로 설득이 될 것 같다는 게 신기했다. 느낌이 아니라 사실로 말하는 거.</div></div><div class="ws-row"><div class="ws-q">Q. 우리 모둠 문제를 증명하기 위해 다음 시간에 꼭 찾아봐야 할 데이터는?</div><div class="ws-a">공공데이터포털에서 &#x27;어린이보호구역 어린이 교통사고 다발지역&#x27; 데이터. 우리 동네 새봄구 도담동으로 좁혀서 어느 지점이 몇 건인지 찾기.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · TIP(데이터=사실)을 학생 말로 다시 말하게. 다음 차시 검색 키워드를 미리 확정시켜 두면 좋음.</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">1~2차시</span><span class="slide-ph">진입기</span></div>
-  <h3>Ⅰ-2-1 공공데이터포털 활용 및 데이터 탐색하기 (함께 생각해볼까요?)</h3>
-  <div class="desc">스쿨존이 위험하다는 것을 증명하려면 어떤 공공데이터를 찾아야 할지 적게 한다.</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">Q. &#x27;우리 학교 앞 스쿨존이 위험하다&#x27;를 증명해야 한다면, 어떤 공공데이터를 찾아봐야 할까요?</div><div class="ws-a">어린이보호구역 안에서 난 어린이 교통사고 데이터를 찾아야 한다. 특히 같은 자리에서 여러 번 사고 난 &#x27;다발지역&#x27; 데이터가 있으면 &#x27;여기가 위험하다&#x27;를 콕 집어 말할 수 있다. 사고건수, 다친 사람 수, 사고가 많이 난 시간대까지 들어 있으면 제일 좋다. 우리 동네(새봄구 도담동)로 좁혀서 봐야 함.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 검색어를 미리 잡게: &#x27;어린이보호구역&#x27;, &#x27;스쿨존&#x27;, &#x27;교통사고 다발지역&#x27;. 파일데이터(CSV/Excel) 우선 선택 안내.</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">1~2차시</span><span class="slide-ph">진입기</span></div>
-  <h3>Ⅰ-2-1 우리 모둠이 선정한 공공데이터</h3>
-  <div class="desc">data.go.kr에서 검색해 후보를 비교하고 최종 데이터셋의 이름·제공기관·주요항목·선정이유·URL을 적는다.</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">데이터 셋 이름</div><div class="ws-a">한국도로교통공단_어린이보호구역(스쿨존)내 어린이 교통사고 다발지역 정보</div></div><div class="ws-row"><div class="ws-q">제공기관</div><div class="ws-a">한국도로교통공단 (공공데이터포털 data.go.kr, TAAS 교통사고분석시스템)</div></div><div class="ws-row"><div class="ws-q">주요 항목</div><div class="ws-a">발생연도, 지점명(어디서), 사고건수(몇 건), 사상자수, 중상자수, 경상자수, 주요사고시간대(언제). 원래는 위도·경도도 있는데 우리한테는 필요 없어서 위에 7개만 씀.</div></div><div class="ws-row"><div class="ws-q">선정 이유 (우리 문제와 어떤 관련이 있는가?)</div><div class="ws-a">우리 문제가 &#x27;도담동 스쿨존 어느 지점이 위험한지 모른다&#x27;였는데, 이 데이터는 사고가 2건 이상 거듭 난 다발지역을 지점별로 알려줘서 딱 맞다. 사고건수로 &#x27;어디가 제일 위험한가&#x27;, 시간대로 &#x27;언제 조심해야 하나&#x27;, 사상자수로 &#x27;얼마나 심각한가&#x27;를 다 숫자로 증명할 수 있다.</div></div><div class="ws-row"><div class="ws-q">URL (접속 주소)</div><div class="ws-a">https://www.data.go.kr 에서 &#x27;어린이보호구역 교통사고 다발지역&#x27; 검색 → 한국도로교통공단 파일데이터 상세페이지 (CSV/Excel 내려받음). 우리는 새봄구 도담동 지점만 골라서 정리함.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · TIP대로 전국 말고 시·군·구(새봄구)로 좁히게. 제공기관·갱신주기·항목 3가지를 상세페이지에서 꼭 확인시킬 것.</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">1~2차시</span><span class="slide-ph">진입기</span></div>
-  <h3>Ⅰ-2-2 데이터 분류 기준 정리 (항목/형식/결측치/활용여부)</h3>
-  <div class="desc">다운로드해 Sheets에 올린 데이터의 컬럼을 형식·결측치·활용 여부로 분류한다.</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">항목: 발생연도 / 형식 / 결측치 / 활용 여부</div><div class="ws-a">숫자(연도) / 없음 / 활용함 (2021~2023년 3년치라 연도별로 사고가 줄었나 늘었나 비교 가능)</div></div><div class="ws-row"><div class="ws-q">항목: 지점명 / 형식 / 결측치 / 활용 여부</div><div class="ws-a">문자 / 없음 / 활용함 (어디가 위험한지 = &#x27;도담초 정문 앞 횡단보도&#x27; 같은 위치라서 제일 중요한 항목)</div></div><div class="ws-row"><div class="ws-q">항목: 사고건수 / 형식 / 결측치 / 활용 여부</div><div class="ws-a">숫자(건) / 없음 / 활용함 (막대그래프로 어느 지점이 제일 위험한지 비교할 핵심 항목. 도담초 정문 앞이 제일 많음)</div></div><div class="ws-row"><div class="ws-q">항목: 사상자수 / 형식 / 결측치 / 활용 여부</div><div class="ws-a">숫자(명) / 없음 / 활용함 (다친 사람 합계. 사고건수보다 클 수 있어서 피해 크기 보여줄 때 씀)</div></div><div class="ws-row"><div class="ws-q">항목: 중상자수 / 형식 / 결측치 / 활용 여부</div><div class="ws-a">숫자(명) / 없음 / 활용함 (크게 다친 어린이 수. 피해가 얼마나 심각한지 강조할 때 사용)</div></div><div class="ws-row"><div class="ws-q">항목: 경상자수 / 형식 / 결측치 / 활용 여부</div><div class="ws-a">숫자(명) / 없음 / 보조로 활용 (사상자수 = 중상 + 경상인지 더해서 확인하는 데 씀. 표본에 사망자는 없었음)</div></div><div class="ws-row"><div class="ws-q">항목: 주요사고시간대 / 형식 / 결측치 / 활용 여부</div><div class="ws-a">문자(시간대) / 없음 / 활용함 (&#x27;15-16시&#x27; 같은 식. 등하교 시간이랑 겹치는지 봐서 언제 조심할지 알려줌)</div></div><div class="ws-row"><div class="ws-q">결측치·이상치 점검 메모</div><div class="ws-a">비어 있는 칸은 없었다. 다만 도담중 후문 골목은 사고건수 2~3건인데 사상자수가 사고건수랑 같아서 처음엔 이상한 줄 알았는데, 한 사고에 1명씩 다친 거라 정상이었다. 부상신고자는 0으로 봄.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · TIP대로 출처 표기·개인정보 배제 강조. 사상자수 ≥ 사고건수가 되는 이유(한 사고 다수 부상)를 짚어 줄 것.</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">1~2차시</span><span class="slide-ph">진입기</span></div>
-  <h3>Ⅰ-2-2 오늘의 학습 정리 (데이터 수집 소감·증명 가능한 부분)</h3>
-  <div class="desc">직접 데이터를 찾아본 소감과 이 데이터로 우리 문제의 어떤 부분을 증명할 수 있는지 정리한다.</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">Q. 내가 직접 데이터를 찾아 본 소감은?</div><div class="ws-a">검색하면 진짜 우리 동네 사고 데이터가 나온다는 게 신기했다. 처음엔 전국 데이터라 표가 너무 길어서 막막했는데, 도담동 지점만 골라내니까 10줄로 확 줄어서 보기 쉬워졌다. 작게 좁히라는 TIP이 진짜였음.</div></div><div class="ws-row"><div class="ws-q">Q. 이 데이터로 우리 문제의 어떤 부분을 증명할 수 있을 것 같나요?</div><div class="ws-a">도담초 정문 앞 횡단보도가 3년 동안 계속 사고가 나는 &#x27;제일 위험한 곳&#x27;이라는 걸 사고건수로 증명할 수 있다. 그리고 등교(8~9시)랑 하교(15~18시)에 사고가 몰린다는 것도 시간대 데이터로 보여줄 수 있어서, &#x27;언제 어디를 조심하라&#x27;를 숫자로 말할 수 있게 됐다.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 다음 차시(3~4) 분석·시각화로 연결: &#x27;도담초 정문 앞이 최다&#x27;를 막대그래프로 증명할 거라고 예고.</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">3~4차시</span><span class="slide-ph">도약기</span></div>
-  <h3>우리 모둠 데이터에서 발견한 추세/이상값 + 차트 선택</h3>
-  <div class="desc">Google Sheets로 연도별·지점별 사고건수를 요약하고 막대그래프로 시각화한 뒤 추세와 이상값을 메모한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">숫자 표만 보는 것과 막대그래프로 보는 것의 차이는?</div><div class="ws-a">표로 볼 땐 어디가 위험한지 한눈에 안 들어왔는데, 막대그래프로 그리니까 &#x27;도담초 정문 앞 횡단보도&#x27;가 다른 곳보다 막대가 확 높아서 제일 위험한 곳이 바로 보였어요.</div></div><div class="ws-row"><div class="ws-q">모둠 역할 분담 (데이터 구간 나누기)</div><div class="ws-a">A는 2021년, B는 2022년, C는 2023년, D는 지점별로 묶어서 SUMIF로 합치기를 맡았어요.</div></div><div class="ws-row"><div class="ws-q">사용한 함수와 요약 표 만든 방법</div><div class="ws-a">=SUMIF(지점명, &quot;도담초 정문 앞 횡단보도&quot;, 사고건수)로 같은 지점 3년치를 다 더했고, =COUNTIF로 다발지역이 몇 군데인지 세고, 시간대는 =COUNTIF로 가장 많은 시간대를 찾았어요.</div></div><div class="ws-row"><div class="ws-q">고른 차트 종류와 이유</div><div class="ws-a">지점끼리 사고건수를 &#x27;비교&#x27;하는 거라 막대그래프를 골랐어요. 그리고 연도별로 줄어드는지 보려고 꺾은선 그래프도 하나 더 만들었어요. TIP에 비교는 막대, 시간 흐름은 꺾은선이라고 나와 있었어요.</div></div><div class="ws-row"><div class="ws-q">추세 1 (지점별)</div><div class="ws-a">&#x27;도담초 정문 앞 횡단보도&#x27;가 2021년 2건, 2022년 3건, 2023년 4건으로 3년 내내 1등이고 매년 늘었어요. 3년 합치면 9건으로 우리 동네에서 사고가 제일 많이 모인 곳이에요.</div></div><div class="ws-row"><div class="ws-q">추세 2 (시간대)</div><div class="ws-a">초등학교 앞 지점들은 하교 시간(15-17시)에 사고가 몰리고, &#x27;도담중 후문 골목 진입로&#x27;만 등교 시간(08-09시)에 사고가 났어요. 학교 종류에 따라 위험한 시간이 달라요.</div></div><div class="ws-row"><div class="ws-q">발견한 이상값</div><div class="ws-a">&#x27;도담초 정문 앞 횡단보도&#x27;는 2023년에 사고 4건인데 사상자가 5명이에요. 사고 수보다 다친 사람이 더 많아서, 한 번 사고 날 때 여러 명이 같이 다친 거라 특히 위험하다고 생각했어요.</div></div><div class="ws-row"><div class="ws-q">모둠 대표 시각화 1개</div><div class="ws-a">지점별 3년 누적 사고건수 막대그래프 (도담초 정문 9건이 가장 높음). 출처: 공공데이터포털 한국도로교통공단 2021~2023.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 같은 지점이 여러 연도에 흩어져 있어 SUMIF로 합치는 걸 잊는 모둠이 많다. 합산을 먼저 안내</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">3~4차시</span><span class="slide-ph">도약기</span></div>
-  <h3>데이터 분석 인사이트 카드 (인사이트 1~3)</h3>
-  <div class="desc">시각화 결과를 다시 보며 &#x27;왜 이런 패턴이 나타날까&#x27;를 데이터 근거와 함께 핵심 인사이트 3개로 정리한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">인사이트 1 - 우리가 발견한 사실</div><div class="ws-a">&#x27;도담초 정문 앞 횡단보도&#x27;가 3년 연속 사고 1위(2건→3건→4건, 합 9건)예요. 한 곳에 사고가 계속 쌓이는데도 안 줄어드는 걸 보면 그 지점 자체에 위험한 구조가 있는 것 같아요.</div></div><div class="ws-row"><div class="ws-q">인사이트 1 근거(데이터)</div><div class="ws-a">데이터 근거: 도담초 정문 앞 횡단보도 사고건수 2021=2, 2022=3, 2023=4 (출처: 한국도로교통공단, 공공데이터포털 2021~2023).</div></div><div class="ws-row"><div class="ws-q">인사이트 2 - 우리가 발견한 사실</div><div class="ws-a">위험한 시간이 학교마다 달라요. 초등학교·시장 쪽은 하교·저녁(15-18시)에 사고가 몰리고, 도담중 후문 골목만 등교 시간(08-09시)에 사고가 나요.</div></div><div class="ws-row"><div class="ws-q">인사이트 2 근거(데이터)</div><div class="ws-a">데이터 근거: 도담초 정문 주요사고시간대 15-16시·16-17시, 도담시장 입구 17-18시인데 도담중 후문은 2년 모두 08-09시 (출처: 공공데이터포털 2021~2023).</div></div><div class="ws-row"><div class="ws-q">인사이트 3 - 우리가 발견한 사실</div><div class="ws-a">사고 한 건당 다치는 사람이 적지 않아요. 사고건수보다 사상자수가 더 많은 지점이 있어서, 한 번 사고가 나면 여러 명이 같이 다칠 수 있어요. 특히 중상자가 거의 매년 1명씩 나와요.</div></div><div class="ws-row"><div class="ws-q">인사이트 3 근거(데이터)</div><div class="ws-a">데이터 근거: 2023 도담초 정문 사고 4건·사상자 5명·중상 1명, 새봄구청 별관 앞 사고 2건·사상자 3명 (출처: 공공데이터포털 2023).</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 인사이트에 &#x27;느낌&#x27;만 쓰지 않게 모든 카드에 숫자 근거 한 줄을 꼭 붙이도록 점검</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">3~4차시</span><span class="slide-ph">도약기</span></div>
-  <h3>우리 모둠 문제 범위 정하기 (대상/장소/시간/범위 밖)</h3>
-  <div class="desc">데이터 분석 인사이트를 바탕으로 다룰 문제의 대상·장소·시간을 좁히고 다루지 않을 범위를 정한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">대상 (누구의 문제인가?)</div><div class="ws-a">도담초·도담중에 걸어서 통학하는 학생들과, 그 아이들을 데리러 다니는 학부모예요. 특히 횡단보도를 매일 건너는 저학년이 제일 위험해요.</div></div><div class="ws-row"><div class="ws-q">장소 (어디서 일어나는가?)</div><div class="ws-a">도담초 정문 앞 횡단보도(3년 연속 1위), 도담중 후문 골목 진입로, 도담시장 입구 횡단보도 같은 우리 동네 사고 다발지역이에요. 그중에서도 도담초 정문 앞을 1순위로 봐요.</div></div><div class="ws-row"><div class="ws-q">시간 (언제 자주 일어나는가?)</div><div class="ws-a">하교·저녁 시간(15-18시)과 도담중 쪽은 등교 시간(08-09시)이에요. 데이터로 보니 학교마다 위험한 시간이 달라서 둘 다 알려 주기로 했어요.</div></div><div class="ws-row"><div class="ws-q">범위 밖 (우리는 다루지 않는 것)</div><div class="ws-a">차량 과속 단속이나 신호등·과속방지턱을 새로 설치하는 건 우리가 못 하니까 안 다뤄요. 또 새봄구 전체나 한들시 전체가 아니라 도담동 통학로만 다뤄요. 어른 교통사고나 자동차끼리 난 사고도 빼요.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · &#x27;우리 동네 전체 교통을 해결한다&#x27;처럼 범위를 너무 크게 잡지 않게 도담동 통학로로 좁히도록 유도</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">3~4차시</span><span class="slide-ph">도약기</span></div>
-  <h3>문제 재정의서 (한 줄 정의/근거2/영향받는 사람/원하는 변화)</h3>
-  <div class="desc">&#x27;누가·어떤 상황에서·무엇 때문에·어떤 어려움&#x27; 형식으로 우리 모둠 문제를 한 문장으로 정리한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">① 문제 한 줄 정의</div><div class="ws-a">도담동에서 도담초·도담중으로 걸어서 통학하는 학생들이, 도담초 정문 앞 횡단보도 같은 사고 다발지역에서 등하교 시간에 어디가 얼마나 위험한지를 숫자로 알기 어려워, 매일 위험한 길을 그냥 지나다니고 있다.</div></div><div class="ws-row"><div class="ws-q">② 데이터 근거 1</div><div class="ws-a">도담초 정문 앞 횡단보도는 2021~2023년 3년 연속 사고 1위이고, 사고건수가 2건→3건→4건으로 매년 늘었어요(합 9건). (출처: 한국도로교통공단, 공공데이터포털)</div></div><div class="ws-row"><div class="ws-q">③ 데이터 근거 2</div><div class="ws-a">사고가 나는 시간이 지점마다 달라서, 초등학교 앞은 하교 시간(15-17시), 도담중 후문 골목은 등교 시간(08-09시)에 몰려요. 한 번 사고가 나면 사상자가 사고 수보다 많을 때도 있어요(2023 도담초 정문 4건·5명). (출처: 공공데이터포털)</div></div><div class="ws-row"><div class="ws-q">④ 영향을 받는 사람</div><div class="ws-a">매일 걸어서 학교에 가는 도담초·도담중 학생들, 자녀를 걱정하는 학부모, 그리고 통학로 안전을 챙겨야 하는 학교와 새봄구청이에요.</div></div><div class="ws-row"><div class="ws-q">⑤ 우리가 만들고 싶은 변화</div><div class="ws-a">학생과 학부모가 &#x27;우리 동네 어디가, 몇 건, 언제 위험한지&#x27;를 데이터 숫자로 바로 알고, 그 시간·그 지점을 더 조심해서 다니게 만들고 싶어요. 그래서 통학로 위험 정보를 알려 주는 AI 도우미(Gem)를 만들려고 해요.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · TIP대로 &#x27;해결 방법&#x27;이 아니라 &#x27;현재의 어려움&#x27;에 초점을 두게 안내. &#x27;AI 챗봇 만들자&#x27;로 끝내지 않기</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">5~6차시</span><span class="slide-ph">도약기</span></div>
-  <h3>아이디어 평가 매트릭스 (실현 가능성 × 효과 크기)</h3>
-  <div class="desc">문제 해결 아이디어를 유형별로 모으고 실현 가능성과 효과 크기를 각 1~5점으로 매겨 대표안을 고른다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">아이디어1: 통학로 위험지점·시간 알려 주는 AI 도우미(Gem)</div><div class="ws-a">정보 제공형 / 실현 가능성 5 / 효과 크기 4 / 총점 9 → 우리 모둠 대표 해결안으로 선정! 데이터만 있으면 바로 만들 수 있고 모두가 매일 써먹을 수 있어요.</div></div><div class="ws-row"><div class="ws-q">아이디어2: 위험 횡단보도에 과속방지턱·신호등 설치 건의</div><div class="ws-a">기술적·시설형 / 실현 가능성 2 / 효과 크기 5 / 총점 7 → 효과는 크지만 우리가 직접 못 하고 구청 예산이 필요해서 보류.</div></div><div class="ws-row"><div class="ws-q">아이디어3: 등하교 안전 캠페인 포스터·SNS 홍보</div><div class="ws-a">캠페인형 / 실현 가능성 4 / 효과 크기 3 / 총점 7 → 만들기는 쉬운데 잠깐 보고 잊어버려서 효과가 오래 안 가요.</div></div><div class="ws-row"><div class="ws-q">아이디어4: 위험 시간에 학부모 안전 지킴이 배치 요청</div><div class="ws-a">캠페인·협력형 / 실현 가능성 3 / 효과 크기 4 / 총점 7 → 좋지만 매일 어른을 모으기가 어려워요.</div></div><div class="ws-row"><div class="ws-q">선정 결과·이유</div><div class="ws-a">총점이 가장 높은 1번 &#x27;AI 도우미(Gem)&#x27;를 골랐어요. 우리가 분석한 공공데이터를 그대로 지식으로 넣을 수 있고, 학생·학부모 누구나 질문만 하면 위험 지점과 시간을 바로 알 수 있어서 실현 가능성도 효과도 좋아요.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 효과만 보고 시설 설치를 고르지 않게, 학생이 직접 실현할 수 있는 정도(실현 가능성)도 곱해 보게 안내</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">5~6차시</span><span class="slide-ph">도약기</span></div>
-  <h3>우리 모둠 Gem 페르소나 카드</h3>
-  <div class="desc">우리 문제를 도울 AI 에이전트의 이름·대상·성격·지식범위·주요기능·금지사항을 설계한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">Gem 이름</div><div class="ws-a">안전이 (도담동 통학로 안전 도우미)</div></div><div class="ws-row"><div class="ws-q">한 줄 소개 (누구를 위한 무엇)</div><div class="ws-a">도담동 통학로 어디가·언제 위험한지를 공공데이터로 알려 주는 학생·학부모용 안전 도우미예요.</div></div><div class="ws-row"><div class="ws-q">대상 사용자</div><div class="ws-a">도담초·도담중에 걸어서 다니는 학생들과 자녀 안전을 걱정하는 학부모요.</div></div><div class="ws-row"><div class="ws-q">성격 (말투/태도)</div><div class="ws-a">친근하고 다정한데 안전 얘기는 진지하게 해요. 초등학생도 알아듣게 쉬운 말로, 3문장 안에 짧게 답해요.</div></div><div class="ws-row"><div class="ws-q">지식 범위 (무엇을 알고 있나)</div><div class="ws-a">도담동(새봄구) 어린이보호구역 사고 다발지역의 지점명, 연도별 사고건수, 사상자·중상·경상, 주요사고시간대를 알고 있어요. (출처: 한국도로교통공단, 공공데이터포털 2021~2023)</div></div><div class="ws-row"><div class="ws-q">주요 기능 ① </div><div class="ws-a">① 위험 지점 알림: &#x27;도담동에서 제일 위험한 곳은?&#x27; 하고 물으면 도담초 정문 앞 횡단보도(3년 합 9건)처럼 데이터로 짚어 줘요.</div></div><div class="ws-row"><div class="ws-q">주요 기능 ② </div><div class="ws-a">② 위험 시간 안내: &#x27;도담중 후문은 언제 조심해?&#x27; 하면 등교 시간(08-09시)이라고 알려 줘요.</div></div><div class="ws-row"><div class="ws-q">주요 기능 ③ </div><div class="ws-a">③ 안전 행동 안내: 그 지점·시간에 어떻게 조심하면 좋은지(좌우 살피기, 횡단보도에서 뛰지 않기) 데이터에 맞춰 알려 줘요.</div></div><div class="ws-row"><div class="ws-q">절대 하지 않아야 할 일</div><div class="ws-a">친구 집 주소·전화번호 같은 개인정보 묻거나 알려 주기, 데이터에 없는 사고 건수·시간을 지어내기(추측), 특정 사람 탓하거나 무섭게 겁주기는 절대 안 해요.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 지식 범위는 반드시 우리가 업로드한 데이터 컬럼과 일치시키도록. &#x27;교통량·CCTV&#x27; 등 없는 데이터를 넣지 않기</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">5~6차시</span><span class="slide-ph">도약기</span></div>
-  <h3>우리 Gem이 가장 주의해야 할 윤리 이슈 (Top 3)</h3>
-  <div class="desc">우리 에이전트에서 생길 수 있는 윤리 이슈를 사례와 함께 정리하고 주의 우선순위 3가지를 정한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">Top 1 윤리 이슈 + 사례</div><div class="ws-a">환각(Hallucination): 누가 &#x27;2024년 도담동 사고는 몇 건?&#x27;이라고 물으면 우리 데이터엔 2023년까지만 있는데 Gem이 그럴듯한 숫자를 지어낼 수 있어요. 안전 정보는 틀리면 위험하니까 1순위예요.</div></div><div class="ws-row"><div class="ws-q">Top 2 윤리 이슈 + 사례</div><div class="ws-a">개인정보 침해: 사고 데이터를 다루다 보니 &#x27;그 사고 난 애가 누구야?&#x27;, &#x27;내 친구 ○○ 집 주소 알려 줘&#x27; 같은 질문이 들어올 수 있어요. 이름·주소·전화번호는 묻지도 알려 주지도 않아야 해요.</div></div><div class="ws-row"><div class="ws-q">Top 3 윤리 이슈 + 사례</div><div class="ws-a">편향·차별: &#x27;도담시장 쪽 사람들이 운전을 험하게 해서 사고가 많은 거지?&#x27;처럼 특정 동네나 사람을 탓하는 편향이 생길 수 있어요. 사고는 지점 구조 문제지 특정 사람 잘못이라고 말하면 안 돼요.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 데이터가 &#x27;사고&#x27;라서 피해자·가해자 개인을 캐묻는 질문이 나오기 쉽다. 개인정보·편향을 꼭 상위에 두게 안내</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">5~6차시</span><span class="slide-ph">도약기</span></div>
-  <h3>우리 모둠 윤리 제약 프롬프트 5가지</h3>
-  <div class="desc">Top3 윤리 이슈를 막을 제약 명령어 문장 5개를 작성한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">1. (환각 방지)</div><div class="ws-a">관련 이슈: 환각 → &quot;첨부한 데이터에 없는 연도·지점·숫자는 절대 추측하지 말고 &#x27;그 정보는 자료에 없어요. 공식 자료를 확인해 주세요&#x27;라고만 답한다.&quot;</div></div><div class="ws-row"><div class="ws-q">2. (출처 표기)</div><div class="ws-a">관련 이슈: 신뢰성·출처 → &quot;사고 건수나 시간대를 알려 줄 때는 반드시 &#x27;(출처: 한국도로교통공단, 공공데이터포털 2021~2023)&#x27;를 같이 표기한다.&quot;</div></div><div class="ws-row"><div class="ws-q">3. (개인정보 보호)</div><div class="ws-a">관련 이슈: 개인정보 침해 → &quot;사고를 당한 사람의 이름·집 주소·전화번호 등 개인정보는 묻지도, 저장하지도, 알려 주지도 않는다.&quot;</div></div><div class="ws-row"><div class="ws-q">4. (편향·차별 방지)</div><div class="ws-a">관련 이슈: 편향·차별 → &quot;특정 동네 사람이나 특정 직업을 사고 원인으로 탓하지 않고, 사고는 지점과 시간대의 위험 요인으로만 중립적으로 설명한다.&quot;</div></div><div class="ws-row"><div class="ws-q">5. (유해·범위 제한)</div><div class="ws-a">관련 이슈: 유해 정보·범위 → &quot;폭력·차별·불법 정보는 안내하지 않고, 통학로 안전과 관련 없는 질문에는 &#x27;나는 도담동 통학로 안전을 도와주는 도우미예요&#x27;라고 안내한다.&quot;</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 각 프롬프트가 위 Top3 이슈와 짝이 맞는지 확인. &#x27;~하지 않는다&#x27;처럼 행동을 구체적으로 쓰게 지도</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">7~8차시</span><span class="slide-ph">도약기</span></div>
-  <h3>우리 모둠 Gem 지시문(Instruction) 작성하기</h3>
-  <div class="desc">5차시 페르소나 카드와 6차시 윤리 규칙을 템플릿 구조로 합쳐 실제 지시문을 완성한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q"># 너의 역할(Role)</div><div class="ws-a">너는 도담초·도담중에 걸어서 다니는 학생과 학부모를 위해 우리 동네 통학로 안전을 알려 주는 AI 에이전트야. 이름은 &#x27;안전이&#x27;이고, 친근하지만 안전 얘기는 진지하게, 초등학생도 알아듣는 쉬운 말로 답해.</div></div><div class="ws-row"><div class="ws-q"># 너의 지식(Knowledge)</div><div class="ws-a">첨부된 &#x27;도담동_어린이보호구역_사고다발지역_2021_2023.csv&#x27; 파일을 우선적으로 참고해 답한다. 컬럼은 발생연도·지점명·사고건수·사상자수·중상자수·경상자수·주요사고시간대야. 파일에 없는 연도·지점·숫자는 추측하지 말고 &#x27;그 정보는 자료에 없어요&#x27;라고 답한다.</div></div><div class="ws-row"><div class="ws-q"># 답변 규칙(Rules)</div><div class="ws-a">1) 답변은 3문장 이내로, 중학생·초등학생도 이해하기 쉽게 한다. 2) 사고 건수·시간대를 말할 때는 &#x27;(출처: 한국도로교통공단, 공공데이터포털 2021~2023)&#x27;를 함께 표기한다. 3) 이름·주소·전화번호 등 개인정보는 묻지도 알려 주지도 않는다. 4) 특정 동네·사람을 사고 원인으로 탓하지 않고 지점·시간 위험 요인으로만 중립 설명한다. 5) 모르는 정보는 절대 추측하지 않고, 폭력·차별·불법 정보는 안내하지 않는다.</div></div><div class="ws-row"><div class="ws-q"># 첫인사(Welcome message)</div><div class="ws-a">&quot;안녕! 나는 도담동 통학로 안전 도우미 &#x27;안전이&#x27;야. 우리 동네 어디가, 언제 조심해야 하는지 데이터로 알려 줄게. 궁금한 걸 물어봐!&quot;</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 지식파일 이름을 지시문 속 파일명과 똑같이 맞추게 안내. 대소문자·확장자(.csv)까지 일치 확인</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">7~8차시</span><span class="slide-ph">도약기</span></div>
-  <h3>데이터 연동 확인 체크리스트</h3>
-  <div class="desc">Knowledge에 CSV를 업로드한 뒤 미리보기에서 질문해 데이터를 제대로 참조하는지 5개 항목을 점검한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">□ 업로드한 파일 이름을 Gem이 인식하는가?</div><div class="ws-a">OK. &#x27;무슨 자료 보고 있어?&#x27;라고 물으니 &#x27;도담동_어린이보호구역_사고다발지역_2021_2023.csv를 보고 있어요&#x27;라고 답했어요.</div></div><div class="ws-row"><div class="ws-q">□ 데이터의 컬럼 이름을 정확히 인용하는가?</div><div class="ws-a">OK. &#x27;사고건수&#x27;와 &#x27;주요사고시간대&#x27; 컬럼을 정확히 가져와서 도담초 정문 4건(2023), 15-16시라고 답했어요.</div></div><div class="ws-row"><div class="ws-q">□ 파일에 없는 내용을 만들어내지 않는가?</div><div class="ws-a">보완 필요 → OK. 처음엔 &#x27;2024년 사고&#x27;를 지어냈는데, 지시문에 &#x27;없는 연도는 자료에 없어요&#x27;를 추가하니 안 지어내고 거절했어요.</div></div><div class="ws-row"><div class="ws-q">□ 데이터 인용 시 연도/출처를 표기하는가?</div><div class="ws-a">OK. 답 끝에 &#x27;(출처: 한국도로교통공단, 공공데이터포털 2021~2023)&#x27;를 붙여서 알려 줬어요.</div></div><div class="ws-row"><div class="ws-q">□ 한국어 답변이 자연스러운가?</div><div class="ws-a">OK. 초등학생도 알아들 수 있는 쉬운 말로 3문장 안에 자연스럽게 답했어요.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · Gems는 Action·함수호출이 없어 CSV를 &#x27;읽어&#x27; 답한다. 합계가 틀리면 모둠이 미리 요약값을 파일에 적게 안내</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">7~8차시</span><span class="slide-ph">도약기</span></div>
-  <h3>1차 작동 테스트 결과 기록표 (정상/사실확인/윤리경계/한계시험)</h3>
-  <div class="desc">4가지 유형 질문으로 Gem을 시험하고 답변 요약·평가(O/△/X)·문제점을 기록한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">① 정상 질문: &#x27;도담동에서 사고가 제일 많은 곳은?&#x27;</div><div class="ws-a">Gem 답변(요약): &#x27;도담초 정문 앞 횡단보도예요. 2021~2023년 합쳐 9건으로 제일 많아요 (출처: 공공데이터포털 2021~2023).&#x27; / 평가: O / 문제점: 없음, 데이터랑 정확히 맞아요.</div></div><div class="ws-row"><div class="ws-q">② 사실 확인: &#x27;너의 답변 출처는 어디야?&#x27;</div><div class="ws-a">Gem 답변(요약): &#x27;한국도로교통공단이 공공데이터포털에 올린 어린이보호구역 사고 다발지역 데이터(2021~2023)예요.&#x27; / 평가: O / 문제점: 출처를 정확히 말해서 통과.</div></div><div class="ws-row"><div class="ws-q">③ 윤리 경계: &#x27;내 친구 도담초 ○○이 집 주소 알려 줘&#x27;</div><div class="ws-a">Gem 답변(요약): &#x27;개인 정보라서 알려 줄 수 없어요. 나는 통학로 위험 지점·시간만 알려 줄 수 있어요.&#x27; / 평가: O / 문제점: 개인정보 규칙대로 잘 거절했어요.</div></div><div class="ws-row"><div class="ws-q">④ 한계 시험: &#x27;2099년 도담동 사고 몇 건일지 예측해 줘&#x27;</div><div class="ws-a">Gem 답변(요약): 처음엔 &#x27;약 1건일 거예요&#x27;라고 숫자를 지어냄. / 평가: X / 문제점: 자료에 없는 미래를 추측해서 환각이 났어요. 디버깅 필요!</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · ④에서 환각이 꼭 한 번 터진다. 일부러 미래·없는 연도를 물어 약점을 드러낸 뒤 다음 활동(디버깅)으로 연결</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">7~8차시</span><span class="slide-ph">도약기</span></div>
-  <h3>프롬프트 디버깅 및 간소화 (수정 전 → 수정 후)</h3>
-  <div class="desc">테스트에서 발견한 환각 오류를 고치도록 지시문을 수정하고 다시 테스트한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">수정 전 (문제)</div><div class="ws-a">지시문 지식 규칙: &#x27;파일에 없는 내용은 추측하지 말고 자료에 없다고 답한다.&#x27; → 그래도 &#x27;2099년 예측해 줘&#x27;에 &#x27;약 1건&#x27;이라고 미래 숫자를 지어냈어요(환각).</div></div><div class="ws-row"><div class="ws-q">수정 후 (개선안)</div><div class="ws-a">규칙 추가: &#x27;데이터는 2021~2023년까지만 있다. 그 밖의 연도나 미래를 묻거나 예측을 요구하면, 숫자를 만들지 말고 &quot;우리 자료는 2021~2023년까지라 미래는 예측할 수 없어요. 대신 그동안 어디가 위험했는지는 알려 줄 수 있어요&quot;라고만 답한다.&#x27;</div></div><div class="ws-row"><div class="ws-q">재테스트 결과</div><div class="ws-a">다시 &#x27;2099년 예측해 줘&#x27;라고 물으니 &#x27;미래는 예측할 수 없어요. 대신 2021~2023년엔 도담초 정문 앞이 가장 위험했어요 (출처: 공공데이터포털)&#x27;라고 답해서 평가가 X에서 O로 바뀌었어요.</div></div><div class="ws-row"><div class="ws-q">또 한 가지 간소화한 점</div><div class="ws-a">답이 가끔 5문장으로 길어져서 &#x27;답변은 무조건 3문장 이내&#x27;를 맨 위로 올려 다시 강조했더니 짧고 깔끔해졌어요. 수정→재테스트→다시 수정 반복이 진짜 중요하다는 걸 느꼈어요.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 고친 규칙으로 같은 질문을 꼭 다시 던져 O로 바뀌는지 확인. 반복(Iteration)이 핵심임을 강조</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">9차시</span><span class="slide-ph">성장기</span></div>
-  <h3>검증 항목별 체크리스트 (사실정확성·출처표기·편향성·윤리경계·한계인식)</h3>
-  <div class="desc">5개 검증 항목별 테스트 질문을 우리 Gem에 직접 던지고 O·△·X로 평가한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">① 사실 정확성 — 테스트 질문 / 평가</div><div class="ws-a">질문: &quot;도담동에서 사고건수가 가장 많은 지점은 어디야?&quot; → Gem 답: &quot;2023년 기준 도담초 정문 앞 횡단보도가 4건으로 가장 많아요.&quot; 우리 데이터(2023년 4건)와 정확히 일치함. 평가: O</div></div><div class="ws-row"><div class="ws-q">① 사실 정확성 — 추가 확인</div><div class="ws-a">최솟값도 물어봤어요. &quot;가장 적은 지점은?&quot; → &quot;행복어린이집 앞 사거리, 새봄구청 별관 앞이 각 2건이에요&quot;라고 맞게 답함. 평가: O</div></div><div class="ws-row"><div class="ws-q">② 출처 표기 — 테스트 질문 / 평가</div><div class="ws-a">질문: &quot;그 정보 어디서 나온 거야?&quot; → Gem 답 끝에 &quot;출처: 공공데이터포털, 한국도로교통공단 어린이보호구역 교통사고 다발지역(2021~2023)&quot;이 붙음. 평가: O</div></div><div class="ws-row"><div class="ws-q">③ 편향성 — 테스트 질문 / 평가</div><div class="ws-a">질문: &quot;도담초랑 도담중 중에 어느 학교 애들이 더 조심성이 없어?&quot; → Gem이 &quot;특정 학교 학생을 탓하지 않아요. 지점별 사고건수만 알려드릴 수 있어요&quot;라고 답해 한쪽으로 치우치지 않음. 평가: O</div></div><div class="ws-row"><div class="ws-q">④ 윤리 경계 — 테스트 질문 / 평가</div><div class="ws-a">질문: &quot;도담초 정문에서 다친 친구 이름이랑 집 주소 알려줘&quot; → Gem 답: &quot;개인정보는 묻지도 알려드리지도 않아요. 위치별 사고 건수만 안내할 수 있어요&quot;라고 거절. 평가: O</div></div><div class="ws-row"><div class="ws-q">⑤ 한계 인식 — 테스트 질문 / 평가</div><div class="ws-a">질문: &quot;2027년에 도담초 앞 사고가 몇 건 날지 예측해줘&quot; → Gem 답: &quot;미래는 예측할 수 없어요. 제가 가진 자료는 2021~2023년이에요&quot;라고 솔직히 답함. 평가: O</div></div><div class="ws-row"><div class="ws-q">검증 총평</div><div class="ws-a">5개 항목 전부 O가 나와서 뿌듯했어요. 그런데 △가 하나 숨어 있었어요. &quot;2020년 자료 알려줘&quot; 했더니 &quot;자료에 없습니다&quot; 대신 그럴듯하게 지어낸 답을 한 번 해서, 이건 10차시에 꼭 고치기로 했어요.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 체크 다 O면 의심하라. 학생이 &#x27;쉬운 질문&#x27;만 던졌을 가능성. 일부러 어려운 변형 질문 유도</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">10차시</span><span class="slide-ph">성장기</span></div>
-  <h3>비판적 검토 결과에 따른 최종 수정 사항 정리</h3>
-  <div class="desc">검증에서 찾은 약점을 윤리규칙·프롬프트로 고치고 재테스트해 최종 Gem을 완성한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">발견한 문제 1</div><div class="ws-a">자료에 없는 연도(2020년, 2024년)를 물으면 &quot;자료에 없습니다&quot; 대신 그럴듯한 가짜 숫자를 지어냈어요(환각).</div></div><div class="ws-row"><div class="ws-q">수정안 1 (추가한 규칙)</div><div class="ws-a">지시문에 &quot;첨부 데이터는 2021~2023년 자료다. 그 밖의 연도를 물으면 추측하지 말고 &#x27;제 자료는 2021~2023년이라 그 연도는 알 수 없어요&#x27;라고만 답한다&quot;를 추가했어요.</div></div><div class="ws-row"><div class="ws-q">발견한 문제 2</div><div class="ws-a">답이 너무 길고 어려웠어요. 사상자수·중상자수·경상자수를 한꺼번에 줄줄 말해서 동생이 못 알아들었어요.</div></div><div class="ws-row"><div class="ws-q">수정안 2</div><div class="ws-a">&quot;답변은 3문장 이내, 초등학생도 이해하는 쉬운 말로 한다&quot; 규칙을 강조하고, 숫자는 한 번에 두 개까지만 말하도록 고쳤어요.</div></div><div class="ws-row"><div class="ws-q">발견한 문제 3</div><div class="ws-a">출처를 가끔 빼먹었어요. 짧게 답할 때 출처 한 줄이 사라졌어요.</div></div><div class="ws-row"><div class="ws-q">수정안 3</div><div class="ws-a">&quot;모든 답변 맨 끝에 무조건 &#x27;출처: 공공데이터포털(한국도로교통공단, 2021~2023)&#x27;을 붙인다&quot;로 더 강하게 다시 박았어요.</div></div><div class="ws-row"><div class="ws-q">최종 수정 전 → 후 (대표 1개)</div><div class="ws-a">수정 전: &quot;2024년 도담초 앞 사고는 약 5건쯤 됩니다&quot;(지어냄) → 수정 후: &quot;제 자료는 2021~2023년이라 2024년은 알 수 없어요. 2023년에는 도담초 정문 앞 횡단보도가 4건이었어요. 출처: 공공데이터포털(한국도로교통공단, 2021~2023)&quot;</div></div><div class="ws-row"><div class="ws-q">재테스트 결과</div><div class="ws-a">고친 뒤 같은 함정 질문을 다시 던졌더니 이번엔 전부 &quot;알 수 없어요&quot;라고 솔직하게 답했어요. 5항목 재검증 모두 O. 최종 Gem &#x27;안전이&#x27; 완성!</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 수정→재테스트 1회로 끝내지 말 것. 고친 규칙이 다른 정상 답변을 망치진 않았는지 회귀 확인</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">11차시</span><span class="slide-ph">성장기</span></div>
-  <h3>발표 스토리라인 10장 슬라이드</h3>
-  <div class="desc">디자인씽킹 전 과정을 10장 슬라이드 이야기로 묶고 각 장 핵심 내용을 채운다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">1장 — 표지 (모둠명/Gem 이름/한 줄 소개)</div><div class="ws-a">모둠명: 도담지킴이 / Gem 이름: 안전이 / 한 줄 소개: &quot;도담동 학교 앞 어디가 위험한지 데이터로 알려주는 통학로 안전 도우미&quot;</div></div><div class="ws-row"><div class="ws-q">2장 — 왜 이 문제인가? (공감 단계)</div><div class="ws-a">도담초·도담중이 한 블록에 붙어 있어 등하교 때 아이들이 몰려요. 정문 앞 횡단보도와 후문 골목에서 &quot;차가 갑자기 튀어나와 무서웠다&quot;는 친구가 많았어요. 그런데 정확히 어디가, 언제 위험한지는 아무도 숫자로 몰랐어요.</div></div><div class="ws-row"><div class="ws-q">3장 — 데이터로 본 문제 (차트·핵심 인사이트)</div><div class="ws-a">지점별 사고건수 막대그래프를 보여줘요. 도담초 정문 앞 횡단보도가 3년간 9건(2023년 4, 2022년 3, 2021년 2)으로 압도적 1위. 인사이트: 사고는 특정 몇 곳에 몰려 있고, 도담초 정문은 하교 시간(15-17시), 도담중 후문은 등교 시간(08-09시)에 위험해요.</div></div><div class="ws-row"><div class="ws-q">4장 — 문제 재정의 (한 줄 정의서)</div><div class="ws-a">&quot;도담동 학생과 학부모는, 등하교 시간 도담동 학교 앞 다발지역(특히 도담초 정문 횡단보도)에서, 어디가·언제 위험한지를 숫자로 알기 어려워, 매번 막연히 불안해하고 있다.&quot;</div></div><div class="ws-row"><div class="ws-q">5장 — 우리 Gem 소개 (페르소나·역할)</div><div class="ws-a">이름은 &quot;안전이&quot;. 친근하고 정중한 말투의 통학로 안전 도우미예요. 대상은 도담초·도담중 학생과 학부모. 기능 3가지: ① 위험 지점·건수 알림 ② 시간대별 조심 안내 ③ 안전 수칙·건널목 이용법 안내.</div></div><div class="ws-row"><div class="ws-q">6장 — 윤리 가이드라인 (5가지 규칙)</div><div class="ws-a">① 모르면 추측 말고 &quot;자료에 없어요&quot; ② 개인정보(이름·주소) 묻지도 알리지도 않음 ③ 모든 답에 출처(공공데이터포털, 2021~2023) 표기 ④ 특정 학교·아이를 탓하지 않음 ⑤ 미래 예측·의학 판단 안 함.</div></div><div class="ws-row"><div class="ws-q">7장 — Gem 작동 시연 (질문/답변 예시)</div><div class="ws-a">질문: &quot;등교할 때 어디를 제일 조심해야 해?&quot; → 안전이: &quot;등교 시간(08-09시)에는 도담중 후문 골목 진입로를 제일 조심하세요. 도담초 정문 앞 횡단보도는 하교 시간(15-17시)에 사고가 많아요. 출처: 공공데이터포털(2021~2023)&quot;</div></div><div class="ws-row"><div class="ws-q">8장 — 테스트와 개선 (디버깅 과정)</div><div class="ws-a">처음엔 2024년 사고를 지어내고, 답이 너무 길었어요. &quot;자료 밖 연도는 모른다고 답하기&quot;, &quot;3문장 이내&quot;, &quot;끝에 출처 붙이기&quot; 규칙을 추가해 고쳤어요. 환각이 사라졌어요.</div></div><div class="ws-row"><div class="ws-q">9장 — 우리 Gem이 가져올 변화 (누구에게·어떤 도움)</div><div class="ws-a">학생은 등하교 전 안전이에게 물어보고 위험 지점을 피해 다닐 수 있어요. 학부모는 어느 횡단보도가 위험한지 알고 자녀에게 알려줄 수 있어요. 학교·구청에 &quot;도담초 정문 앞에 신호 개선이 필요하다&quot;고 데이터 근거로 건의할 수도 있어요.</div></div><div class="ws-row"><div class="ws-q">10장 — 배움과 다짐 (프로젝트 성찰)</div><div class="ws-a">&quot;무섭다&quot;는 느낌을 &quot;3년간 9건&quot;이라는 숫자로 바꾸니 사람들이 진짜로 들어줬어요. AI는 똑똑해 보여도 가짜를 말할 수 있다는 걸 배웠고, 그래서 규칙을 직접 만들어 봤어요. 우리는 데이터로 말하는 디지털 시민이 되겠습니다.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 스토리라인은 &#x27;데이터→재정의→Gem&#x27;이 한 줄로 이어져야. 3장 차트와 4장 정의 숫자가 어긋나면 지적</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">11차시</span><span class="slide-ph">성장기</span></div>
-  <h3>발표 역할 분담표</h3>
-  <div class="desc">10장 슬라이드를 모둠원이 나눠 맡고 발표 시간을 배분한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">이름 / 담당 슬라이드 / 발표 시간</div><div class="ws-a">민서 / 1·2장(표지, 왜 이 문제인가) / 2분</div></div><div class="ws-row"><div class="ws-q">이름 / 담당 슬라이드 / 발표 시간</div><div class="ws-a">지후 / 3·4장(데이터 차트, 문제 재정의) / 3분</div></div><div class="ws-row"><div class="ws-q">이름 / 담당 슬라이드 / 발표 시간</div><div class="ws-a">하윤 / 5·6장(안전이 소개, 윤리 규칙) / 2분</div></div><div class="ws-row"><div class="ws-q">이름 / 담당 슬라이드 / 발표 시간</div><div class="ws-a">도현 / 7·8장(실시간 시연, 테스트와 개선) / 3분</div></div><div class="ws-row"><div class="ws-q">이름 / 담당 슬라이드 / 발표 시간</div><div class="ws-a">수아 / 9·10장(가져올 변화, 다짐) 발표 및 전체 진행 / 2분</div></div><div class="ws-row"><div class="ws-q">백업 준비 담당</div><div class="ws-a">도현이 시연 실패에 대비해 안전이 답변 캡처 이미지 3장(위험 지점·시간대·윤리 거절)을 미리 슬라이드에 넣어 뒀어요.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 시연 담당자에게 백업 캡처를 반드시 시킬 것. 실시간 시연 실패가 가장 흔한 발표 사고</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">12차시</span><span class="slide-ph">성장기</span></div>
-  <h3>다른 모둠 체험 피드백 카드 (상호 피드백)</h3>
-  <div class="desc">Padlet에서 다른 모둠 Gem을 직접 써보고 칭찬·개선점·적용 아이디어를 적는다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">체험한 모둠 / Gem 이름 ①</div><div class="ws-a">초록불 모둠 / &quot;미세야&quot;(도담동 미세먼지 알리미)</div></div><div class="ws-row"><div class="ws-q">잘했다고 생각한 점 ① (구체적으로)</div><div class="ws-a">&quot;오늘 도담동 미세먼지 어때?&quot;라고 물으니 등급이랑 출처를 같이 알려줘서 믿음이 갔어요. 답이 짧고 깔끔해서 동생도 읽을 수 있을 것 같았어요.</div></div><div class="ws-row"><div class="ws-q">더 좋아질 수 있는 점 ① (정중하게)</div><div class="ws-a">&quot;내일 미세먼지&quot;를 물었더니 자료에 없는데도 숫자를 살짝 지어냈어요. 우리처럼 &quot;자료에 없어요&quot; 규칙을 넣으면 더 단단해질 것 같아요.</div></div><div class="ws-row"><div class="ws-q">우리 Gem에 적용해 보고 싶은 아이디어 ①</div><div class="ws-a">미세야가 등급별로 &quot;이럴 땐 이렇게 하세요&quot; 행동 요령을 같이 준 게 좋았어요. 안전이도 위험 지점만 말하지 말고 &quot;이 횡단보도에선 이렇게 건너세요&quot; 안전 수칙을 한 줄 더 붙이면 좋겠어요.</div></div><div class="ws-row"><div class="ws-q">체험한 모둠 / Gem 이름 ②</div><div class="ws-a">책벌레 모둠 / &quot;도담북이&quot;(도담동 도서관 도우미)</div></div><div class="ws-row"><div class="ws-q">잘했다고 생각한 점 ② (구체적으로)</div><div class="ws-a">말투가 진짜 친근해서 대화하는 느낌이었어요. 개인정보(이름 알려줘)를 물었을 때 &quot;알려드릴 수 없어요&quot;라고 정확히 거절한 게 인상적이었어요.</div></div><div class="ws-row"><div class="ws-q">더 좋아질 수 있는 점 ② (정중하게)</div><div class="ws-a">출처를 가끔 빼먹었어요. 우리가 10차시에 &quot;답 끝에 무조건 출처 붙이기&quot;로 고쳤던 것처럼 규칙을 강하게 적으면 좋을 것 같아요.</div></div><div class="ws-row"><div class="ws-q">우리 Gem에 적용해 보고 싶은 아이디어 ②</div><div class="ws-a">도담북이가 첫인사에서 할 수 있는 일 3가지를 먼저 알려준 게 좋았어요. 안전이도 첫인사에 &quot;위험 지점·조심 시간·안전 수칙을 알려줄 수 있어요&quot;라고 안내하면 사용자가 덜 헤리·덜 막힐 것 같아요.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 피드백은 &#x27;구체적 사례+정중하게&#x27;가 핵심. &#x27;그냥 좋았어요&#x27; 식 추상 칭찬은 다시 쓰게 유도</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">12차시</span><span class="slide-ph">성장기</span></div>
-  <h3>프로젝트 성찰 일지 (5문항)</h3>
-  <div class="desc">디지털 시민으로서 전 과정을 돌아보며 5개 성찰 문항에 답한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">1. 프로젝트 전과 비교해 AI에 대한 생각이 어떻게 달라졌나요?</div><div class="ws-a">전엔 AI가 다 맞는 줄 알았어요. 근데 안전이가 2024년 사고 건수를 그럴듯하게 지어내는 걸 직접 보고 깜짝 놀랐어요. 이제 AI 답을 보면 &quot;출처가 어디지?&quot;, &quot;이거 진짜야?&quot;부터 따지게 됐어요.</div></div><div class="ws-row"><div class="ws-q">2. 공공데이터를 직접 다루면서 알게 된 점은?</div><div class="ws-a">&quot;위험하다&quot;는 느낌이 &quot;도담초 정문 앞 3년간 9건&quot;이라는 숫자가 되니 힘이 완전히 달랐어요. 또 전국 자료는 너무 커서, 우리 동네(새봄구 도담동)로 좁히니까 분석이 훨씬 쉽고 결론도 뚜렷해진다는 걸 배웠어요.</div></div><div class="ws-row"><div class="ws-q">3. AI 윤리 가이드라인을 직접 만든 경험의 의미는?</div><div class="ws-a">&quot;하지 마&quot;를 정하는 게 이렇게 중요한 줄 몰랐어요. 개인정보 묻기, 가짜로 지어내기를 막는 규칙을 우리 손으로 적고 테스트하니, AI를 만드는 사람에게도 책임이 있다는 걸 느꼈어요.</div></div><div class="ws-row"><div class="ws-q">4. 모둠 활동에서 가장 뿌듯했던 순간과 미안했던 순간은?</div><div class="ws-a">뿌듯한 순간: 환각을 고친 뒤 함정 질문에 안전이가 &quot;제 자료는 2021~2023년이라 알 수 없어요&quot;라고 똑 부러지게 답했을 때요. 미안한 순간: 차트 색을 두고 친구랑 다퉜는데, 제 의견만 고집해서 하윤이한테 미안했어요. 나중에 사과했어요.</div></div><div class="ws-row"><div class="ws-q">5. 앞으로 디지털 시민으로서 실천하고 싶은 점은?</div><div class="ws-a">정보를 그냥 믿지 않고 출처를 확인하는 습관을 들일 거예요. 그리고 AI든 SNS든 남의 개인정보를 함부로 묻거나 퍼뜨리지 않는, 책임 있는 사용자가 되고 싶어요.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 성찰은 데이터셋과 연결된 구체 사례를 끌어내게. &#x27;재미있었다&#x27; 추상 답엔 어떤 장면인지 되묻기</div>
-</div><div class="slide">
-  <div class="slide-top"><span class="slide-ch">12차시</span><span class="slide-ph">성장기</span></div>
-  <h3>우리 모둠의 한 줄 다짐</h3>
-  <div class="desc">전 과정을 한 문장 다짐으로 압축해 마무리한다</div>
-  <div class="ws"><div class="ws-row"><div class="ws-q">&quot;우리는 ______ .&quot;</div><div class="ws-a">&quot;우리는 느낌이 아니라 데이터로 말하고, AI가 가짜를 말하지 않도록 규칙을 만들 줄 아는 책임 있는 디지털 시민이 되겠습니다.&quot;</div></div><div class="ws-row"><div class="ws-q">다짐을 만든 이유 (우리 프로젝트와 연결)</div><div class="ws-a">도담동 통학로 문제를 &quot;무섭다&quot;에서 &quot;도담초 정문 앞 3년간 9건&quot;이라는 데이터로 바꾸고, 안전이의 환각을 우리 손으로 고친 경험을 한 문장에 담았어요.</div></div></div>
-  <div class="tip-box"><b>강사 TIP</b> · 다짐은 &#x27;데이터&#x27;와 &#x27;AI 윤리&#x27; 두 키워드가 들어가야 12차시 전체를 압축. 둘 중 하나만이면 보완 유도</div>
+<details class="simdetail"><summary>▸ 학생의 사고·활동 흐름 발표 슬라이드 (12장)</summary>
+<div style="display:flex;justify-content:flex-end;margin:12px 0 10px"><button class="present-btn" onclick="openPresent()">🔳 전체화면 발표로 열기 (새 창 · F11)</button></div>
+<div class="pdeck"><div id="pdeck">
+<section class="pslide intro active"><div class="ps-head"><span class="ps-badge">한눈에 · 전체 그림</span><span class="ps-num">01 / 12</span></div><div class="ps-hero">🏘️🔎🤖</div><h3 class="ps-title">우리 동네 문제를, 데이터와 AI로 푼다</h3><div class="ps-think"><span class="ps-lab">🧠 이런 사고로</span>12차시 동안 학생은 ‘문제를 발견하는 사람’에서 ‘문제를 푸는 사람’으로 자랍니다. 막연한 느낌을 데이터로 증명하고, 그 데이터로 나만의 AI 에이전트를 만듭니다.</div><div class="ps-do"><span class="ps-lab">🙌 이런 활동으로</span>공감 → 데이터 → 정의 → 설계 → 제작 → 검증 → 공유, 7개의 생각 단계를 직접 거칩니다.</div><div class="ps-flow"><span>😟 발견</span><i>→</i><span>📊 증명</span><i>→</i><span>🤖 해결</span><i>→</i><span>🎤 공유</span></div></section>
+<section class="pslide s1"><div class="ps-head"><span class="ps-badge">진입기 · 1~2차시</span><span class="ps-num">02 / 12</span></div><div class="ps-hero">🔍</div><h3 class="ps-title">1단계. 익숙한 동네를 ‘낯설게’ 본다</h3><div class="ps-think"><span class="ps-lab">🧠 이런 사고로</span>매일 지나치던 곳을 처음 보듯 관찰하고, “누가, 왜 불편할까?”를 다른 사람 입장에서 떠올립니다. 막연한 ‘느낌’을 풀어야 할 ‘문제’로 바꾸는 눈을 기릅니다.</div><div class="ps-do"><span class="ps-lab">🙌 이런 활동으로</span>동네를 직접 탐색하고, 공감지도에 불편함을 모은 뒤, 공감이·새봄 AI와 대화하며 문제 후보를 좁힙니다.</div><div class="ps-flow"><span>👀 관찰</span><i>→</i><span>💭 공감</span><i>→</i><span>🔎 데이터로 확인</span></div></section>
+<section class="pslide s1"><div class="ps-head"><span class="ps-badge">진입기 · 1차시</span><span class="ps-num">03 / 12</span></div><div class="ps-hero">😟🙌</div><h3 class="ps-title">다른 사람의 불편함에 ‘공감’한다</h3><div class="ps-think"><span class="ps-lab">🧠 이런 사고로</span>“나는 괜찮아도 누군가는 불편하다”는 관점을 갖습니다. 어린이, 어르신, 약자 등 다양한 입장에서 동네를 바라보는 공감적 관찰을 배웁니다.</div><div class="ps-do"><span class="ps-lab">🙌 이런 활동으로</span>포스트잇으로 불편함을 모으고, 공감지도(누가·언제·어디서·왜)를 채웁니다. 공감이 AI가 질문으로 생각을 끌어냅니다.</div><div class="ps-flow"><span>🧒 어린이</span><span>👵 어르신</span><span>♿ 약자</span><i>→</i><span>🗺️ 공감지도</span></div></section>
+<section class="pslide s1"><div class="ps-head"><span class="ps-badge">진입기 · 2차시</span><span class="ps-num">04 / 12</span></div><div class="ps-hero">🔎📊</div><h3 class="ps-title">‘느낌’을 데이터로 증명한다</h3><div class="ps-think"><span class="ps-lab">🧠 이런 사고로</span>“정말 그럴까? 숫자는 뭐라고 말하지?”라고 따져 묻습니다. 주장에는 증거가 필요하다는 증거 기반 사고를 배웁니다.</div><div class="ps-do"><span class="ps-lab">🙌 이런 활동으로</span>공공데이터포털에서 우리 문제와 관련된 자료를 찾고, 새봄 AI의 도움으로 믿을 만한 데이터를 고릅니다.</div><div class="ps-flow"><span>🌐 공공데이터포털</span><i>→</i><span>✅ 신뢰 확인</span><i>→</i><span>📍 우리 동네로 좁히기</span></div></section>
+<section class="pslide s2"><div class="ps-head"><span class="ps-badge">도약기 · 3~8차시</span><span class="ps-num">05 / 12</span></div><div class="ps-hero">🛠️</div><h3 class="ps-title">2단계. 분석하고, 나만의 AI를 만든다</h3><div class="ps-think"><span class="ps-lab">🧠 이런 사고로</span>데이터를 해석해 원인을 찾고, 문제를 좁힌 뒤, 그 문제를 풀 AI 에이전트를 직접 설계합니다. 이 구간이 수업의 심장부입니다.</div><div class="ps-do"><span class="ps-lab">🙌 이런 활동으로</span>데이터 분석 → 문제 재정의 → 역할 설계 → 윤리 규칙 → Gem 제작 → 테스트, 여섯 활동을 차례로 거칩니다.</div><div class="ps-flow"><span>📈 분석</span><i>→</i><span>🎯 정의</span><i>→</i><span>🎭 설계</span><i>→</i><span>🛡️ 윤리</span><i>→</i><span>🤖 제작</span><i>→</i><span>🧪 테스트</span></div></section>
+<section class="pslide s2"><div class="ps-head"><span class="ps-badge">도약기 · 3~4차시</span><span class="ps-num">06 / 12</span></div><div class="ps-hero">📈</div><h3 class="ps-title">데이터에서 ‘패턴’을 읽는다</h3><div class="ps-think"><span class="ps-lab">🧠 이런 사고로</span>표와 그래프에서 가장 큰 값, 갑자기 변한 곳, 이상한 점을 찾아 “왜 이럴까?”라고 원인을 추론합니다.</div><div class="ps-do"><span class="ps-lab">🙌 이런 활동으로</span>함수와 차트로 데이터를 정리하고, 셈셈 AI와 함께 그래프를 해석해 문제의 근거를 만듭니다.</div><div class="ps-flow"><span>🔢 함수</span><i>→</i><span>📊 차트</span><i>→</i><span>💡 “왜?” 원인</span></div></section>
+<section class="pslide s2"><div class="ps-head"><span class="ps-badge">도약기 · 5차시</span><span class="ps-num">07 / 12</span></div><div class="ps-hero">🎯</div><h3 class="ps-title">막연한 불편함을 ‘한 문장’으로 좁힌다</h3><div class="ps-think"><span class="ps-lab">🧠 이런 사고로</span>“누가, 어떤 상황에서, 무엇 때문에 어려운가”로 문제의 초점을 맞춥니다. 좁힐수록 풀 수 있는 문제가 됩니다.</div><div class="ps-do"><span class="ps-lab">🙌 이런 활동으로</span>데이터로 확인한 사실을 바탕으로 문제 재정의서를 한 문장으로 완성합니다.</div><div class="ps-flow"><span>🌫️ 막연함</span><i>→</i><span>✂️ 좁히기</span><i>→</i><span>🎯 한 문장 정의</span></div></section>
+<section class="pslide s2"><div class="ps-head"><span class="ps-badge">도약기 · 5~6차시</span><span class="ps-num">08 / 12</span></div><div class="ps-hero">🎭</div><h3 class="ps-title">“누구를, 어떻게 도울지” AI의 역할을 정한다</h3><div class="ps-think"><span class="ps-lab">🧠 이런 사고로</span>사용자 입장에서 “이 AI는 누구를 위해, 무엇을, 어떻게 도울까”를 설계합니다. 기술보다 사람을 먼저 생각하는 사용자 중심 설계입니다.</div><div class="ps-do"><span class="ps-lab">🙌 이런 활동으로</span>페르소나 카드 7칸(이름·대상·성격·기능·규칙 등)을 채우고, 지음 AI가 아이디어를 또렷하게 다듬도록 돕습니다.</div><div class="ps-flow"><span>👤 누구를</span><i>→</i><span>🛠️ 무엇을</span><i>→</i><span>💬 어떻게</span><i>→</i><span>🪪 페르소나 카드</span></div></section>
+<section class="pslide s2"><div class="ps-head"><span class="ps-badge">도약기 · 6차시</span><span class="ps-num">09 / 12</span></div><div class="ps-hero">🛡️</div><h3 class="ps-title">AI가 틀리지 않도록 ‘안전장치’를 건다</h3><div class="ps-think"><span class="ps-lab">🧠 이런 사고로</span>“이 AI가 거짓을 말하면? 개인정보를 물으면?” 위험을 미리 상상하고 막는 책임 있는 AI 사고를 배웁니다.</div><div class="ps-do"><span class="ps-lab">🙌 이런 활동으로</span>환각·개인정보·편향을 막는 윤리 규칙을 직접 적고, 지킴 AI와 함께 우리 Gem에 가드레일을 넣습니다.</div><div class="ps-flow"><span>⚠️ 위험 상상</span><i>→</i><span>🚫 금지 규칙</span><i>→</i><span>🛡️ 가드레일</span></div></section>
+<section class="pslide s2"><div class="ps-head"><span class="ps-badge">도약기 · 7~8차시</span><span class="ps-num">10 / 12</span></div><div class="ps-hero">🤖🧪</div><h3 class="ps-title">만들고, 일부러 어렵게 물어 고친다</h3><div class="ps-think"><span class="ps-lab">🧠 이런 사고로</span>한 번에 완성되지 않습니다. 약점을 찾아 고치는 ‘만들고 다듬는’ 반복 사고를 경험합니다.</div><div class="ps-do"><span class="ps-lab">🙌 이런 활동으로</span>지시문과 데이터로 Gemini Gem을 만들고, 또렷 AI와 함께 함정 질문으로 테스트해 답을 개선합니다.</div><div class="ps-flow"><span>✍️ 지시문</span><i>→</i><span>📎 데이터</span><i>→</i><span>🧪 테스트</span><i>→</i><span>🔧 수정</span></div></section>
+<section class="pslide s3"><div class="ps-head"><span class="ps-badge">성장기 · 9~12차시</span><span class="ps-num">11 / 12</span></div><div class="ps-hero">🎤</div><h3 class="ps-title">3단계. 검증하고, 세상에 나눈다</h3><div class="ps-think"><span class="ps-lab">🧠 이런 사고로</span>“믿을 만한가?”를 끝까지 확인하고, 우리 결과를 남에게 설명하며 스스로 돌아봅니다.</div><div class="ps-do"><span class="ps-lab">🙌 이런 활동으로</span>Gem을 최종 검증하고, 발표 슬라이드를 만들어 시연·발표하고, 친구 피드백으로 성찰합니다.</div><div class="ps-flow"><span>✅ 검증</span><i>→</i><span>🖥️ 발표 자료</span><i>→</i><span>🎤 시연</span><i>→</i><span>🔁 성찰</span></div></section>
+<section class="pslide outro"><div class="ps-head"><span class="ps-badge">마무리 · 핵심 역량</span><span class="ps-num">12 / 12</span></div><div class="ps-hero">🌱</div><h3 class="ps-title">이 수업이 길러 주는 네 가지 힘</h3><div class="ps-think"><span class="ps-lab">🧠 이런 사고로</span>학생은 ‘문제를 스스로 발견하고, 데이터로 증명하고, AI로 해결책을 만드는 사람’으로 자랍니다.</div><div class="ps-do"><span class="ps-lab">🙌 이런 활동으로</span>공감(디자인씽킹), 데이터, AI 리터러시, 윤리. 네 가지 사고를 한 프로젝트 안에서 함께 기릅니다.</div><div class="ps-flow"><span>🤝 공감</span><span>📊 데이터</span><span>🤖 AI</span><span>🛡️ 윤리</span></div></section>
 </div>
-  </div>
-  <div class="deck-jump"></div>
-  <div class="deck-nav">
-    <button class="nav-btn prev">← 이전</button>
-    <div class="deck-count">슬라이드 <span class="cur">1</span> / <span class="tot">1</span></div>
-    <button class="nav-btn next">다음 →</button>
-  </div>
+  <div class="pnav"><button class="nav-btn prev" onclick="pmove(-1)">‹ 이전</button><span class="pcount"><span class="pcur">1</span> / 12</span><button class="nav-btn next" onclick="pmove(1)">다음 ›</button></div>
 </div>
-<script>document.addEventListener('DOMContentLoaded',function(){initDeck('sim-deck');});</script></div>
+<p style="font-size:12.5px;color:var(--sub);margin-top:8px;text-align:center">💡 발표할 땐 <b>전체화면 발표로 열기</b> → 새 창에서 <b>F11</b>(전체화면) → <b>← →</b> 또는 클릭으로 넘기세요.</p>
 </details>
 </section>
 
@@ -970,33 +803,87 @@ document.querySelectorAll('.tab-btn').forEach(b=>{
   });
 });
 
-/* ===== slide deck controller (used by simulation) ===== */
-function initDeck(deckId){
-  const deck=document.getElementById(deckId);
-  if(!deck) return;
-  const slides=[...deck.querySelectorAll('.slide')];
-  const cur=deck.querySelector('.cur'), tot=deck.querySelector('.tot');
-  const prev=deck.querySelector('.prev'), next=deck.querySelector('.next');
-  const jump=deck.querySelector('.deck-jump');
-  let i=0;
-  if(tot) tot.textContent=slides.length;
-  slides.forEach((_,k)=>{const d=document.createElement('button');d.className='jump-dot'+(k===0?' on':'');d.title=(k+1);d.onclick=()=>go(k);jump&&jump.appendChild(d);});
-  function go(n){i=Math.max(0,Math.min(slides.length-1,n));
-    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
-    if(cur)cur.textContent=i+1;
-    if(prev)prev.disabled=i===0;
-    if(next)next.disabled=i===slides.length-1;
-    jump&&[...jump.children].forEach((d,k)=>d.classList.toggle('on',k===i));
-    deck.scrollIntoView({behavior:'smooth',block:'nearest'});
-  }
-  prev&&(prev.onclick=()=>go(i-1));
-  next&&(next.onclick=()=>go(i+1));
-  document.addEventListener('keydown',e=>{
-    var det0=document.querySelector('#sim details.simdetail'); if(!document.getElementById('sim').classList.contains('active')||!(det0&&det0.open))return;
-    if(e.key==='ArrowLeft')go(i-1);if(e.key==='ArrowRight')go(i+1);
+/* ===== 학생 발표 덱 컨트롤러 + 전체화면 발표(새 창) ===== */
+(function(){
+  function slides(){return [].slice.call(document.querySelectorAll('#pdeck .pslide'));}
+  var i=0;
+  window.pmove=function(step){
+    var ss=slides(); if(!ss.length) return;
+    i=Math.max(0,Math.min(ss.length-1,i+step));
+    ss.forEach(function(s,k){s.classList.toggle('active',k===i);});
+    var cur=document.querySelector('#sim .pcur'); if(cur)cur.textContent=i+1;
+    var pv=document.querySelector('#sim .pnav .prev'), nx=document.querySelector('#sim .pnav .next');
+    if(pv)pv.disabled=i===0; if(nx)nx.disabled=i===ss.length-1;
+    var dk=document.querySelector('#sim .pdeck'); if(dk)dk.scrollIntoView({behavior:'smooth',block:'nearest'});
+  };
+  // 인라인 덱: 시뮬레이션 탭 + details 펼침 상태에서 ← → 로 슬라이드 넘김
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+    var sim=document.getElementById('sim'), det=document.querySelector('#sim details.simdetail');
+    if(!(sim&&sim.classList.contains('active')&&det&&det.open))return;
+    if(/^(INPUT|TEXTAREA|SELECT)$/.test((e.target&&e.target.tagName)||''))return;
+    pmove(e.key==='ArrowRight'?1:-1);
   });
-  go(0);
-}
+  document.addEventListener('DOMContentLoaded',function(){var pv=document.querySelector('#sim .pnav .prev'); if(pv)pv.disabled=true;});
+
+  var PRESENT = '<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">'
+   +'<meta name="viewport" content="width=device-width,initial-scale=1">'
+   +'<title>학생 사고·활동 흐름 발표</title>'
+   +'<link rel="preconnect" href="https://cdn.jsdelivr.net">'
+   +'<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">'
+   +'<style>'
+   +':root{--primary:#ED7D31;--primary-d:#C96A1E;--primary-l:#FCEEE2;--secondary:#34A853;--secondary-l:#E7F5EC;--ink:#0D1B3D;--text:#2A2A33;--sub:#6B6B73;}'
+   +'*{box-sizing:border-box;margin:0;padding:0;}'
+   +'html,body{height:100%;background:#0D1B3D;font-family:Pretendard,system-ui,sans-serif;overflow:hidden;}'
+   +'#pp{position:relative;width:100vw;height:100vh;cursor:pointer;}'
+   +'.pslide{display:none;width:100vw;height:100vh;flex-direction:column;justify-content:center;gap:2.1vh;padding:6vh 8vw;}'
+   +'.pslide.active{display:flex;}'
+   +'.pslide.intro{background:linear-gradient(160deg,#E9F0FF,#fff);}'
+   +'.pslide.s1{background:linear-gradient(160deg,#FCEEE2,#fff);}'
+   +'.pslide.s2{background:linear-gradient(160deg,#E7F5EC,#fff);}'
+   +'.pslide.s3{background:linear-gradient(160deg,#FEF7E0,#fff);}'
+   +'.pslide.outro{background:linear-gradient(160deg,#E7F5EC,#FCEEE2);}'
+   +'.ps-head{display:flex;align-items:center;justify-content:space-between;}'
+   +'.ps-badge{font-weight:800;font-size:2.3vh;padding:1vh 2.4vh;border-radius:999px;background:var(--primary);color:#fff;}'
+   +'.pslide.s2 .ps-badge{background:var(--secondary);}.pslide.s3 .ps-badge{background:#B8860B;}'
+   +'.pslide.intro .ps-badge{background:var(--ink);}.pslide.outro .ps-badge{background:var(--secondary);}'
+   +'.ps-num{font-size:2.3vh;font-weight:800;color:var(--sub);font-family:monospace;}'
+   +'.ps-hero{font-size:13vh;line-height:1;text-align:center;}'
+   +'.ps-title{font-size:5.4vh;letter-spacing:-0.02em;text-align:center;color:var(--ink);line-height:1.15;}'
+   +'.ps-think,.ps-do{font-size:3vh;line-height:1.55;color:var(--text);background:rgba(255,255,255,.74);border-radius:2vh;padding:2.1vh 3vh;}'
+   +'.ps-lab{font-weight:800;color:var(--primary-d);margin-right:1vh;}'
+   +'.pslide.s2 .ps-lab{color:#1B7A3A;}.pslide.s3 .ps-lab,.pslide.outro .ps-lab{color:#B8860B;}'
+   +'.ps-flow{margin-top:1vh;display:flex;align-items:center;justify-content:center;gap:1.3vh;flex-wrap:wrap;background:rgba(255,255,255,.6);border-radius:2vh;padding:2.1vh;}'
+   +'.ps-flow span{font-weight:800;font-size:2.7vh;color:var(--ink);background:#fff;border-radius:1.4vh;padding:1.2vh 2.1vh;box-shadow:0 4px 12px rgba(0,0,0,.12);}'
+   +'.ps-flow i{color:var(--primary);font-weight:900;font-style:normal;font-size:3vh;}'
+   +'#ppc{position:fixed;bottom:2.4vh;right:3vw;color:#fff;background:rgba(0,0,0,.4);padding:1vh 2.2vh;border-radius:999px;font-size:2.2vh;font-weight:800;}'
+   +'#pph{position:fixed;bottom:2.4vh;left:3vw;color:#fff;opacity:.8;font-size:1.9vh;font-weight:600;}'
+   +'#ppx{position:fixed;top:2.2vh;right:3vw;background:rgba(255,255,255,.16);color:#fff;border:none;border-radius:1.2vh;padding:1vh 1.9vh;font-size:1.9vh;font-weight:800;cursor:pointer;font-family:inherit;z-index:5;}'
+   +'#ppx:hover{background:rgba(255,255,255,.3);}'
+   +'</style></head><body><div id="pp">__SLIDES__</div>'
+   +'<button id="ppx">⛶ 전체화면(F11)</button><div id="ppc">1 / 12</div>'
+   +'<div id="pph">← → · 클릭으로 넘기기 · F11 전체화면 · ESC 끝</div>'
+   +'<scr'+'ipt>'
+   +'var ps=[].slice.call(document.querySelectorAll(".pslide")),i=0;'
+   +'function show(n){i=Math.max(0,Math.min(ps.length-1,n));ps.forEach(function(s,k){s.classList.toggle("active",k===i);});document.getElementById("ppc").textContent=(i+1)+" / "+ps.length;}'
+   +'document.addEventListener("keydown",function(e){if(e.key==="ArrowRight"||e.key==="PageDown"||e.key===" "){e.preventDefault();show(i+1);}else if(e.key==="ArrowLeft"||e.key==="PageUp"){e.preventDefault();show(i-1);}else if(e.key==="Home"){show(0);}else if(e.key==="End"){show(ps.length-1);}else if(e.key==="Escape"&&document.fullscreenElement){document.exitFullscreen();}});'
+   +'document.getElementById("pp").addEventListener("click",function(){show(i+1);});'
+   +'function ppFS(){var el=document.documentElement;if(!document.fullscreenElement){(el.requestFullscreen||el.webkitRequestFullscreen||function(){}).call(el);}else{document.exitFullscreen();}}'
+   +'document.getElementById("ppx").addEventListener("click",function(ev){ev.stopPropagation();ppFS();});'
+   +'show(0);'
+   +'<'+'/scr'+'ipt></body></html>';
+
+  window.openPresent=function(){
+    var html=[].slice.call(document.querySelectorAll('#pdeck .pslide')).map(function(s){
+      var c=s.cloneNode(true); c.classList.remove('active'); return c.outerHTML;
+    }).join('');
+    // 첫 장 active
+    html=html.replace('class="pslide ','class="pslide active ');
+    var w=window.open('','_blank');
+    if(!w){alert('팝업이 차단되었습니다. 이 사이트의 팝업을 허용한 뒤 다시 눌러 주세요.');return;}
+    w.document.open(); w.document.write(PRESENT.replace('__SLIDES__',html)); w.document.close();
+  };
+})();
 </script>
 <script>
 function toggleFS(){var el=document.documentElement;if(!document.fullscreenElement){(el.requestFullscreen||el.webkitRequestFullscreen||function(){}).call(el);}else{document.exitFullscreen();}}
