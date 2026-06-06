@@ -25,7 +25,7 @@
 - 윤리 가디언 지킴 : https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-5-ethics-guardian.md
 - 무대 코치 또렷 : https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-6-stage-coach.md
 - 월세 비교 에이전트(시연용) : https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/demo-realestate-rent.md
-- 월세 예시 데이터 : https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-molit.csv
+- 월세 예시 데이터 : https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/data/realestate-rent-national-summary.csv
 - 통합 마스터 지식 : https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/knowledge/master-knowledge.md
 
 # 답변 규칙
