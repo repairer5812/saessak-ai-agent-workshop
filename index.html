@@ -227,6 +227,11 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
 .clz-helper{font-size:12.5px;color:var(--primary-d);background:var(--primary-l);border-radius:10px;padding:9px 12px;font-weight:600;}
 details.simdetail{margin-top:26px;} details.simdetail>summary{cursor:pointer;font-weight:700;color:var(--primary-d);font-size:15px;padding:11px 14px;background:var(--surface-2);border-radius:14px;list-style:none;}
 details.simdetail>summary::-webkit-details-marker{display:none;}
+#fsBtn{position:fixed;top:13px;right:13px;z-index:50;background:var(--ink);color:#fff;border:none;border-radius:12px;padding:9px 14px;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;box-shadow:0 6px 16px -6px rgba(0,0,0,.45);}
+#fsBtn:hover{background:var(--primary);}
+.navhint{text-align:center;font-size:12px;color:var(--sub);padding:6px 10px;}
+.navhint b{color:var(--primary-d);}
+:fullscreen{overflow:auto;}
 /* ===== responsive ===== */
 @media(max-width:760px){
   header.top h1{font-size:25px;}
@@ -241,6 +246,7 @@ details.simdetail>summary::-webkit-details-marker{display:none;}
 </style>
 </head>
 <body>
+<button id="fsBtn" onclick="toggleFS()" title="전체화면으로 보기 (← → 키로 탭 넘기기)">🖥️ 전체화면</button>
 
 <header class="top">
   <div class="wrap">
@@ -269,8 +275,10 @@ details.simdetail>summary::-webkit-details-marker{display:none;}
     <button class="tab-btn" data-tab="training">🎓 연수용 AI Agent</button>
     <button class="tab-btn" data-tab="data">📊 데이터 전처리</button>
     <button class="tab-btn" data-tab="sim">🎬 학생 전과정 시뮬레이션</button>
+    <button class="tab-btn" data-tab="share">🔗 공유</button>
   </div>
 </nav>
+<div class="navhint">🖥️ 우상단 <b>전체화면</b> 버튼 · <b>← →</b> 키로 PPT처럼 넘겨 보세요</div>
 
 <main class="wrap">
 
@@ -927,6 +935,18 @@ details.simdetail>summary::-webkit-details-marker{display:none;}
 </details>
 </section>
 
+<section class="tabpane" id="share">
+  <h2 class="section-title">이 강의자료 공유</h2>
+  <p class="section-lead">QR을 스캔하거나 링크를 누르면 이 강의자료(웹)가 바로 열립니다. 강사·동료에게 공유하세요.</p>
+  <div class="card" style="text-align:center;border:3px solid var(--primary);background:linear-gradient(135deg,var(--primary-l),#fff);padding:36px 20px">
+    <h3 style="font-size:26px;color:var(--ink);margin-bottom:6px">📲 강의자료 바로 열기</h3>
+    <p style="font-size:15px;color:var(--sub);margin-bottom:22px">응답하라 AI 에이전트 강사워크숍 강의자료</p>
+    <div style="width:min(540px,90vw);margin:0 auto;aspect-ratio:1/1;line-height:0;background:#fff;padding:18px;border-radius:26px;box-shadow:var(--shadow-clay)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" shape-rendering="crispEdges" class="segno"><path fill="#fff" d="M0 0h37v37h-37z"/><path class="qrline" stroke="#0d1b3d" d="M2 2.5h7m3 0h1m1 0h4m2 0h2m3 0h1m2 0h7m-33 1h1m5 0h1m2 0h3m1 0h3m5 0h1m1 0h2m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m5 0h2m2 0h2m1 0h2m2 0h2m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m6 0h2m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m2 0h2m1 0h1m1 0h1m3 0h1m4 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m2 0h1m3 0h5m4 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m1 0h6m1 0h2m1 0h1m-25 1h1m2 0h1m1 0h2m1 0h1m1 0h2m1 0h1m2 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-27 1h2m1 0h2m1 0h1m3 0h3m2 0h1m7 0h4m3 0h2m-33 1h1m3 0h3m2 0h6m3 0h5m4 0h2m1 0h1m1 0h1m-33 1h1m1 0h1m1 0h1m5 0h1m2 0h1m2 0h1m3 0h2m4 0h1m1 0h2m2 0h1m-30 1h1m1 0h2m2 0h1m1 0h1m2 0h4m2 0h2m2 0h3m2 0h1m2 0h1m-33 1h2m1 0h3m2 0h1m2 0h5m3 0h3m2 0h1m1 0h3m2 0h2m-31 1h3m1 0h1m2 0h4m1 0h5m4 0h1m1 0h3m2 0h2m-31 1h1m1 0h1m1 0h1m3 0h1m1 0h2m1 0h1m1 0h3m2 0h3m2 0h3m2 0h1m-31 1h1m4 0h1m1 0h2m2 0h1m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m-32 1h2m1 0h3m2 0h2m4 0h1m2 0h2m1 0h5m2 0h1m1 0h1m1 0h1m-32 1h2m1 0h4m2 0h1m1 0h3m2 0h2m6 0h1m1 0h1m3 0h3m-33 1h1m7 0h5m3 0h3m2 0h3m1 0h1m1 0h1m3 0h2m-31 1h1m1 0h1m1 0h2m2 0h2m1 0h1m2 0h1m3 0h6m-24 1h1m1 0h1m2 0h1m1 0h4m2 0h1m1 0h2m1 0h2m2 0h3m2 0h1m1 0h2m-33 1h2m1 0h1m2 0h4m1 0h2m1 0h1m4 0h1m1 0h1m3 0h3m1 0h1m2 0h1m-32 1h1m3 0h1m2 0h2m2 0h2m1 0h1m5 0h1m2 0h2m1 0h1m1 0h1m2 0h1m-33 1h1m3 0h5m1 0h1m1 0h3m1 0h2m1 0h1m1 0h9m-22 1h2m1 0h4m2 0h1m1 0h1m4 0h1m3 0h2m1 0h2m-33 1h7m3 0h1m1 0h1m1 0h1m2 0h2m5 0h1m1 0h1m1 0h4m-32 1h1m5 0h1m1 0h2m1 0h7m1 0h1m1 0h2m1 0h1m3 0h1m3 0h1m-33 1h1m1 0h3m1 0h1m5 0h2m3 0h2m1 0h3m1 0h6m-30 1h1m1 0h3m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1m3 0h3m2 0h1m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h1m4 0h1m4 0h2m3 0h2m2 0h1m-33 1h1m5 0h1m3 0h4m3 0h1m1 0h3m1 0h2m1 0h1m-27 1h7m1 0h5m1 0h2m4 0h6m2 0h2m1 0h1"/></svg></div>
+    <a href="https://repairer5812.github.io/saessak-ai-agent-workshop/" target="_blank" rel="noopener" style="display:inline-block;margin-top:24px;background:var(--primary);color:#fff;font-weight:800;font-size:18px;padding:15px 38px;border-radius:16px;box-shadow:0 8px 20px -6px var(--primary)">▶ 강의자료 열기</a>
+    <p style="font-size:13px;color:var(--sub);margin-top:12px;word-break:break-all">https://repairer5812.github.io/saessak-ai-agent-workshop/</p>
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -970,11 +990,25 @@ function initDeck(deckId){
   prev&&(prev.onclick=()=>go(i-1));
   next&&(next.onclick=()=>go(i+1));
   document.addEventListener('keydown',e=>{
-    if(!document.getElementById('sim').classList.contains('active'))return;
+    var det0=document.querySelector('#sim details.simdetail'); if(!document.getElementById('sim').classList.contains('active')||!(det0&&det0.open))return;
     if(e.key==='ArrowLeft')go(i-1);if(e.key==='ArrowRight')go(i+1);
   });
   go(0);
 }
+</script>
+<script>
+function toggleFS(){var el=document.documentElement;if(!document.fullscreenElement){(el.requestFullscreen||el.webkitRequestFullscreen||function(){}).call(el);}else{document.exitFullscreen();}}
+document.addEventListener('fullscreenchange',function(){var b=document.getElementById('fsBtn');if(b)b.textContent=document.fullscreenElement?'\u2715 전체화면 끄기':'\ud83d\udda5\ufe0f 전체화면';});
+document.addEventListener('keydown',function(e){
+ if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+ if(/^(INPUT|TEXTAREA|SELECT)$/.test((e.target&&e.target.tagName)||''))return;
+ var sim=document.getElementById('sim'),det=sim&&sim.querySelector('details.simdetail');
+ if(sim&&sim.classList.contains('active')&&det&&det.open)return;
+ var tabs=[].slice.call(document.querySelectorAll('.tab-btn')),cur=-1;
+ tabs.forEach(function(b,i){if(b.classList.contains('active'))cur=i;});
+ if(cur<0)return; var nx=e.key==='ArrowRight'?Math.min(cur+1,tabs.length-1):Math.max(cur-1,0);
+ if(nx!==cur)tabs[nx].click();
+});
 </script>
 </body>
 </html>
