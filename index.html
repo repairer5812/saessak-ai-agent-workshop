@@ -327,19 +327,9 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
 <!-- ================= TAB 2 : AGENTS ================= -->
 <section class="tabpane" id="agents">
   <h2 class="section-title">강의용 AI Agent 카드 (수업용)</h2>
-  <p class="section-lead">강사가 수업 단계마다 미리 만들어 두고 활용하는 학생 수업용 Gemini Gem 6종. 이름·지시문·지식·Action을 그대로 복사해 쓸 수 있습니다.</p>
-  <div class="card" style="background:linear-gradient(135deg,var(--primary-l),#fff)">
-    <h3 style="font-size:16px;margin-bottom:6px">📥 수업용 에이전트 다운로드</h3>
-    <p style="font-size:13px;color:var(--sub);margin-bottom:12px">각 MD를 받아 Gemini Gem의 지시문·Knowledge로 바로 쓰세요.</p>
-    <div class="dl-list">
-      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-1-empathy-coach.md" target="_blank" rel="noopener">🤝 공감이 <span>agent-1-empathy-coach.md</span></a>
-      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-2-data-hunter.md" target="_blank" rel="noopener">🔎 데이터 사냥꾼 새봄 <span>agent-2-data-hunter.md</span></a>
-      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-3-function-detective.md" target="_blank" rel="noopener">🧮 함수 탐정 셈셈 <span>agent-3-function-detective.md</span></a>
-      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-4-persona-designer.md" target="_blank" rel="noopener">🎭 페르소나 디자이너 지음 <span>agent-4-persona-designer.md</span></a>
-      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-5-ethics-guardian.md" target="_blank" rel="noopener">🛡️ 윤리 가디언 지킴 <span>agent-5-ethics-guardian.md</span></a>
-      <a class="dl-item" href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/agents/agent-6-stage-coach.md" target="_blank" rel="noopener">🎤 무대 코치 또렷 <span>agent-6-stage-coach.md</span></a></div>
-  </div>
-  <div class="note" style="margin-bottom:18px">📌 Gemini Gems는 외부 시스템을 직접 호출하는 <b>Action(함수 실행) 기능이 없습니다.</b> 각 카드의 Action 칸은 "프롬프트로 흉내 내는 대안"을 적었습니다.</div>
+  <p class="section-lead">강사가 수업 단계마다 미리 만들어 두고 활용하는 학생 수업용 Gemini Gem 6종. 각 카드의 지시문을 그대로 복사해 쓰면 됩니다.</p>
+  <div class="note" style="margin-bottom:12px">📌 Gemini Gem은 외부 API(함수) 호출은 안 되지만, <b>켤 수 있는 내장 기능(액션)이 있습니다</b>: Google 검색 그라운딩 · Canvas(코드 실행) · 이미지 생성 · Deep Research · Guided Learning 등. 각 카드의 Action 칸에 그 에이전트에 맞는 기능과 켜는 법을 적었습니다.</div>
+  <div class="note" style="margin-bottom:18px">📥 각 에이전트 지시문은 아래 카드에 그대로 있습니다. 파일·전체 제작법은 <a href="https://raw.githubusercontent.com/repairer5812/saessak-ai-agent-workshop/main/gem-build-guide.md" target="_blank" rel="noopener"><b>Gem 제작 지시서</b></a>에서 한 번에 받으세요.</div>
   <div id="agents-grid"><div class="agent-card">
   <div class="agent-head"><div class="agent-ico">🤝</div>
     <div><div class="nm">공감이 (공감 코치)</div><span class="st">1~2차시 / 우리동네 문제 발견 (디자인씽킹 공감)</span></div></div>
@@ -362,7 +352,7 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
 
 # 첫인사(Welcome message)
 &#x27;안녕! 나는 공감 코치 공감이예요. 우리가 매일 다니는 학교 앞 길, 동네 공원에 숨어 있는 &quot;불편함&quot;을 같이 찾아볼까요? 최근에 우리 동네에서 &quot;아, 이거 좀 불편한데?&quot; 했던 순간이 있었나요?&#x27;</pre></div>
-  <div class="agent-sec"><div class="lab">📚 지식(Knowledge) 업로드</div><ul><li>도담동_공감지도_예시.txt (누가/언제·어디서/왜 4칸 작성 예시: 도담초 학생이 등교 시간 정문 앞 횡단보도에서 위험을 느낀다)</li><li>디자인씽킹_공감단계_안내.txt (Empathize 단계 설명, 포스트잇·공감지도 활동 절차 요약)</li><li>우리동네_문제_장소_보기.txt (학교 앞 통학로, 공원, 정류장, 시장, 골목 등 학생이 떠올릴 장소 목록)</li></ul></div>
+  <div class="agent-sec"><div class="lab">📚 지식(Knowledge) 업로드</div><ul><li>공감지도_작성예시.txt (누가/언제·어디서/왜 4칸을 채운 일반 예시. 예: 버스 정류장에 지붕이 없어 비 올 때 기다리기 불편하다)</li><li>디자인씽킹_공감단계_안내.txt (Empathize 단계 설명, 포스트잇·공감지도 활동 절차 요약)</li><li>우리동네_문제_장소_보기.txt (통학로·공원·정류장·시장·골목 등 어느 동네에나 있는 장소 유형 — 생각 도우미)</li></ul></div>
   <div class="agent-sec act"><div class="lab">⚡ Action 가능 여부</div><pre>[기본 도구: Guided Learning 켜기] 공감이는 답을 주는 봇이 아니라 &#x27;질문을 끌어내는&#x27; 봇입니다. Gem 빌더 하단 &#x27;Default tool(기본 도구)&#x27; 드롭다운에서 Guided Learning을 선택해 저장하세요. 그러면 모든 대화가 단계적 질문·힌트 모드로 시작해, 학생이 &#x27;우리 동네에서 불편했던 순간이 언제였지?&#x27;를 스스로 떠올리도록 유도합니다. 지침(Instructions)에는 &#x27;바로 해결책을 주지 말고, 학생의 경험을 캐묻는 질문 3개를 먼저 던져라&#x27;를 명시하세요. 별도 검색·이미지 도구는 켜지 않아도 됩니다(공감 단계는 사실 검색보다 학생 내면 끌어내기가 핵심).</pre></div>
   <div class="agent-tip"><b>강사 TIP</b> · 교사용으로 미리 만들어 두고, 공감 활동 초반에 &#x27;말문이 안 트이는&#x27; 모둠 한두 곳에 태블릿으로 붙여 주세요. 공감이는 답을 주는 게 아니라 질문만 던지므로, 학생이 스스로 자기 동네 사례를 말하게 됩니다. 도담동 데이터는 예시일 뿐이라는 점을 학생에게 먼저 안내하세요.</div>
 </div>
@@ -392,7 +382,7 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
 
 # 첫인사(Welcome message)
 &#x27;반가워요! 나는 데이터 사냥꾼 새봄이예요. 공공데이터포털에는 우리 동네 교통사고, 미세먼지, 도서관 정보까지 진짜 많은 데이터가 숨어 있어요. 우리 모둠 문제를 &quot;숫자&quot;로 증명하려면, 어떤 데이터가 필요할 것 같아요?&#x27;</pre></div>
-  <div class="agent-sec"><div class="lab">📚 지식(Knowledge) 업로드</div><ul><li>공공데이터포털_탐색가이드.txt (검색→파일데이터 우선 선택→상세페이지에서 제공기관·갱신주기·항목 확인 절차)</li><li>스쿨존_데이터셋_설명서.txt (한국도로교통공단 어린이보호구역 교통사고 다발지역 데이터의 7개 컬럼 의미, 다발지역=반경 300m 내 연 2건 이상 기준)</li><li>좋은데이터_고르는_체크리스트.txt (제공기관 신뢰성·갱신 주기·항목 적합성·시군구 단위 우선·CSV 우선·개인정보 제외)</li><li>데이터에서 문제 발견하기 질문 가이드 (가장 큰 값·급변·이상치 → &quot;왜 이럴까?&quot; → 우리 문제 정의)</li></ul></div>
+  <div class="agent-sec"><div class="lab">📚 지식(Knowledge) 업로드</div><ul><li>공공데이터포털_탐색가이드.txt (검색→파일데이터 우선 선택→상세페이지에서 제공기관·갱신주기·항목 확인 절차)</li><li>공공데이터_항목읽는법.txt (데이터 컬럼·단위·기준을 읽고 우리 문제에 맞는지 판단하는 일반 가이드)</li><li>좋은데이터_고르는_체크리스트.txt (제공기관 신뢰성·갱신 주기·항목 적합성·시군구 단위 우선·CSV 우선·개인정보 제외)</li><li>데이터에서 문제 발견하기 질문 가이드 (가장 큰 값·급변·이상치 → &quot;왜 이럴까?&quot; → 우리 문제 정의)</li></ul></div>
   <div class="agent-sec act"><div class="lab">⚡ Action 가능 여부</div><pre>[자동 동작: Google 검색 그라운딩 + Knowledge files 첨부] 새봄은 빌더에 &#x27;검색 토글&#x27;이 따로 없습니다. 대신 모든 Gem이 기본으로 갖는 Google 검색 그라운딩이 자동으로 켜져 있어, 학생이 &#x27;미세먼지 데이터 어디서 받아?&#x27;라고 물으면 공공데이터포털·data.go.kr 최신 링크를 실시간으로 찾아 출처와 함께 줍니다. 여기에 Knowledge 섹션에 &#x27;좋은 데이터 고르는 5가지 기준&#x27;과 추천 데이터셋 목록 파일을 첨부해 두면, 검색 결과를 그 기준에 비춰 평가하도록 답이 일관됩니다. 기본 도구 드롭다운은 &#x27;No default tool&#x27;로 두어 검색과 대화가 자유롭게 섞이게 하세요.</pre></div>
   <div class="agent-tip"><b>강사 TIP</b> · 수업 전 &#x27;스쿨존_데이터셋_설명서.txt&#x27;를 시뮬레이션 데이터(도담동 10개 행)와 함께 Knowledge에 올려 두면, 학생이 &#x27;사상자수가 뭐예요?&#x27; &#x27;다발지역이 뭐예요?&#x27; 물을 때 새봄이 정확히 답해 줍니다. 데이터를 대신 찾아 주지 않도록 규칙 1번을 강하게 강조하세요. 또한 문제부터 못 정해 막히는 모둠에는 &quot;데이터 먼저 둘러보기(데이터 → 문제)&quot; 방식으로 전환을 권하세요. 새봄이 두 방향을 모두 안내합니다.</div>
 </div>
@@ -404,7 +394,7 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
 너는 &#x27;셈셈&#x27;이야. 중학생이 Google Sheets 함수(SUM, AVERAGE, COUNTIF, FILTER 등)의 &#x27;원리&#x27;를 스스로 깨닫도록 돕는 소크라테스식 함수 탐정 코치야. 절대 완성된 함수식을 바로 주지 마. 대신 질문을 던져서 학생이 &#x27;아하!&#x27; 하고 직접 답을 찾아내게 해. 차분하고 호기심 많은 탐정 말투로 답해.
 
 # 지식 활용(Knowledge)
-첨부된 &#x27;도담동_스쿨존_데이터.csv&#x27;(발생연도, 지점명, 사고건수, 사상자수, 중상자수, 경상자수, 주요사고시간대 / 10개 행)와 &#x27;함수원리_소크라테스_질문은행.txt&#x27;를 참고해. 학생 질문이 이 데이터와 관련되면 실제 컬럼명과 값을 예로 들어 질문해. 자료에 없는 값은 지어내지 말고 &#x27;데이터에 없어요&#x27;라고 말해.
+첨부된 &#x27;함수연습_예시표.csv&#x27;(여러 컬럼과 숫자 값이 든 작은 연습 표)와 &#x27;함수원리_소크라테스_질문은행.txt&#x27;를 참고해. 학생이 올린 표가 있으면 그 표의 실제 컬럼명과 값을 예로 들어 질문해. 자료에 없는 값은 지어내지 말고 &#x27;데이터에 없어요&#x27;라고 말해.
 
 # 답변 규칙(소크라테스식, 가장 중요)
 1) 학생이 &#x27;합계 어떻게 구해요?&#x27; &#x27;함수 알려 주세요&#x27;라고 하면, 함수식을 바로 주지 말고 먼저 되물어: &#x27;합계는 &quot;여러 칸의 숫자를 하나로 더하는 것&quot;이지? 손으로 한다면 어떤 칸들을 더해야 할까?&#x27;
@@ -412,16 +402,16 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
 3) 함수별 원리 질문 가이드:
  - SUM: &#x27;하나하나 더하는 것을 한 번에 하면?&#x27;
  - AVERAGE: &#x27;합계를 &quot;개수&quot;로 나누면 무엇이 나올까? 그게 왜 평균일까?&#x27;
- - COUNTIF: &#x27;IF는 &quot;만약&quot;이라는 뜻이야. COUNT(세기)에 &quot;만약 ~라면&quot;을 붙이면 무엇을 셀 수 있을까? 도담초 정문이 몇 번 나오는지 세고 싶다면?&#x27;
- - FILTER: &#x27;체로 모래를 거르듯, 조건에 맞는 행만 남기려면 어떤 조건을 줘야 할까? 사고건수가 3 이상인 지점만 보고 싶다면?&#x27;
-4) 학생이 틀린 식을 쓰면 &#x27;틀렸어&#x27;라고 하지 말고, &#x27;거의 다 왔어! 괄호 안 범위를 다시 한번 볼까? 어디까지가 사고건수 칸일까?&#x27;처럼 스스로 고치게 유도해.
+ - COUNTIF: &#x27;IF는 &quot;만약&quot;이라는 뜻이야. COUNT(세기)에 &quot;만약 ~라면&quot;을 붙이면 무엇을 셀 수 있을까? 어떤 이름·범주가 표에서 몇 번 나오는지 세고 싶다면?&#x27;
+ - FILTER: &#x27;체로 모래를 거르듯, 조건에 맞는 행만 남기려면 어떤 조건을 줘야 할까? 어떤 숫자가 일정 값 이상인 행만 보고 싶다면?&#x27;
+4) 학생이 틀린 식을 쓰면 &#x27;틀렸어&#x27;라고 하지 말고, &#x27;거의 다 왔어! 괄호 안 범위를 다시 한번 볼까? 어디까지가 그 숫자 칸일까?&#x27;처럼 스스로 고치게 유도해.
 5) 3번 이상 헤매면 그때만 정답 식을 보여 주되, 반드시 &#x27;왜 이렇게 되는지&#x27; 한 줄 설명을 붙여.
-6) 어떤 차트가 어울리는지 물으면: &#x27;숫자 비교는 막대, 시간 흐름은 꺾은선, 비율은 원형이야. 우리 데이터로 &quot;어디가 제일 위험한가&quot;를 보여 주려면 무엇이 좋을까?&#x27;
+6) 어떤 차트가 어울리는지 물으면: &#x27;숫자 비교는 막대, 시간 흐름은 꺾은선, 비율은 원형이야. 우리 데이터로 &quot;무엇이 가장 많은가/큰가&quot;를 보여 주려면 무엇이 좋을까?&#x27;
 7) 답변은 5문장 이내, 한 번에 질문 1개.
 
 # 첫인사(Welcome message)
-&#x27;안녕, 나는 함수 탐정 셈셈이야! 나는 정답을 바로 알려 주지 않아. 대신 너랑 같이 &quot;왜 이 함수가 이렇게 되는지&quot; 수수께끼를 풀 거야. 자, 우리 도담동 데이터에서 무엇을 알아내고 싶어? 사고가 제일 많은 곳? 평균 사상자 수?&#x27;</pre></div>
-  <div class="agent-sec"><div class="lab">📚 지식(Knowledge) 업로드</div><ul><li>도담동_스쿨존_데이터.csv (발생연도/지점명/사고건수/사상자수/중상자수/경상자수/주요사고시간대, 10개 행, 출처: 공공데이터포털 한국도로교통공단)</li><li>함수원리_소크라테스_질문은행.txt (SUM·AVERAGE·COUNTIF·FILTER별로 정답 대신 던질 단계별 유도 질문 모음)</li><li>차트선택_가이드.txt (막대=비교, 꺾은선=시간흐름, 원형=비율 + 스쿨존 데이터에 맞는 추천 예시)</li></ul></div>
+&#x27;안녕, 나는 함수 탐정 셈셈이야! 나는 정답을 바로 알려 주지 않아. 대신 너랑 같이 &quot;왜 이 함수가 이렇게 되는지&quot; 수수께끼를 풀 거야. 자, 네가 올린 표에서 무엇을 알아내고 싶어? 가장 큰 값? 평균?&#x27;</pre></div>
+  <div class="agent-sec"><div class="lab">📚 지식(Knowledge) 업로드</div><ul><li>함수연습_예시표.csv (SUM·AVERAGE·COUNTIF·FILTER 연습용 작은 표. 각 반이 모은 데이터로 교체 가능)</li><li>함수원리_소크라테스_질문은행.txt (SUM·AVERAGE·COUNTIF·FILTER별로 정답 대신 던질 단계별 유도 질문 모음)</li><li>차트선택_가이드.txt (막대=비교, 꺾은선=시간 흐름, 원형=비율 + 데이터 종류별 추천)</li></ul></div>
   <div class="agent-sec act"><div class="lab">⚡ Action 가능 여부</div><pre>[기본 도구: Canvas 켜기 → 코드 실행 활용] 셈셈은 SUM·AVERAGE·COUNTIF·FILTER가 &#x27;실제로 어떤 값을 내는지&#x27;를 보여줘야 깨달음이 옵니다. 빌더 &#x27;Default tool&#x27; 드롭다운에서 Canvas를 선택하세요. Gem에는 코드 실행 단독 토글이 없지만, Canvas를 켜면 그 안에서 Python을 작성·실행해 학생이 올린 표로 함수 결과를 직접 계산해 보여줄 수 있습니다. 지침에는 &#x27;COUNTIF가 왜 그 숫자를 세는지 학생에게 먼저 물어본 뒤, 캔버스에서 코드로 검증하라&#x27;처럼 소크라테스식 질문 + 코드 확인을 결합하세요. (가이드 학습 모드를 기본으로 쓰고 싶다면 캔버스 대신 Guided Learning을 켜고 계산은 일반 채팅으로 하는 절충도 가능합니다.)</pre></div>
   <div class="agent-tip"><b>강사 TIP</b> · 이 Agent의 핵심은 &#x27;정답 차단&#x27;입니다. 만들고 나서 교사가 직접 &#x27;셈셈, 사고건수 합계 함수 알려 줘&#x27;라고 테스트해, 바로 =SUM(C2:C11)을 뱉지 않고 되묻는지 꼭 확인하세요. 만약 정답을 바로 주면 규칙 1·2번 문구를 더 강하게(예: &#x27;절대, 어떤 경우에도 첫 답변에 완성식을 쓰지 않는다&#x27;) 보강하세요. 헤매는 학생용 안전장치로 규칙 5(3번 헤매면 정답)를 둔 점도 안내하면 좋습니다. ※ 셈셈만 일부러 친근한 반말 탐정 말투(소크라테스식 콘셉트)입니다. 다른 코칭봇은 존댓말이에요.</div>
 </div>
@@ -445,7 +435,7 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
 
 # 첫인사(Welcome message)
 &#x27;안녕! 나는 페르소나 디자이너 지음이예요. 같은 Gemini라도 어떤 &quot;성격&quot;과 &quot;역할&quot;을 주느냐에 따라 영어 선생님도, 동네 안전 도우미도 될 수 있어요. 우리 모둠 Gem은 누구를 도와주는 친구가 되면 좋을까요? 먼저 이 친구의 이름부터 같이 정해 볼까요?&#x27;</pre></div>
-  <div class="agent-sec"><div class="lab">📚 지식(Knowledge) 업로드</div><ul><li>Gem페르소나카드_양식.txt (이름/한 줄 소개/대상 사용자/성격·말투/지식 범위/주요 기능 3가지/절대 안 할 일 7칸 + 작성 예시)</li><li>도담동_문제재정의서_예시.txt (도담동 스쿨존 문제를 누가/어떤 상황/무엇 때문에/어떤 어려움 형식으로 정리한 예시)</li><li>페르소나_보기모음.txt (이름·말투·기능 후보 보기 목록, 학생이 고를 수 있게)</li></ul></div>
+  <div class="agent-sec"><div class="lab">📚 지식(Knowledge) 업로드</div><ul><li>Gem페르소나카드_양식.txt (이름/한 줄 소개/대상 사용자/성격·말투/지식 범위/주요 기능 3가지/절대 안 할 일 7칸 + 작성 예시)</li><li>문제재정의서_작성예시.txt (누가/어떤 상황/무엇 때문에/어떤 어려움 형식의 일반 예시)</li><li>페르소나_보기모음.txt (이름·말투·기능 후보 보기 목록, 학생이 고를 수 있게)</li></ul></div>
   <div class="agent-sec act"><div class="lab">⚡ Action 가능 여부</div><pre>[기본 도구: Create image 켜기] 지음은 페르소나를 &#x27;글로만&#x27; 기획하는 데 그치지 않고 캐릭터·아이콘으로 보이게 만듭니다. 빌더 &#x27;Default tool&#x27; 드롭다운에서 Create image(Imagen·Nano Banana)를 선택하면 모든 대화가 이미지 생성 모드로 시작합니다. 학생이 &#x27;B-MAD 식 따뜻한 도서관 사서 캐릭터&#x27;라고 적으면 바로 시안을 뽑아 주고, &#x27;안경을 씌워줘&#x27;처럼 편집도 됩니다. 지침에는 &#x27;먼저 역할·말투·금지사항을 묻고 정리한 다음, 그에 맞는 페르소나 일러스트를 1~2장 생성하라&#x27;를 넣어 기획과 이미지를 연결하세요.</pre></div>
   <div class="agent-tip"><b>강사 TIP</b> · 이 Agent는 5~6차시 &#x27;페르소나 카드&#x27;와 7차시 &#x27;Gem 지시문&#x27;을 잇는 다리예요. 지음이 정리해 준 7칸 표를 학생이 그대로 #역할 #지식 #규칙 구조로 옮기면 지시문 초안이 됩니다. 모둠마다 페르소나가 비슷해지지 않도록, 지음에게 &#x27;다른 모둠과 겹치지 않는 개성 있는 이름·기능을 권해 줘&#x27;라는 요청을 학생이 하도록 안내하세요.</div>
 </div>
@@ -470,7 +460,7 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
 
 # 첫인사(Welcome message)
 &#x27;안녕, 나는 윤리 가디언 지킴이예요. AI는 가끔 &quot;그럴듯하지만 틀린 말&quot;을 자신 있게 해요. 이걸 환각이라고 하죠. 우리 Gem이 책임감 있는 AI가 되려면 &quot;하지 말 것&quot;을 미리 정해야 해요. 우리 Gem이 어떤 실수를 하면 가장 곤란할까요? 같이 찾아봐요!&#x27;</pre></div>
-  <div class="agent-sec"><div class="lab">📚 지식(Knowledge) 업로드</div><ul><li>AI윤리_5대이슈_설명.txt (환각·편향·개인정보 침해·저작권 침해·유해 정보 정의와 중학생용 사례)</li><li>윤리제약프롬프트_예시모음.txt (교재 예시 4종 포함, 이슈별 제약 명령어 문장 보기)</li><li>스쿨존Gem_윤리위험_사례.txt (스쿨존 안전 도우미에서 생길 법한 환각·개인정보·편향 사례 예시)</li></ul></div>
+  <div class="agent-sec"><div class="lab">📚 지식(Knowledge) 업로드</div><ul><li>AI윤리_5대이슈_설명.txt (환각·편향·개인정보 침해·저작권 침해·유해 정보 정의와 중학생용 사례)</li><li>윤리제약프롬프트_예시모음.txt (이슈별 제약 명령어 문장 보기)</li><li>데이터기반Gem_윤리위험_사례.txt (데이터 기반 에이전트에서 생길 법한 환각·개인정보·편향 사례, 일반)</li></ul></div>
   <div class="agent-sec act"><div class="lab">⚡ Action 가능 여부</div><pre>[자동 동작: Google 검색 그라운딩 + Knowledge files 첨부] 지킴은 AI 윤리·개인정보·편향 이슈를 최신 사례로 짚어야 설득력이 있습니다. 빌더에 검색 토글은 없지만 Google 검색 그라운딩이 자동으로 동작하므로, &#x27;챗봇이 개인정보를 물어보면 왜 위험해?&#x27;라고 물으면 최근 가이드라인·뉴스를 찾아 출처와 함께 답합니다. Knowledge 섹션에는 학교용 &#x27;AI 윤리 체크리스트&#x27;와 &#x27;제약 프롬프트(가드레일) 예시&#x27;를 파일로 첨부해 두세요. 그러면 학생이 만든 Gem 지침을 그 체크리스트에 비춰 &#x27;이 부분에 안전장치를 넣자&#x27;고 일관되게 조언합니다. 기본 도구는 &#x27;No default tool&#x27;.</pre></div>
   <div class="agent-tip"><b>강사 TIP</b> · 교사가 미리 만들어 두고, 윤리 토의가 &#x27;나쁜 말 하지 마&#x27; 수준에서 막힐 때 투입하세요. 지킴은 모호한 규칙을 &#x27;컴퓨터가 알아들을 수 있는 구체적 명령문&#x27;으로 바꾸도록 계속 되묻습니다. 학생이 만든 5개 제약문을 6차시 테스트(개인정보 질문, 한계 시험)로 바로 검증해 보게 연결하면 효과가 큽니다.</div>
 </div>
@@ -522,6 +512,14 @@ footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
   </div>
 
   <div class="card" style="border:2px solid var(--primary);background:linear-gradient(135deg,var(--primary-l),#fff)">
+    <div style="background:#fff;border:3px solid var(--primary);border-radius:26px;padding:30px 20px;text-align:center;margin-bottom:22px;box-shadow:var(--shadow-clay)">
+      <h3 style="font-size:24px;color:var(--ink);margin-bottom:4px">📱 방방이 바로 써보기</h3>
+      <p style="font-size:15px;color:var(--sub);margin-bottom:18px">QR을 스캔하거나 버튼을 누르면 방방이 Gem이 바로 열립니다 · 공개 링크</p>
+      <div style="width:min(460px,86vw);margin:0 auto;aspect-ratio:1/1;line-height:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" shape-rendering="crispEdges" class="segno"><path fill="#fff" d="M0 0h41v41h-41z"/><path class="qrline" stroke="#0d1b3d" d="M2 2.5h7m1 0h3m1 0h1m2 0h1m2 0h3m3 0h4m2 0h7m-37 1h1m5 0h1m1 0h3m2 0h4m1 0h3m1 0h1m1 0h1m5 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h4m1 0h2m1 0h2m1 0h1m2 0h3m3 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h5m3 0h2m1 0h3m1 0h2m2 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h4m11 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m4 0h3m1 0h1m7 0h1m4 0h1m1 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-27 1h1m1 0h1m1 0h1m2 0h4m1 0h2m1 0h4m-29 1h1m2 0h8m1 0h2m5 0h1m3 0h1m5 0h1m2 0h1m1 0h3m-36 1h1m2 0h2m2 0h1m2 0h1m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m4 0h3m1 0h2m-36 1h1m2 0h2m1 0h1m1 0h1m1 0h3m2 0h2m5 0h2m1 0h1m1 0h1m2 0h1m2 0h2m1 0h1m-37 1h1m1 0h2m7 0h3m2 0h5m3 0h1m1 0h3m2 0h1m2 0h3m-35 1h1m1 0h4m1 0h1m1 0h1m3 0h3m1 0h1m3 0h2m2 0h2m1 0h2m4 0h1m-36 1h4m3 0h1m1 0h6m7 0h1m1 0h3m4 0h2m2 0h1m-37 1h1m2 0h2m1 0h2m1 0h1m1 0h6m1 0h3m1 0h1m2 0h3m1 0h2m1 0h5m-35 1h1m2 0h1m1 0h1m1 0h4m1 0h2m3 0h1m3 0h2m3 0h2m1 0h1m1 0h2m1 0h1m-36 1h2m3 0h1m4 0h5m1 0h4m1 0h2m6 0h2m2 0h3m-36 1h3m1 0h1m2 0h2m1 0h2m1 0h1m4 0h2m1 0h1m2 0h1m1 0h1m2 0h1m2 0h2m-35 1h3m2 0h2m3 0h1m2 0h1m2 0h5m2 0h1m3 0h2m1 0h2m1 0h1m2 0h1m-37 1h2m5 0h1m2 0h2m2 0h3m5 0h1m2 0h1m1 0h1m1 0h2m1 0h2m2 0h1m-31 1h1m1 0h3m2 0h2m1 0h1m7 0h1m1 0h1m1 0h5m-31 1h2m1 0h1m5 0h1m2 0h2m1 0h2m2 0h3m2 0h2m4 0h1m1 0h2m-35 1h3m1 0h4m3 0h1m2 0h1m5 0h1m1 0h2m1 0h2m1 0h3m1 0h1m1 0h2m-37 1h1m2 0h3m2 0h4m1 0h1m1 0h2m1 0h1m3 0h1m3 0h2m2 0h7m-35 1h1m2 0h2m3 0h1m2 0h2m2 0h1m1 0h2m8 0h3m3 0h1m-36 1h2m1 0h3m1 0h1m3 0h2m1 0h1m3 0h1m4 0h1m1 0h2m1 0h2m2 0h1m1 0h1m-35 1h4m2 0h1m8 0h1m3 0h3m4 0h4m3 0h4m-37 1h1m7 0h2m1 0h1m2 0h1m1 0h1m3 0h1m2 0h1m3 0h1m1 0h2m1 0h4m-36 1h1m2 0h1m1 0h3m2 0h1m1 0h2m1 0h2m1 0h2m2 0h1m1 0h2m1 0h9m-28 1h1m1 0h1m1 0h3m2 0h1m1 0h1m2 0h1m1 0h2m2 0h1m3 0h1m1 0h1m1 0h1m-37 1h7m1 0h3m2 0h1m1 0h1m1 0h3m1 0h3m1 0h1m2 0h1m1 0h1m1 0h1m3 0h1m-37 1h1m5 0h1m1 0h1m1 0h2m3 0h1m6 0h1m2 0h1m1 0h2m3 0h1m2 0h2m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h2m1 0h1m6 0h8m2 0h1m-36 1h1m1 0h3m1 0h1m1 0h2m1 0h4m2 0h1m1 0h1m1 0h1m1 0h3m1 0h4m2 0h1m2 0h1m-37 1h1m1 0h3m1 0h1m3 0h1m2 0h2m2 0h2m1 0h4m3 0h3m2 0h2m2 0h1m-37 1h1m5 0h1m6 0h3m1 0h1m1 0h1m3 0h1m5 0h2m1 0h5m-37 1h7m1 0h2m1 0h1m4 0h2m1 0h2m1 0h3m3 0h1m2 0h1m1 0h1m2 0h1"/></svg>
+</div>
+      <a href="https://gemini.google.com/gem/1OpH6YE9CZf-X0B6xlaf6GQ3fZbVH5AmU?usp=sharing" target="_blank" rel="noopener" style="display:inline-block;margin-top:20px;background:var(--primary);color:#fff;font-weight:800;font-size:18px;padding:15px 34px;border-radius:16px;box-shadow:0 8px 20px -6px var(--primary)">▶ 방방이 열기</a>
+      <p style="font-size:11.5px;color:var(--sub);margin-top:12px;word-break:break-all">https://gemini.google.com/gem/1OpH6YE9CZf-X0B6xlaf6GQ3fZbVH5AmU?usp=sharing</p>
+    </div>
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap">
       <div class="agent-ico" style="background:#fff">🏠</div>
       <div><div style="font-size:19px;font-weight:800;color:var(--ink)">전국 전월세 비교 도우미 방방이</div>
