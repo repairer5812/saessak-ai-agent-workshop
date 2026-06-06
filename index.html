@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>응답하라 AI 에이전트 · 강사워크숍 강의자료</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    응답하라 AI 에이전트 강사워크숍 강의자료
@@ -163,43 +163,39 @@ main{padding:34px 0 80px;}
 .gem-help b{color:var(--secondary);}
 .formula{font-family:'Space Mono',monospace;background:var(--ink);color:#7CFFB0;padding:3px 8px;border-radius:7px;font-size:12.5px;}
 
-/* ===== 학생 사고·활동 발표 덱 (12장) · 스쿨존 세이프티 디자인 ===== */
-.present-btn{font-family:'Do Hyeon',sans-serif;border:2px solid #161C24;cursor:pointer;font-size:15px;letter-spacing:.01em;color:#FFD400;background:#161C24;padding:11px 22px;border-radius:12px;box-shadow:0 8px 20px -8px rgba(13,20,30,.6);transition:.16s;}
-.present-btn:hover{background:#FFD400;color:#161C24;transform:translateY(-1px);}
-.pdeck{position:relative;background:#161C24;border:1px solid #242E39;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 26px 64px -28px rgba(13,20,30,.55);font-family:'Pretendard',sans-serif;}
-.pdeck::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;z-index:4;background:repeating-linear-gradient(135deg,#FFD400 0 16px,#161C24 16px 30px);}
-.pslide{display:none;position:relative;flex-direction:column;gap:14px;padding:42px 32px 30px;min-height:470px;color:#E8EDF4;}
+/* ===== 학생 발표 덱 (12장) · impeccable 리디자인: 시빅 워크숍 리소 포스터 ===== */
+.present-btn{font-family:'Black Han Sans',sans-serif;border:none;cursor:pointer;font-size:15px;letter-spacing:.01em;color:#1A1613;background:#F5B431;padding:12px 22px;border-radius:8px;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .2s;}
+.present-btn:hover{background:#FFC23C;transform:translateY(-2px);}
+.pdeck{position:relative;background:#1A1613;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 30px 70px -30px rgba(20,14,8,.6);font-family:'Pretendard',sans-serif;}
+.pslide{display:none;flex-direction:column;gap:16px;padding:40px 36px 28px;min-height:470px;color:#F4ECE1;--st:#F5B431;}
 .pslide.active{display:flex;}
-.pslide::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.028) 1px,transparent 1px);background-size:22px 22px;}
-.pslide>*{position:relative;z-index:1;}
-.ps-head{display:flex;align-items:center;justify-content:space-between;gap:10px;}
-.ps-badge{font-family:'Do Hyeon',sans-serif;font-size:14px;letter-spacing:.01em;padding:6px 15px;border-radius:9px;background:#FFD400;color:#161C24;}
-.ps-num{font-family:'Do Hyeon',sans-serif;font-size:17px;letter-spacing:.06em;color:#FFD400;opacity:.85;}
-.ps-hero{font-size:clamp(46px,11vw,60px);line-height:1;text-align:center;margin:6px 0 0;filter:drop-shadow(0 0 16px rgba(255,212,0,.28));}
-.ps-title{font-family:'Do Hyeon',sans-serif;font-size:clamp(21px,5.6vw,30px);text-align:center;color:#fff;line-height:1.2;letter-spacing:-.01em;}
-.ps-think,.ps-do{font-size:14.5px;line-height:1.65;color:#D7DEE7;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);border-left:3px solid #FFD400;border-radius:13px;padding:13px 16px;}
-.ps-lab{font-family:'Do Hyeon',sans-serif;display:inline-block;color:#FFD400;margin-right:6px;}
-.ps-flow{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:rgba(0,0,0,.24);border:1px dashed rgba(255,212,0,.38);border-radius:14px;padding:14px 12px;}
-.ps-flow span{font-weight:700;font-size:13px;color:#161C24;background:#F4F7FB;border-radius:999px;padding:8px 13px;box-shadow:0 3px 0 rgba(0,0,0,.28);}
-.ps-flow i{color:#FFD400;font-weight:900;font-style:normal;font-size:16px;padding:0 4px;}
-.ps-note{font-size:11.5px;color:#8A98A6;text-align:center;margin-top:2px;}
-/* 단계별 색: 진입기=옐로 / 도약기=오렌지 / 성장기=그린 / intro·outro */
-.pslide.s2 .ps-badge{background:#ED7D31;color:#fff;} .pslide.s2 .ps-think,.pslide.s2 .ps-do{border-left-color:#ED7D31;} .pslide.s2 .ps-lab,.pslide.s2 .ps-num{color:#ED7D31;} .pslide.s2 .ps-flow{border-color:rgba(237,125,49,.4);} .pslide.s2 .ps-flow i{color:#ED7D31;} .pslide.s2 .ps-hero{filter:drop-shadow(0 0 16px rgba(237,125,49,.3));}
-.pslide.s3 .ps-badge{background:#2FBF71;color:#0E2417;} .pslide.s3 .ps-think,.pslide.s3 .ps-do{border-left-color:#2FBF71;} .pslide.s3 .ps-lab,.pslide.s3 .ps-num{color:#2FBF71;} .pslide.s3 .ps-flow{border-color:rgba(47,191,113,.4);} .pslide.s3 .ps-flow i{color:#2FBF71;} .pslide.s3 .ps-hero{filter:drop-shadow(0 0 16px rgba(47,191,113,.3));}
-.pslide.intro .ps-badge{background:#F4F7FB;color:#161C24;}
-.pslide.outro .ps-badge{background:linear-gradient(90deg,#2FBF71,#FFD400);color:#0E2417;} .pslide.outro .ps-think,.pslide.outro .ps-do{border-left-color:#2FBF71;} .pslide.outro .ps-lab,.pslide.outro .ps-num{color:#2FBF71;}
-/* 슬라이드 진입 스태거 모션 */
-@keyframes deckUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
-.pslide.active .ps-hero{animation:deckUp .45s both .02s;}
-.pslide.active .ps-title{animation:deckUp .45s both .10s;}
-.pslide.active .ps-think{animation:deckUp .45s both .18s;}
-.pslide.active .ps-do{animation:deckUp .45s both .26s;}
-.pslide.active .ps-flow{animation:deckUp .45s both .34s;}
-.pslide.active .ps-note{animation:deckUp .45s both .40s;}
-.pnav{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-top:1px solid #242E39;background:#11161D;}
-.nav-btn{font-family:'Do Hyeon',sans-serif;border:none;cursor:pointer;font-size:15px;letter-spacing:.02em;color:#161C24;background:#FFD400;padding:9px 22px;border-radius:11px;transition:.15s;}
-.nav-btn:hover{background:#fff;transform:translateY(-1px);} .nav-btn:disabled{background:#2A333E;color:#5C6875;cursor:default;transform:none;}
-.pcount{font-family:'Do Hyeon',sans-serif;font-size:15px;letter-spacing:.05em;color:#FFD400;}
+.pslide.s1{--st:#FF6B4A;} .pslide.s2{--st:#37B6E0;} .pslide.s3{--st:#37C46B;} .pslide.intro{--st:#F5B431;} .pslide.outro{--st:#37C46B;}
+.ps-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.ps-badge{font-family:'Black Han Sans',sans-serif;font-size:15px;letter-spacing:.02em;padding:7px 16px;border-radius:7px;background:var(--st);color:#1A1613;}
+.ps-num{font-family:'Black Han Sans',sans-serif;font-size:22px;color:var(--st);letter-spacing:.02em;}
+.ps-hero{align-self:center;font-size:clamp(36px,8vw,48px);line-height:1;width:auto;min-width:clamp(78px,17vw,102px);height:clamp(78px,17vw,102px);padding:0 clamp(14px,4vw,24px);display:flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;background:color-mix(in srgb,var(--st) 22%,#1A1613);margin:2px 0;}
+.ps-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(24px,6.2vw,34px);text-align:center;color:#F4ECE1;line-height:1.22;letter-spacing:-.01em;text-wrap:balance;word-break:keep-all;}
+.ps-think,.ps-do{font-size:14.5px;line-height:1.7;color:#E9E0D4;word-break:keep-all;}
+.ps-lab{font-family:'Black Han Sans',sans-serif;display:inline-block;font-size:13px;letter-spacing:.01em;color:#1A1613;background:var(--st);padding:4px 12px;border-radius:6px;margin-right:9px;}
+.ps-flow{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;}
+.ps-flow span{font-weight:800;font-size:13px;color:#1A1613;background:var(--st);border-radius:999px;padding:8px 14px;}
+.ps-flow i{color:#B8AE9F;font-weight:900;font-style:normal;font-size:15px;}
+.ps-note{font-size:11.5px;color:#B8AE9F;text-align:center;}
+.pprog{display:flex;gap:4px;padding:6px 36px 2px;background:#1A1613;}
+.pprog span{flex:1;height:5px;border-radius:3px;background:rgba(244,236,225,.13);transition:background .25s;}
+.pprog span.on{background:#F4ECE1;}
+.pnav{display:flex;align-items:center;justify-content:space-between;padding:14px 22px 18px;background:#221C18;}
+.nav-btn{font-family:'Black Han Sans',sans-serif;border:none;cursor:pointer;font-size:15px;color:#1A1613;background:#F4ECE1;padding:9px 22px;border-radius:8px;transition:transform .2s,opacity .2s;}
+.nav-btn:hover{transform:translateY(-2px);} .nav-btn:disabled{opacity:.32;cursor:default;transform:none;}
+.pcount{font-family:'Black Han Sans',sans-serif;font-size:16px;color:#F4ECE1;letter-spacing:.03em;}
+@keyframes rkUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.pslide.active .ps-head{animation:rkUp .42s cubic-bezier(.2,.8,.2,1) both .02s;}
+.pslide.active .ps-hero{animation:rkUp .42s cubic-bezier(.2,.8,.2,1) both .10s;}
+.pslide.active .ps-title{animation:rkUp .42s cubic-bezier(.2,.8,.2,1) both .16s;}
+.pslide.active .ps-think{animation:rkUp .42s cubic-bezier(.2,.8,.2,1) both .24s;}
+.pslide.active .ps-do{animation:rkUp .42s cubic-bezier(.2,.8,.2,1) both .30s;}
+.pslide.active .ps-flow{animation:rkUp .42s cubic-bezier(.2,.8,.2,1) both .38s;}
+@media (prefers-reduced-motion:reduce){.pslide.active *{animation:none!important;}}
 
 /* ===== misc ===== */
 .note{font-size:13px;color:var(--sub);background:var(--surface-2);border-radius:12px;padding:12px 15px;}
@@ -783,6 +779,7 @@ details.simdetail[open]>summary::before{content:"▾  ";}
 <section class="pslide s3"><div class="ps-head"><span class="ps-badge">성장기 · 9~12차시</span><span class="ps-num">11 / 12</span></div><div class="ps-hero">🎤</div><h3 class="ps-title">3단계. 검증하고, 동네에 나눈다</h3><div class="ps-think"><span class="ps-lab">🧠 이런 사고로</span>“안전이를 믿어도 될까?”를 끝까지 확인하고, 우리 결과를 발표로 동네에 알리며 스스로 돌아봤습니다.</div><div class="ps-do"><span class="ps-lab">🙌 이런 활동으로</span>안전이를 최종 검증하고, 발표 슬라이드를 만들어 시연·발표하고, 친구·학부모 피드백으로 성찰했습니다.</div><div class="ps-flow"><span>✅ 검증</span><i>→</i><span>🖥️ 발표 자료</span><i>→</i><span>🎤 시연</span><i>→</i><span>🔁 성찰</span></div></section>
 <section class="pslide outro"><div class="ps-head"><span class="ps-badge">마무리 · 우리가 기른 힘</span><span class="ps-num">12 / 12</span></div><div class="ps-hero">🌱</div><h3 class="ps-title">치평초 스쿨존 프로젝트가 남긴 네 가지 힘</h3><div class="ps-think"><span class="ps-lab">🧠 이런 사고로</span>우리 모둠은 ‘동네 문제를 스스로 발견하고, 데이터로 증명하고, AI로 해결책을 만든 사람’이 되었습니다.</div><div class="ps-do"><span class="ps-lab">🙌 이런 활동으로</span>공감(디자인씽킹), 데이터, AI 리터러시, 윤리. 네 가지 사고를 치평초 스쿨존 프로젝트 하나로 함께 길렀습니다.</div><div class="ps-flow"><span>🤝 공감</span><span>📊 데이터</span><span>🤖 AI</span><span>🛡️ 윤리</span></div></section>
 </div>
+  <div class="pprog" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
   <div class="pnav"><button class="nav-btn prev" onclick="pmove(-1)">‹ 이전</button><span class="pcount"><span class="pcur">1</span> / 12</span><button class="nav-btn next" onclick="pmove(1)">다음 ›</button></div>
 </div>
 <p style="font-size:12.5px;color:var(--sub);margin-top:8px;text-align:center">💡 발표할 땐 <b>전체화면 발표로 열기</b> → 새 창에서 <b>F11</b>(전체화면) → <b>← →</b> 또는 클릭으로 넘기세요.</p>
@@ -833,6 +830,7 @@ document.querySelectorAll('.tab-btn').forEach(b=>{
     var cur=document.querySelector('#sim .pcur'); if(cur)cur.textContent=i+1;
     var pv=document.querySelector('#sim .pnav .prev'), nx=document.querySelector('#sim .pnav .next');
     if(pv)pv.disabled=i===0; if(nx)nx.disabled=i===ss.length-1;
+    var pr=document.querySelectorAll('#sim .pprog span'); pr.forEach(function(s,k){s.classList.toggle('on',k<=i);});
     var dk=document.querySelector('#sim .pdeck'); if(dk)dk.scrollIntoView({behavior:'smooth',block:'nearest'});
   };
   document.addEventListener('keydown',function(e){
@@ -842,7 +840,10 @@ document.querySelectorAll('.tab-btn').forEach(b=>{
     if(/^(INPUT|TEXTAREA|SELECT)$/.test((e.target&&e.target.tagName)||''))return;
     pmove(e.key==='ArrowRight'?1:-1);
   });
-  document.addEventListener('DOMContentLoaded',function(){var pv=document.querySelector('#sim .pnav .prev'); if(pv)pv.disabled=true;});
+  document.addEventListener('DOMContentLoaded',function(){
+    var pv=document.querySelector('#sim .pnav .prev'); if(pv)pv.disabled=true;
+    var pr=document.querySelectorAll('#sim .pprog span'); if(pr.length)pr[0].classList.add('on');
+  });
 
   var PRESENT = '<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">'
    +'<meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -850,44 +851,42 @@ document.querySelectorAll('.tab-btn').forEach(b=>{
    +'<link rel="preconnect" href="https://cdn.jsdelivr.net">'
    +'<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">'
    +'<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-   +'<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">'
+   +'<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">'
    +'<style>'
-   +':root{--y:#FFD400;--ink:#10151B;}'
    +'*{box-sizing:border-box;margin:0;padding:0;}'
-   +"html,body{height:100%;background:#10151B;font-family:Pretendard,system-ui,sans-serif;overflow:hidden;color:#E8EDF4;}"
+   +"html,body{height:100%;background:#1A1613;font-family:Pretendard,system-ui,sans-serif;overflow:hidden;color:#F4ECE1;}"
    +'#pp{position:relative;width:100vw;height:100vh;cursor:pointer;}'
-   +'#pp::before{content:"";position:fixed;top:0;left:0;right:0;height:1.5vh;z-index:9;background:repeating-linear-gradient(135deg,#FFD400 0 2.4vh,#10151B 2.4vh 4.6vh);}'
-   +'.pslide{display:none;width:100vw;height:100vh;flex-direction:column;justify-content:center;gap:2.2vh;padding:10vh 9vw 8vh;position:relative;}'
+   +'.pslide{display:none;width:100vw;height:100vh;flex-direction:column;justify-content:center;gap:2.4vh;padding:9vh 9vw 12vh;--st:#F5B431;}'
    +'.pslide.active{display:flex;}'
-   +'.pslide::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.022) 1.5px,transparent 1.5px);background-size:3vh 3vh;}'
-   +'.pslide>*{position:relative;z-index:2;}'
+   +'.pslide.s1{--st:#FF6B4A;}.pslide.s2{--st:#37B6E0;}.pslide.s3{--st:#37C46B;}.pslide.intro{--st:#F5B431;}.pslide.outro{--st:#37C46B;}'
    +'.ps-head{display:flex;align-items:center;justify-content:space-between;}'
-   +".ps-badge{font-family:'Do Hyeon',sans-serif;font-size:2.7vh;padding:1vh 2.8vh;border-radius:1.2vh;background:var(--y);color:#10151B;}"
-   +".ps-num{font-family:'Do Hyeon',sans-serif;font-size:3.2vh;letter-spacing:.06em;color:#FFD400;opacity:.88;}"
-   +'.ps-hero{font-size:15vh;line-height:1;text-align:center;filter:drop-shadow(0 0 5vh rgba(255,212,0,.26));}'
-   +".ps-title{font-family:'Do Hyeon',sans-serif;font-size:6.4vh;text-align:center;color:#fff;line-height:1.12;letter-spacing:-.01em;}"
-   +'.ps-think,.ps-do{font-size:3vh;line-height:1.6;color:#D7DEE7;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-left:.55vh solid var(--y);border-radius:1.6vh;padding:2.2vh 3vh;}'
-   +".ps-lab{font-family:'Do Hyeon',sans-serif;color:var(--y);margin-right:1.2vh;}"
-   +'.ps-flow{margin-top:1vh;display:flex;align-items:center;justify-content:center;gap:1vh;flex-wrap:wrap;background:rgba(0,0,0,.28);border:.25vh dashed rgba(255,212,0,.4);border-radius:1.6vh;padding:2.2vh;}'
-   +".ps-flow span{font-family:'Do Hyeon',sans-serif;font-size:2.7vh;color:#10151B;background:#F4F7FB;border-radius:999px;padding:1.2vh 2.4vh;box-shadow:0 .5vh 0 rgba(0,0,0,.3);}"
-   +'.ps-flow i{color:var(--y);font-weight:900;font-style:normal;font-size:3.2vh;padding:0 .6vh;}'
-   +'.ps-note{font-size:1.9vh;color:#8A98A6;text-align:center;}'
-   +'.pslide.s2 .ps-badge{background:#ED7D31;color:#fff;}.pslide.s2 .ps-think,.pslide.s2 .ps-do{border-left-color:#ED7D31;}.pslide.s2 .ps-lab,.pslide.s2 .ps-num{color:#ED7D31;}.pslide.s2 .ps-flow{border-color:rgba(237,125,49,.4);}.pslide.s2 .ps-flow i{color:#ED7D31;}.pslide.s2 .ps-hero{filter:drop-shadow(0 0 5vh rgba(237,125,49,.3));}'
-   +'.pslide.s3 .ps-badge{background:#2FBF71;color:#0E2417;}.pslide.s3 .ps-think,.pslide.s3 .ps-do{border-left-color:#2FBF71;}.pslide.s3 .ps-lab,.pslide.s3 .ps-num{color:#2FBF71;}.pslide.s3 .ps-flow{border-color:rgba(47,191,113,.4);}.pslide.s3 .ps-flow i{color:#2FBF71;}.pslide.s3 .ps-hero{filter:drop-shadow(0 0 5vh rgba(47,191,113,.3));}'
-   +'.pslide.intro .ps-badge{background:#F4F7FB;color:#10151B;}'
-   +'.pslide.outro .ps-badge{background:linear-gradient(90deg,#2FBF71,#FFD400);color:#0E2417;}.pslide.outro .ps-think,.pslide.outro .ps-do{border-left-color:#2FBF71;}.pslide.outro .ps-lab,.pslide.outro .ps-num{color:#2FBF71;}'
-   +"#ppc{font-family:'Do Hyeon',sans-serif;position:fixed;bottom:3vh;right:3.5vw;color:#10151B;background:#FFD400;padding:1vh 2.4vh;border-radius:999px;font-size:2.4vh;z-index:9;}"
-   +'#pph{position:fixed;bottom:3vh;left:3.5vw;color:#9AA7B4;font-size:1.9vh;font-weight:600;z-index:9;}'
-   +"#ppx{font-family:'Do Hyeon',sans-serif;position:fixed;top:2.4vh;right:3.5vw;background:rgba(255,255,255,.1);color:#fff;border:.2vh solid rgba(255,212,0,.55);border-radius:1vh;padding:1vh 2vh;font-size:2vh;cursor:pointer;z-index:10;}"
-   +'#ppx:hover{background:#FFD400;color:#10151B;}'
-   +'@keyframes ppUp{from{opacity:0;transform:translateY(2.4vh);}to{opacity:1;transform:none;}}'
-   +'.pslide.active .ps-hero{animation:ppUp .5s both .02s;}.pslide.active .ps-title{animation:ppUp .5s both .12s;}.pslide.active .ps-think{animation:ppUp .5s both .22s;}.pslide.active .ps-do{animation:ppUp .5s both .32s;}.pslide.active .ps-flow{animation:ppUp .5s both .42s;}.pslide.active .ps-note{animation:ppUp .5s both .5s;}'
+   +".ps-badge{font-family:'Black Han Sans',sans-serif;font-size:2.7vh;padding:1vh 2.6vh;border-radius:1vh;background:var(--st);color:#1A1613;}"
+   +".ps-num{font-family:'Black Han Sans',sans-serif;font-size:3.6vh;color:var(--st);letter-spacing:.02em;}"
+   +'.ps-hero{align-self:center;font-size:11vh;line-height:1;width:auto;min-width:19vh;height:19vh;padding:0 4vh;display:flex;align-items:center;justify-content:center;gap:1.4vh;border-radius:999px;background:color-mix(in srgb,var(--st) 22%,#1A1613);}'
+   +".ps-title{font-family:'Black Han Sans',sans-serif;font-size:6.6vh;text-align:center;color:#F4ECE1;line-height:1.18;letter-spacing:-.01em;word-break:keep-all;}"
+   +'.ps-think,.ps-do{font-size:3vh;line-height:1.7;color:#E9E0D4;word-break:keep-all;max-width:82ch;align-self:center;text-align:center;}'
+   +".ps-lab{font-family:'Black Han Sans',sans-serif;display:inline-block;font-size:2.3vh;color:#1A1613;background:var(--st);padding:.5vh 1.8vh;border-radius:.8vh;margin-right:1.4vh;}"
+   +'.ps-flow{margin-top:1vh;display:flex;align-items:center;justify-content:center;gap:1.2vh;flex-wrap:wrap;}'
+   +".ps-flow span{font-weight:800;font-size:2.7vh;color:#1A1613;background:var(--st);border-radius:999px;padding:1.1vh 2.4vh;}"
+   +'.ps-flow i{color:#B8AE9F;font-weight:900;font-style:normal;font-size:3vh;}'
+   +'.ps-note{font-size:1.9vh;color:#B8AE9F;text-align:center;}'
+   +'#ppp{position:fixed;left:0;right:0;bottom:0;display:flex;gap:.5vh;padding:1.5vh 3vw;}'
+   +'#ppp span{flex:1;height:.8vh;border-radius:.5vh;background:rgba(244,236,225,.13);transition:background .25s;}'
+   +'#ppp span.on{background:#F4ECE1;}'
+   +"#ppc{font-family:'Black Han Sans',sans-serif;position:fixed;bottom:4.4vh;right:3vw;color:#1A1613;background:#F4ECE1;padding:.8vh 2.2vh;border-radius:999px;font-size:2.3vh;z-index:9;}"
+   +'#pph{position:fixed;bottom:4.8vh;left:3vw;color:#B8AE9F;font-size:1.8vh;font-weight:600;z-index:9;}'
+   +"#ppx{font-family:'Black Han Sans',sans-serif;position:fixed;top:2.4vh;right:3vw;background:rgba(244,236,225,.1);color:#F4ECE1;border:none;border-radius:.9vh;padding:1vh 2vh;font-size:2vh;cursor:pointer;z-index:10;}"
+   +'#ppx:hover{background:#F5B431;color:#1A1613;}'
+   +'@keyframes rkUp{from{opacity:0;transform:translateY(2.4vh);}to{opacity:1;transform:none;}}'
+   +'.pslide.active .ps-head{animation:rkUp .5s cubic-bezier(.2,.8,.2,1) both .03s;}.pslide.active .ps-hero{animation:rkUp .5s cubic-bezier(.2,.8,.2,1) both .12s;}.pslide.active .ps-title{animation:rkUp .5s cubic-bezier(.2,.8,.2,1) both .2s;}.pslide.active .ps-think{animation:rkUp .5s cubic-bezier(.2,.8,.2,1) both .3s;}.pslide.active .ps-do{animation:rkUp .5s cubic-bezier(.2,.8,.2,1) both .38s;}.pslide.active .ps-flow{animation:rkUp .5s cubic-bezier(.2,.8,.2,1) both .46s;}'
+   +'@media (prefers-reduced-motion:reduce){.pslide.active *{animation:none!important;}}'
    +'</style></head><body><div id="pp">__SLIDES__</div>'
-   +'<button id="ppx">⛶ 전체화면(F11)</button><div id="ppc">1 / 12</div>'
+   +'<button id="ppx">⬛ 전체화면(F11)</button><div id="ppc">1 / 12</div>'
    +'<div id="pph">← → · 클릭으로 넘기기 · F11 전체화면 · ESC 끝</div>'
+   +'<div id="ppp">'+('<span></span>'.repeat(12))+'</div>'
    +'<scr'+'ipt>'
-   +'var ps=[].slice.call(document.querySelectorAll(".pslide")),i=0;'
-   +'function show(n){i=Math.max(0,Math.min(ps.length-1,n));ps.forEach(function(s,k){s.classList.toggle("active",k===i);});document.getElementById("ppc").textContent=(i+1)+" / "+ps.length;}'
+   +'var ps=[].slice.call(document.querySelectorAll(".pslide")),pg=[].slice.call(document.querySelectorAll("#ppp span")),i=0;'
+   +'function show(n){i=Math.max(0,Math.min(ps.length-1,n));ps.forEach(function(s,k){s.classList.toggle("active",k===i);});document.getElementById("ppc").textContent=(i+1)+" / "+ps.length;pg.forEach(function(s,k){s.classList.toggle("on",k<=i);});}'
    +'document.addEventListener("keydown",function(e){if(e.key==="ArrowRight"||e.key==="PageDown"||e.key===" "){e.preventDefault();show(i+1);}else if(e.key==="ArrowLeft"||e.key==="PageUp"){e.preventDefault();show(i-1);}else if(e.key==="Home"){show(0);}else if(e.key==="End"){show(ps.length-1);}else if(e.key==="Escape"&&document.fullscreenElement){document.exitFullscreen();}});'
    +'document.getElementById("pp").addEventListener("click",function(){show(i+1);});'
    +'function ppFS(){var el=document.documentElement;if(!document.fullscreenElement){(el.requestFullscreen||el.webkitRequestFullscreen||function(){}).call(el);}else{document.exitFullscreen();}}'
