@@ -629,12 +629,63 @@ details.simdetail[open]>summary::before{content:"▾  ";}
 </div>
 <div class="card"><h3 style="font-size:17px;margin-bottom:8px">😵 왜 어려울까?</h3><p style="font-size:14.5px;color:var(--text)">중학생은 함수를 처음 배우기 때문에, 공공데이터포털에서 받은 원본 파일이 한 화면에 깔끔하게 정리돼 있을 거라 기대하지만 실제로는 빈칸(결측치), 말도 안 되게 큰 값(이상치), &#x27;서울특별시&#x27;와 &#x27;서울시&#x27;처럼 같은 뜻인데 다르게 적힌 표기, &#x27;2023-05-01&#x27;과 &#x27;2023.5.1&#x27;처럼 뒤섞인 날짜 형식이 한꺼번에 들어 있습니다. 어디가 잘못됐는지 눈으로 한 줄씩 찾는 것 자체가 오래 걸리고, 빈칸을 0으로 채워야 할지 평균으로 채워야 할지 같은 판단이 어렵습니다. 또 함수 이름과 괄호 안 인자 순서를 외워야 하고, 글자 표기를 통일하려면 TRIM, SUBSTITUTE 같은 낯선 함수를 조합해야 해서 한 셀만 틀려도 그래프 전체가 이상해집니다. 데이터가 7개 컬럼 곱하기 수십 행이라 손으로 다 고치다 보면 분석·디자인씽킹이라는 진짜 활동에 쓸 시간이 사라집니다. 그래서 무엇이 문제인지 찾아 주고, 어떤 함수를 어떤 순서로 쓰면 되는지 옆에서 알려 주는 비계(scaffolding)가 필요합니다.</p></div>
 
-<div class="card" style="background:linear-gradient(135deg,var(--secondary-l),#fff)">
-  <h3 style="font-size:16px;color:var(--secondary);margin-bottom:8px">🧭 핵심 전략 · 두 갈래 길</h3>
-  <div class="grid g2">
-    <div class="kp"><strong>① Gemini 사이드패널 채팅 (어디서나 OK)</strong><p>시트 우측 <b>Gemini 채팅창</b>에 "이 표에서 빈칸·이상치를 찾아줘"처럼 말로 부탁합니다. 모든 학교 계정에서 가장 안전한 1차 경로.</p></div>
-    <div class="kp"><strong>② =AI() 함수 (되는 환경에서만)</strong><p>셀에 <span class="formula">=AI("...")</span>를 직접 써서 자동 처리. 학교 계정에 따라 안 보일 수 있어요. <b style="color:var(--warn)">수업 전 강사가 표시 여부 반드시 확인.</b></p></div>
+<h3 class="section-title" style="font-size:19px;margin:6px 0 6px">🧭 세 가지 전처리 방법 (강사가 골라 쓰기)</h3>
+<p class="section-lead" style="margin-bottom:12px">같은 데이터를 정리하는 세 가지 길입니다. <b>위로 갈수록 학생이 더 많이 배우고, 아래로 갈수록 더 빠르고 자동</b>입니다. 각 방법에 바로 쓸 예시 프롬프트를 넣었어요.</p>
+<div class="card" style="background:linear-gradient(135deg,#FFF1F0,#fff);border-left:6px solid var(--warn);margin-bottom:14px">
+  <h3 style="font-size:16px;color:var(--warn);margin-bottom:6px">⚠️ 강사 유의 · ‘사고의 외주화’를 경계하세요</h3>
+  <p style="font-size:13.5px;color:var(--text);line-height:1.6">방법이 자동화될수록(아래로 갈수록) 학생이 ‘왜 이렇게 고치는지’ 판단을 건너뛰고 AI 결과를 그냥 믿기 쉽습니다. 어떤 방법을 쓰든 ① AI가 바꾼 부분을 학생이 직접 검토하고 “이게 맞아?”를 묻게 하고, ② 숫자(사고건수·사상자수)는 AI가 지어낼 수 있으니 원본·출처와 대조하는 단계를 꼭 넣으세요. <b>권장: 처음엔 1·2번으로 데이터 사고를 기르고, 3번은 익숙해진 뒤 ‘빠른 길’로.</b></p>
+</div>
+<div class="card" style="margin-bottom:14px">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:4px">
+    <h3 style="font-size:17px;color:var(--ink)">1. 학생이 Gemini와 토론하며 직접 전처리</h3>
+    <span style="font-size:11.5px;font-weight:800;color:#1B7A3A;background:var(--secondary-l);padding:4px 11px;border-radius:999px;white-space:nowrap">학습 ●●● · 자동화 ●○○</span>
   </div>
+  <p style="font-size:13.5px;color:var(--sub);margin-bottom:10px">Gemini를 <b>튜터</b>로 써서, 학생이 직접 함수를 입력하며 정리합니다. AI가 답을 대신 하지 않고 질문·힌트로 끌어 줘 <b>데이터 사고력을 가장 많이</b> 기릅니다.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:6px">
+    <span style="font-size:12.5px;font-weight:700;color:var(--primary-d)">📝 예시 프롬프트 (Gemini에 붙여넣기)</span>
+    <button onclick="copyPrompt(this)" style="border:none;cursor:pointer;font-family:inherit;font-weight:800;font-size:13px;color:#fff;background:var(--primary);padding:8px 16px;border-radius:11px;box-shadow:0 6px 14px -6px var(--primary)">📋 복사하기</button>
+  </div>
+  <pre style="white-space:pre-wrap;word-break:break-word;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:14px 15px;font-size:12.5px;line-height:1.6;color:var(--text);font-family:'Pretendard',sans-serif;margin:0">나는 중학생이야. 지금 '스쿨존 교통사고' 표를 직접 정리하려고 해.
+너는 답을 바로 알려주지 말고, 내가 스스로 하도록 돕는 선생님 역할을 해 줘.
+- 빈칸, 이상치, 표기 흔들림 중 하나씩 골라 먼저 "어디가 문제일 것 같아?"라고 나한테 질문해 줘.
+- 내가 찾으면 맞는지 확인해 주고, 어떤 함수를 쓰면 좋을지 '정답 대신 힌트'로 알려 줘. (예: 빈칸 세기, 공백 정리, 평균 구하기)
+- 내가 함수를 직접 입력해 보면, 결과가 맞는지 같이 봐 줘.
+- 숫자(사고건수, 사상자수)는 네가 지어내지 말고, 내가 출처를 확인하도록 안내만 해 줘.
+한 번에 한 단계씩, 내가 따라올 수 있게 천천히 진행해 줘.</pre>
+</div>
+<div class="card" style="margin-bottom:14px">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:4px">
+    <h3 style="font-size:17px;color:var(--ink)">2. Gemini in Sheets (=AI() · 사이드패널)</h3>
+    <span style="font-size:11.5px;font-weight:800;color:var(--primary-d);background:var(--primary-l);padding:4px 11px;border-radius:999px;white-space:nowrap">학습 ●●○ · 자동화 ●●○</span>
+  </div>
+  <p style="font-size:13.5px;color:var(--sub);margin-bottom:10px">시트 안에서 Gemini가 셀 변환을 도와줍니다. 학생이 열별로 직접 호출하고 <b>결과를 검토·고정</b>(값으로 붙여넣기). 비즈니스 프로 계정이면 바로 됩니다.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:6px">
+    <span style="font-size:12.5px;font-weight:700;color:var(--primary-d)">📝 예시 프롬프트 (Gemini에 붙여넣기)</span>
+    <button onclick="copyPrompt(this)" style="border:none;cursor:pointer;font-family:inherit;font-weight:800;font-size:13px;color:#fff;background:var(--primary);padding:8px 16px;border-radius:11px;box-shadow:0 6px 14px -6px var(--primary)">📋 복사하기</button>
+  </div>
+  <pre style="white-space:pre-wrap;word-break:break-word;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:14px 15px;font-size:12.5px;line-height:1.6;color:var(--text);font-family:'Pretendard',sans-serif;margin:0">이 시트의 '스쿨존 교통사고' 표에서 빈칸, 이상치, 표기 흔들림이 있는 곳을 모두 찾아 줘.
+- 어느 행, 어느 열이 문제인지 짚어 주고, 각각 어떤 함수(빈칸 세기, 공백 정리, 평균 비교 등)로 고치면 되는지 예시도 알려 줘.
+- 사상자수가 비면 '중상자수와 경상자수의 합'으로 채우는 식을 알려 줘.
+- 사고건수처럼 계산으로 모르는 빈칸과, 평균보다 비정상적으로 큰 값은 '확인 필요'로 표시만 해 줘. 숫자는 지어내지 마.
+- 마지막에 무엇을 어떻게 정리하면 되는지 순서를 3줄로 알려 줘.</pre>
+  <p style="font-size:12px;color:var(--sub);margin-top:8px">셀에 직접 쓰는 <span class="formula">=AI()</span> 예시는 아래 <b>‘전처리·분석에 쓰는 함수’</b> 표를 참고하세요.</p>
+</div>
+<div class="card" style="margin-bottom:14px">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:4px">
+    <h3 style="font-size:17px;color:var(--ink)">3. 파일을 Gemini에 올려 한 번에 전처리</h3>
+    <span style="font-size:11.5px;font-weight:800;color:#B8860B;background:#FEF7E0;padding:4px 11px;border-radius:999px;white-space:nowrap">학습 ●○○ · 자동화 ●●●</span>
+  </div>
+  <p style="font-size:13.5px;color:var(--sub);margin-bottom:10px">CSV·XLSX를 Gemini에 올려 한 번에 정리. <b>가장 빠르지만</b> ‘AI가 다 했으니 그냥 믿기’ 위험이 가장 큽니다. 아래 <b>가드레일 프롬프트</b>를 꼭 쓰고, 결과는 사람이 검토하세요.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:6px">
+    <span style="font-size:12.5px;font-weight:700;color:var(--primary-d)">📝 예시 프롬프트 (Gemini에 붙여넣기)</span>
+    <button onclick="copyPrompt(this)" style="border:none;cursor:pointer;font-family:inherit;font-weight:800;font-size:13px;color:#fff;background:var(--primary);padding:8px 16px;border-radius:11px;box-shadow:0 6px 14px -6px var(--primary)">📋 복사하기</button>
+  </div>
+  <pre style="white-space:pre-wrap;word-break:break-word;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:14px 15px;font-size:12.5px;line-height:1.6;color:var(--text);font-family:'Pretendard',sans-serif;margin:0">첨부한 '스쿨존 교통사고' 파일(발생연도, 지점명, 사고건수, 사상자수, 중상자수, 경상자수, 주요사고시간대)을 아래 규칙대로 정리해 줘.
+1) 빈칸: 어디가 비었는지 알려 주고, 사상자수가 비면 '중상자수와 경상자수의 합'으로 채워 줘. 사고건수처럼 계산으로 모르는 빈칸은 지어내지 말고 '확인 필요'로 표시해 줘.
+2) 이상치: 사고건수 평균과 비교해 비정상적으로 큰 값을 표시하고, 사상자수가 '중상자수와 경상자수의 합'과 다른 행도 표시해 줘. 원본 숫자는 바꾸지 말고 의심 행으로 표시만.
+3) 표기 통일: 지점명 공백 정리, 발생연도 네 자리 숫자, 주요사고시간대 'HH-HH시' 형식으로 통일해 줘.
+4) 결과: 정리한 표 전체 + 무엇을 어떻게 바꿨는지 항목별 요약 + 사고 다발 지점 3곳과 위험 시간대를 두 문장으로.
+주의: 숫자는 지어내지 마. 네 결과는 '추천'이니 사람이 출처(공공데이터포털, 한국도로교통공단)와 대조해 확인해야 해. 개인정보는 제외.</pre>
 </div>
 
 <div class="card"><h3 style="font-size:17px;margin-bottom:10px">🔧 시트에서 Gemini 켜고 쓰기</h3><ol style="margin:0;padding-left:20px;font-size:14px;color:var(--text);line-height:1.9"><li>Google 계정으로 로그인한 뒤, 모둠이 정리할 공공데이터를 Google Sheets에 업로드합니다. (드라이브에 올린 CSV/XLSX를 더블클릭하고 &#x27;Google 스프레드시트로 열기&#x27;)</li><li>화면 오른쪽 위의 별 모양(또는 &#x27;Gemini&#x27;) 아이콘을 눌러 Gemini 사이드패널을 엽니다. 패널이 안 보이면 상단 메뉴 &#x27;도구 &gt; Gemini&#x27; 또는 확장 프로그램 영역에서 Gemini를 켭니다. (학교 계정은 관리자가 Gemini를 켜 둬야 보입니다. 안 보이면 강사에게 요청)</li><li>사이드패널이 열리면 아래 입력창에 우리말로 부탁을 적습니다. 예: &#x27;이 시트에서 빈칸이 있는 행을 모두 찾아 줘&#x27;. Gemini가 어떤 셀이 비었는지, 어떤 함수를 쓰면 되는지 알려 줍니다.</li><li>셀 안에서 직접 AI를 쓰려면 빈 셀에 &#x27;=AI(&#x27; 를 입력합니다. 표기 통일·요약 같은 작업을 함수처럼 쓸 수 있습니다. (=AI 함수는 계정·지역에 따라 &#x27;AI&#x27;, &#x27;AI.TABLE&#x27; 등으로 보일 수 있고, 안 보이면 사이드패널 채팅으로 같은 일을 부탁합니다.)</li><li>=AI 함수가 만든 결과는 추천값일 뿐이므로, 그대로 두지 말고 마우스로 셀을 복사한 뒤 &#x27;값으로 붙여넣기(Ctrl+Shift+V)&#x27;를 해서 진짜 데이터로 고정합니다. 그래야 그래프와 함수가 흔들리지 않습니다.</li><li>마지막으로 사이드패널에 &#x27;지금까지 무엇을 어떻게 정리했는지 3줄로 요약해 줘&#x27;라고 부탁해, 정리 과정을 학습지(데이터 분류 기준 정리표)에 기록합니다.</li></ol></div>
@@ -646,39 +697,6 @@ details.simdetail[open]>summary::before{content:"▾  ";}
   <p style="font-size:13.5px;color:var(--sub);margin-bottom:14px">아래 표 그대로 담은 실습 시트입니다. <b>[파일 &gt; 사본 만들기]</b>로 복사한 뒤, 우측 Gemini 사이드패널·=AI()로 빈칸·이상치·표기 통일을 연습하세요.</p>
   <a href="https://docs.google.com/spreadsheets/d/14ljmREmGgdOaWlW7aBB7U1E5FVfqIVkXn9VOcoRLHy0/copy" target="_blank" rel="noopener" style="display:inline-block;background:var(--secondary);color:#fff;font-weight:800;font-size:16px;padding:13px 28px;border-radius:14px;box-shadow:0 8px 20px -6px var(--secondary)">📄 연습 시트 사본 만들기</a>
   <a href="https://docs.google.com/spreadsheets/d/14ljmREmGgdOaWlW7aBB7U1E5FVfqIVkXn9VOcoRLHy0/edit?usp=sharing" target="_blank" rel="noopener" style="display:block;font-size:12px;color:#1a73e8;font-weight:600;margin-top:12px;word-break:break-all;text-decoration:underline">🔗 https://docs.google.com/spreadsheets/d/14ljmREmGgdOaWlW7aBB7U1E5FVfqIVkXn9VOcoRLHy0</a>
-</div>
-<div class="card" style="border:2px solid var(--primary);background:linear-gradient(135deg,var(--primary-l),#fff);margin-bottom:16px">
-  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:6px">
-    <h3 style="font-size:18px;color:var(--ink)">🤖 Gemini에게 표 전체를 한 번에 전처리 시키기</h3>
-    <button onclick="copyPrompt(this)" style="border:none;cursor:pointer;font-family:inherit;font-weight:800;font-size:14px;color:#fff;background:var(--primary);padding:10px 18px;border-radius:12px;box-shadow:0 6px 14px -6px var(--primary)">📋 프롬프트 복사하기</button>
-  </div>
-  <p style="font-size:13.5px;color:var(--sub);margin-bottom:12px">시트 우측 <b>Gemini 사이드패널</b>에 아래 프롬프트를 붙여넣으면, 빈칸·이상치·표기 통일까지 표 전체를 한 번에 정리해 줍니다. (결과는 추천값이니 사람이 확인한 뒤 사용)</p>
-  <pre style="white-space:pre-wrap;word-break:break-word;background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 16px;font-size:12.5px;line-height:1.65;color:var(--text);font-family:'Pretendard',sans-serif;margin:0">너는 공공데이터 전처리를 돕는 데이터 분석 도우미야. 지금 이 시트의 '스쿨존 교통사고' 표(발생연도, 지점명, 사고건수, 사상자수, 중상자수, 경상자수, 주요사고시간대)를 아래 규칙대로 전체 정리해 줘.
-
-1) 빈칸(결측치) 찾기·채우기
-- 어느 행, 어느 열이 비어 있는지 모두 찾아 알려 줘.
-- 사상자수가 비어 있으면 '중상자수와 경상자수의 합'으로 계산해 채워 줘.
-- 사고건수처럼 계산으로 알 수 없는 빈칸은 함부로 추측하지 말고 '확인 필요'로만 표시해 줘.
-
-2) 이상치(이상한 값) 찾기
-- 사고건수 열의 평균과 비교해 비정상적으로 큰 값(예: 40)을 찾아 표시해 줘.
-- 사상자수가 '중상자수와 경상자수의 합'과 다른 행도 찾아 표시해 줘.
-- 원본 숫자를 마음대로 바꾸지 말고, 의심되는 행으로 표시만 해 줘.
-
-3) 표기 통일
-- 지점명: 앞뒤와 중간의 불필요한 공백을 정리해, 같은 곳은 같은 이름으로 묶어 줘.
-- 발생연도: 모두 네 자리 숫자로 통일해 줘. 예: '2023년'은 2023, '2022.07.01'은 2022.
-- 주요사고시간대: 모두 'HH-HH시' 형식으로 통일해 줘. 예: '오후 3시'는 15-16시, '8시경'은 08-09시.
-
-4) 결과로 보여 줄 것
-- 1. 정리한 표 전체
-- 2. 무엇을(빈칸·이상치·표기) 어떻게 고쳤는지 항목별로 한국어 요약
-- 3. 사고가 가장 많은 지점 세 곳과 가장 위험한 시간대를 중학생도 이해하게 두 문장으로 정리
-
-주의
-- 사고건수·사상자수 같은 숫자는 지어내지 마. 모르면 '확인 필요'로 남겨.
-- 네가 만든 값은 '추천'이야. 사람이 출처(공공데이터포털, 한국도로교통공단)와 대조해 확인한 뒤 '값으로 붙여넣기'로 고정해야 해.
-- 개인정보(이름, 주소, 전화번호)는 다루지 말고 제외해.</pre>
 </div>
 <div class="card" style="overflow-x:auto;padding:14px"><table class="dtab ct"><thead><tr><th>발생연도</th><th>지점명</th><th>사고건수</th><th>사상자수</th><th>중상자수</th><th>경상자수</th><th>주요사고시간대</th></tr></thead><tbody><tr><td class="">2023</td><td class="">도담초 정문 앞 횡단보도</td><td class="">4</td><td class="">5</td><td class="">1</td><td class="">4</td><td class="">오후 3시</td></tr><tr><td class="">2023년</td><td class="">도담초 정문  앞 횡단보도</td><td class="cell-bad">(빈칸)</td><td class="">3</td><td class="">1</td><td class="">2</td><td class="">08-09시</td></tr><tr><td class="">2023</td><td class="">도담동 행복어린이집 앞 사거리</td><td class="">2</td><td class="">2</td><td class="">0</td><td class="">2</td><td class="">16시~17시</td></tr><tr><td class="">2023</td><td class="">새봄구청 별관 앞 어린이보호구역</td><td class="">40</td><td class="">3</td><td class="">1</td><td class="">2</td><td class="">15-16시</td></tr><tr><td class="">2022</td><td class="">도담중 후문 골목 진입로</td><td class="">2</td><td class="cell-bad">(빈칸)</td><td class="">0</td><td class="">2</td><td class="">8시경</td></tr><tr><td class="">2022.07.01</td><td class="">도담시장 입구 횡단보도</td><td class="">3</td><td class="">3</td><td class="">0</td><td class="">5</td><td class="">17-18시</td></tr><tr><td class="">2022</td><td class="">도담초 정문 앞 횡단보도</td><td class="">3</td><td class="">4</td><td class="">1</td><td class="">3</td><td class="cell-bad">(빈칸)</td></tr><tr><td class="">2021</td><td class="">한들천 산책로 진입 횡단보도</td><td class="">2</td><td class="">2</td><td class="">1</td><td class="">1</td><td class="">오후3시</td></tr></tbody></table></div>
 
