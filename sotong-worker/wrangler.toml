@@ -1,0 +1,7 @@
+name = "saessak-sotong"
+main = "worker.js"
+compatibility_date = "2025-06-01"
+
+[[kv_namespaces]]
+binding = "SOTONG"
+id = "84294917d9dd4ae6baf892a6c1b10887"

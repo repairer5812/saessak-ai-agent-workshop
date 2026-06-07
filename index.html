@@ -225,6 +225,28 @@ details.dbox[open]>summary{border-bottom:1px solid var(--line);}
 .dbox-body{padding:16px 20px 18px;font-size:18px;color:var(--text);line-height:1.7;}
 .dbox-body p{margin:0 0 11px;} .dbox-body li{margin-bottom:6px;}
 .dbox-body .step{box-shadow:none;border:1px solid var(--line);}
+/* ===== 소통 탭 ===== */
+.sot-q{font-size:20px;color:var(--ink);margin-bottom:13px;line-height:1.4;}
+.sot-hint{font-size:15px;color:var(--sub);font-weight:600;}
+.sot-opts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
+.sot-opts label{display:flex;align-items:center;gap:9px;font-size:18px;font-weight:600;background:var(--surface-2);border:2px solid var(--line);border-radius:14px;padding:11px 17px;cursor:pointer;}
+.sot-opts input{width:21px;height:21px;accent-color:var(--primary);cursor:pointer;}
+.sot-opts label:has(input:checked){border-color:var(--primary);background:var(--primary-l);color:var(--primary-d);}
+.sot-btn{border:none;cursor:pointer;font-family:inherit;font-weight:800;font-size:17px;color:#fff;background:var(--primary);padding:12px 30px;border-radius:14px;box-shadow:0 8px 20px -6px var(--primary);transition:.15s;}
+.sot-btn:hover{background:var(--primary-d);} .sot-btn:disabled{opacity:.5;cursor:default;}
+.sot-ta{width:100%;box-sizing:border-box;font-family:inherit;font-size:18px;line-height:1.6;color:var(--text);background:var(--surface-2);border:2px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:13px;resize:vertical;}
+.sot-ta:focus{outline:none;border-color:var(--primary);}
+.sot-results{margin-top:16px;display:flex;flex-direction:column;gap:9px;}
+.sot-bar{display:flex;align-items:center;gap:11px;font-size:17px;}
+.sot-bar .lab{width:84px;font-weight:700;color:var(--ink);flex:0 0 auto;}
+.sot-bar .track{flex:1;background:var(--surface-2);border-radius:999px;height:26px;overflow:hidden;}
+.sot-bar .fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--primary-d));border-radius:999px;min-width:3px;transition:width .5s;}
+.sot-bar .cnt{width:48px;text-align:right;font-weight:800;color:var(--primary-d);flex:0 0 auto;}
+.sot-list{margin-top:18px;display:flex;flex-direction:column;gap:11px;}
+.sot-item{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:15px 17px;font-size:18px;line-height:1.6;color:var(--text);display:flex;justify-content:space-between;gap:14px;align-items:flex-start;white-space:pre-wrap;word-break:break-word;}
+.sot-item .del{flex:0 0 auto;border:none;background:transparent;color:var(--sub);cursor:pointer;font-size:14.5px;font-weight:700;padding:3px 8px;border-radius:9px;white-space:nowrap;}
+.sot-item .del:hover{color:var(--warn);background:#FFF1F0;}
+.sot-empty{font-size:16px;color:var(--sub);text-align:center;padding:16px;}
 /* ===== misc ===== */
 .note{font-size:18px;color:var(--sub);background:var(--surface-2);border-radius:12px;padding:12px 15px;}
 footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
@@ -312,6 +334,7 @@ details.simdetail[open]>summary::before{content:"▾  ";}
     <button class="tab-btn" data-tab="data">📊 데이터 전처리</button>
     <button class="tab-btn" data-tab="training">🎓 연수용 AI Agent</button>
     <button class="tab-btn" data-tab="sim">🎬 학생 전과정 시뮬레이션</button>
+    <button class="tab-btn" data-tab="sotong">💬 소통</button>
   </div>
 </nav>
 <div class="navhint">🖥️ 우상단 <b>전체화면</b> 버튼 · <b>← →</b> 키로 PPT처럼 넘겨 보세요</div>
@@ -934,6 +957,38 @@ details.simdetail[open]>summary::before{content:"▾  ";}
   </div>
 </section>
 
+<section class="tabpane" id="sotong">
+  <h2 class="section-title">💬 소통 · 오늘의 연수</h2>
+  <p class="section-lead">강의를 들으며 떠오른 질문과 소감을 남겨 주세요. 제출하면 아래에 바로 모입니다. (익명 · 누구나 삭제 가능)</p>
+
+  <div class="card">
+    <h3 class="sot-q">1. 현재 선생님이 사용하고 계신 유료 AI 계정은? <span class="sot-hint">(복수 선택 가능)</span></h3>
+    <div class="sot-opts" id="poll-opts">
+      <label><input type="checkbox" value="chatgpt"> ChatGPT</label>
+      <label><input type="checkbox" value="gemini"> Gemini</label>
+      <label><input type="checkbox" value="claude"> Claude</label>
+      <label><input type="checkbox" value="xai"> xAI</label>
+      <label><input type="checkbox" value="etc"> 그 외</label>
+    </div>
+    <button class="sot-btn" onclick="sotVote(this)">제출하기</button>
+    <div class="sot-results" id="poll-results"></div>
+  </div>
+
+  <div class="card">
+    <h3 class="sot-q">2. 오늘 AI 에이전트 강의를 들으시면서 생긴 질문을 적어주세요.</h3>
+    <textarea id="q-input" class="sot-ta" rows="5" placeholder="질문을 자유롭게 적어주세요…" maxlength="2000"></textarea>
+    <button class="sot-btn" onclick="sotSubmit('question',this)">제출하기</button>
+    <div class="sot-list" id="q-list"></div>
+  </div>
+
+  <div class="card">
+    <h3 class="sot-q">3. 오늘 연수를 들으신 소감 한마디 적어주세요.</h3>
+    <textarea id="f-input" class="sot-ta" rows="5" placeholder="소감을 자유롭게 적어주세요…" maxlength="2000"></textarea>
+    <button class="sot-btn" onclick="sotSubmit('feedback',this)">제출하기</button>
+    <div class="sot-list" id="f-list"></div>
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -1055,6 +1110,40 @@ document.addEventListener('keydown',function(e){
  if(cur<0)return; var nx=e.key==='ArrowRight'?Math.min(cur+1,tabs.length-1):Math.max(cur-1,0);
  if(nx!==cur)tabs[nx].click();
 });
+</script>
+<script>
+(function(){
+  var API='https://saessak-sotong.repairer5812.workers.dev';
+  var L={chatgpt:'ChatGPT',gemini:'Gemini',claude:'Claude',xai:'xAI',etc:'그 외'};
+  var lastState={questions:[],feedback:[],poll:{}};
+  var pendQ=[], pendF=[];
+  function esc(s){var e=document.createElement('div');e.textContent=s||'';return e.innerHTML;}
+  function row(it){var del=it.id?'<button class="del" onclick="sotDel(\''+it.id+'\',this)">✕ 삭제</button>':'<span class="del" style="opacity:.55">전송 중…</span>';return '<div class="sot-item"><span>'+esc(it.text)+'</span>'+del+'</div>';}
+  function listHtml(items,pend){var seen={};items.forEach(function(it){seen[it.text]=1;});for(var k=pend.length-1;k>=0;k--){if(seen[pend[k]])pend.splice(k,1);}var all=items.concat(pend.map(function(t){return {id:'',text:t};}));return all.length?all.map(row).join(''):'<div class="sot-empty">아직 없습니다. 첫 번째로 남겨 보세요!</div>';}
+  function render(){
+    var st=lastState;
+    var pr=document.getElementById('poll-results');
+    if(pr){var tot=Object.keys(L).reduce(function(a,k){return a+(st.poll[k]||0);},0);
+      pr.innerHTML=tot?'<div style="font-size:15px;color:var(--sub);margin-bottom:6px">응답 '+tot+'건 (복수 응답 포함)</div>'+Object.keys(L).map(function(k){var c=st.poll[k]||0,pct=tot?Math.round(c/tot*100):0;return '<div class="sot-bar"><span class="lab">'+L[k]+'</span><span class="track"><span class="fill" style="width:'+pct+'%"></span></span><span class="cnt">'+c+'</span></div>';}).join(''):'';}
+    var ql=document.getElementById('q-list');if(ql)ql.innerHTML=listHtml(st.questions||[],pendQ);
+    var fl=document.getElementById('f-list');if(fl)fl.innerHTML=listHtml(st.feedback||[],pendF);
+  }
+  var busy=false;
+  window.sotLoad=function(){if(busy)return;busy=true;fetch(API+'/state?t='+Date.now()).then(function(r){return r.json();}).then(function(st){lastState=st;render();}).catch(function(){}).finally(function(){busy=false;});};
+  window.sotSubmit=function(kind,btn){
+    var ta=document.getElementById(kind==='question'?'q-input':'f-input'),t=ta.value.trim();if(!t){ta.focus();return;}
+    btn.disabled=true;(kind==='question'?pendQ:pendF).push(t);render();ta.value='';
+    fetch(API+'/'+kind,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:t})}).then(function(r){return r.json();}).then(function(){setTimeout(sotLoad,1800);setTimeout(sotLoad,9000);}).catch(function(){var arr=kind==='question'?pendQ:pendF;var i=arr.indexOf(t);if(i>=0)arr.splice(i,1);render();alert('제출에 실패했어요. 잠시 후 다시 시도해 주세요.');}).finally(function(){btn.disabled=false;});
+  };
+  window.sotVote=function(btn){
+    var o=[].slice.call(document.querySelectorAll('#poll-opts input:checked')).map(function(i){return i.value;});if(!o.length){alert('하나 이상 선택해 주세요.');return;}
+    btn.disabled=true;
+    fetch(API+'/vote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({options:o})}).then(function(r){return r.json();}).then(function(){btn.textContent='✅ 제출됨! (결과는 곧 갱신)';document.querySelectorAll('#poll-opts input:checked').forEach(function(i){i.checked=false;});setTimeout(function(){btn.textContent='제출하기';btn.disabled=false;},2500);setTimeout(sotLoad,1800);setTimeout(sotLoad,9000);}).catch(function(){alert('제출 실패');btn.disabled=false;});
+  };
+  window.sotDel=function(id,btn){if(!id)return;if(!confirm('이 항목을 삭제할까요?'))return;var it=btn.closest('.sot-item');if(it)it.style.opacity='.4';fetch(API+'/item?id='+encodeURIComponent(id),{method:'DELETE'}).then(function(){if(it)it.remove();setTimeout(sotLoad,1500);}).catch(function(){if(it)it.style.opacity='1';alert('삭제 실패');});};
+  var timer=null;
+  document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.tab-btn');if(b&&b.dataset.tab==='sotong'){sotLoad();if(!timer)timer=setInterval(function(){var s=document.getElementById('sotong');if(s&&s.classList.contains('active'))sotLoad();},8000);}});
+})();
 </script>
 </body>
 </html>
