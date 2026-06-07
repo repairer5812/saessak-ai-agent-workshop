@@ -1151,7 +1151,7 @@ document.addEventListener('keydown',function(e){
   };
   window.sotDel=function(id,btn){if(!id)return;if(!confirm('이 항목을 삭제할까요?'))return;var it=btn.closest('.sot-item');if(it)it.style.opacity='.4';fetch(API+'/item?id='+encodeURIComponent(id),{method:'DELETE'}).then(function(){if(it)it.remove();setTimeout(sotLoad,1500);}).catch(function(){if(it)it.style.opacity='1';alert('삭제 실패');});};
   var timer=null;
-  document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.tab-btn');if(b&&b.dataset.tab==='sotong'){sotLoad();if(!timer)timer=setInterval(function(){var s=document.getElementById('sotong');if(s&&s.classList.contains('active'))sotLoad();},8000);}});
+  document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.tab-btn');if(b&&b.dataset.tab==='sotong'){sotLoad();if(!timer)timer=setInterval(function(){if(document.visibilityState!=='visible')return;var s=document.getElementById('sotong');if(s&&s.classList.contains('active'))sotLoad();},15000);}});
 })();
 </script>
 </body>
