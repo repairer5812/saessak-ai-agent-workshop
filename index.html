@@ -647,6 +647,39 @@ details.simdetail[open]>summary::before{content:"▾  ";}
   <a href="https://docs.google.com/spreadsheets/d/14ljmREmGgdOaWlW7aBB7U1E5FVfqIVkXn9VOcoRLHy0/copy" target="_blank" rel="noopener" style="display:inline-block;background:var(--secondary);color:#fff;font-weight:800;font-size:16px;padding:13px 28px;border-radius:14px;box-shadow:0 8px 20px -6px var(--secondary)">📄 연습 시트 사본 만들기</a>
   <a href="https://docs.google.com/spreadsheets/d/14ljmREmGgdOaWlW7aBB7U1E5FVfqIVkXn9VOcoRLHy0/edit?usp=sharing" target="_blank" rel="noopener" style="display:block;font-size:12px;color:#1a73e8;font-weight:600;margin-top:12px;word-break:break-all;text-decoration:underline">🔗 https://docs.google.com/spreadsheets/d/14ljmREmGgdOaWlW7aBB7U1E5FVfqIVkXn9VOcoRLHy0</a>
 </div>
+<div class="card" style="border:2px solid var(--primary);background:linear-gradient(135deg,var(--primary-l),#fff);margin-bottom:16px">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+    <h3 style="font-size:18px;color:var(--ink)">🤖 Gemini에게 표 전체를 한 번에 전처리 시키기</h3>
+    <button onclick="copyPrompt(this)" style="border:none;cursor:pointer;font-family:inherit;font-weight:800;font-size:14px;color:#fff;background:var(--primary);padding:10px 18px;border-radius:12px;box-shadow:0 6px 14px -6px var(--primary)">📋 프롬프트 복사하기</button>
+  </div>
+  <p style="font-size:13.5px;color:var(--sub);margin-bottom:12px">시트 우측 <b>Gemini 사이드패널</b>에 아래 프롬프트를 붙여넣으면, 빈칸·이상치·표기 통일까지 표 전체를 한 번에 정리해 줍니다. (결과는 추천값이니 사람이 확인한 뒤 사용)</p>
+  <pre style="white-space:pre-wrap;word-break:break-word;background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 16px;font-size:12.5px;line-height:1.65;color:var(--text);font-family:'Pretendard',sans-serif;margin:0">너는 공공데이터 전처리를 돕는 데이터 분석 도우미야. 지금 이 시트의 '스쿨존 교통사고' 표(발생연도, 지점명, 사고건수, 사상자수, 중상자수, 경상자수, 주요사고시간대)를 아래 규칙대로 전체 정리해 줘.
+
+1) 빈칸(결측치) 찾기·채우기
+- 어느 행, 어느 열이 비어 있는지 모두 찾아 알려 줘.
+- 사상자수가 비어 있으면 '중상자수와 경상자수의 합'으로 계산해 채워 줘.
+- 사고건수처럼 계산으로 알 수 없는 빈칸은 함부로 추측하지 말고 '확인 필요'로만 표시해 줘.
+
+2) 이상치(이상한 값) 찾기
+- 사고건수 열의 평균과 비교해 비정상적으로 큰 값(예: 40)을 찾아 표시해 줘.
+- 사상자수가 '중상자수와 경상자수의 합'과 다른 행도 찾아 표시해 줘.
+- 원본 숫자를 마음대로 바꾸지 말고, 의심되는 행으로 표시만 해 줘.
+
+3) 표기 통일
+- 지점명: 앞뒤와 중간의 불필요한 공백을 정리해, 같은 곳은 같은 이름으로 묶어 줘.
+- 발생연도: 모두 네 자리 숫자로 통일해 줘. 예: '2023년'은 2023, '2022.07.01'은 2022.
+- 주요사고시간대: 모두 'HH-HH시' 형식으로 통일해 줘. 예: '오후 3시'는 15-16시, '8시경'은 08-09시.
+
+4) 결과로 보여 줄 것
+- 1. 정리한 표 전체
+- 2. 무엇을(빈칸·이상치·표기) 어떻게 고쳤는지 항목별로 한국어 요약
+- 3. 사고가 가장 많은 지점 세 곳과 가장 위험한 시간대를 중학생도 이해하게 두 문장으로 정리
+
+주의
+- 사고건수·사상자수 같은 숫자는 지어내지 마. 모르면 '확인 필요'로 남겨.
+- 네가 만든 값은 '추천'이야. 사람이 출처(공공데이터포털, 한국도로교통공단)와 대조해 확인한 뒤 '값으로 붙여넣기'로 고정해야 해.
+- 개인정보(이름, 주소, 전화번호)는 다루지 말고 제외해.</pre>
+</div>
 <div class="card" style="overflow-x:auto;padding:14px"><table class="dtab ct"><thead><tr><th>발생연도</th><th>지점명</th><th>사고건수</th><th>사상자수</th><th>중상자수</th><th>경상자수</th><th>주요사고시간대</th></tr></thead><tbody><tr><td class="">2023</td><td class="">도담초 정문 앞 횡단보도</td><td class="">4</td><td class="">5</td><td class="">1</td><td class="">4</td><td class="">오후 3시</td></tr><tr><td class="">2023년</td><td class="">도담초 정문  앞 횡단보도</td><td class="cell-bad">(빈칸)</td><td class="">3</td><td class="">1</td><td class="">2</td><td class="">08-09시</td></tr><tr><td class="">2023</td><td class="">도담동 행복어린이집 앞 사거리</td><td class="">2</td><td class="">2</td><td class="">0</td><td class="">2</td><td class="">16시~17시</td></tr><tr><td class="">2023</td><td class="">새봄구청 별관 앞 어린이보호구역</td><td class="">40</td><td class="">3</td><td class="">1</td><td class="">2</td><td class="">15-16시</td></tr><tr><td class="">2022</td><td class="">도담중 후문 골목 진입로</td><td class="">2</td><td class="cell-bad">(빈칸)</td><td class="">0</td><td class="">2</td><td class="">8시경</td></tr><tr><td class="">2022.07.01</td><td class="">도담시장 입구 횡단보도</td><td class="">3</td><td class="">3</td><td class="">0</td><td class="">5</td><td class="">17-18시</td></tr><tr><td class="">2022</td><td class="">도담초 정문 앞 횡단보도</td><td class="">3</td><td class="">4</td><td class="">1</td><td class="">3</td><td class="cell-bad">(빈칸)</td></tr><tr><td class="">2021</td><td class="">한들천 산책로 진입 횡단보도</td><td class="">2</td><td class="">2</td><td class="">1</td><td class="">1</td><td class="">오후3시</td></tr></tbody></table></div>
 
 <h3 class="section-title" style="font-size:19px;margin:24px 0 6px">🪜 전처리 5단계 (before → after)</h3>
@@ -914,6 +947,7 @@ document.querySelectorAll('.tab-btn').forEach(b=>{
 })();
 </script>
 <script>
+function copyPrompt(btn){var pre=btn.closest('.card').querySelector('pre');if(!pre)return;var t=pre.textContent.trim();function ok(){var o=btn.innerHTML;btn.innerHTML='✅ 복사됐어요!';btn.style.background='var(--secondary)';setTimeout(function(){btn.innerHTML=o;btn.style.background='var(--primary)';},1700);}function fb(){try{var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}catch(e){alert('자동 복사가 안 돼요. 프롬프트를 직접 선택해 복사해 주세요.');}}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok).catch(fb);}else{fb();}}
 function toggleFS(){var el=document.documentElement;if(!document.fullscreenElement){(el.requestFullscreen||el.webkitRequestFullscreen||function(){}).call(el);}else{document.exitFullscreen();}}
 document.addEventListener('fullscreenchange',function(){var b=document.getElementById('fsBtn');if(b)b.textContent=document.fullscreenElement?'\u2715 전체화면 끄기':'\ud83d\udda5\ufe0f 전체화면';});
 document.addEventListener('keydown',function(e){
