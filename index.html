@@ -81,7 +81,7 @@ main{padding:34px 0 80px;}
 .tabpane.active{display:block;}
 @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 .section-title{font-size:24px;margin-bottom:6px;letter-spacing:-0.03em;}
-.section-lead{color:var(--sub);font-size:15px;margin-bottom:24px;font-weight:500;}
+.section-lead{color:var(--sub);font-size:16px;margin-bottom:24px;font-weight:500;}
 
 /* ===== Cards / boxes ===== */
 .card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow-clay);
@@ -102,7 +102,7 @@ main{padding:34px 0 80px;}
 .tl-time{font-weight:800;color:var(--primary-d);font-size:14px;background:var(--primary-l);
   border-radius:12px;padding:8px 6px;text-align:center;height:fit-content;}
 .tl-body h4{font-size:16.5px;margin-bottom:4px;}
-.tl-body p{color:var(--sub);font-size:14px;}
+.tl-body p{color:var(--sub);font-size:16px;}
 
 /* 12차시 지도 */
 .phase-map{display:grid;gap:14px;}
@@ -120,8 +120,8 @@ main{padding:34px 0 80px;}
 
 /* key points */
 .kp{background:var(--surface-2);border-radius:var(--radius-sm);padding:16px 18px;}
-.kp strong{color:var(--ink);display:block;margin-bottom:5px;font-size:15px;}
-.kp p{color:var(--sub);font-size:14px;}
+.kp strong{color:var(--ink);display:block;margin-bottom:5px;font-size:16.5px;}
+.kp p{color:var(--sub);font-size:16px;}
 
 /* ===== Agent cards (placeholder fill) ===== */
 #agents-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
@@ -161,7 +161,7 @@ main{padding:34px 0 80px;}
 .ba .arr{color:var(--sub);font-size:20px;font-weight:800;}
 .gem-help{background:var(--secondary-l);border-radius:12px;padding:11px 14px;margin-top:10px;font-size:13.5px;color:#155724;}
 .gem-help b{color:var(--secondary);}
-.formula{font-family:'Space Mono',monospace;background:var(--ink);color:#7CFFB0;padding:3px 8px;border-radius:7px;font-size:12.5px;}
+.formula{font-family:'Space Mono',monospace;background:var(--ink);color:#7CFFB0;padding:3px 8px;border-radius:7px;font-size:15px;}
 
 /* ===== 학생 발표 덱 (12장) · impeccable 리디자인: 시빅 워크숍 리소 포스터 ===== */
 .present-btn{font-family:'Black Han Sans',sans-serif;border:none;cursor:pointer;font-size:15px;letter-spacing:.01em;color:#1A1613;background:#F5B431;padding:12px 22px;border-radius:8px;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .2s;}
@@ -200,23 +200,23 @@ main{padding:34px 0 80px;}
 /* ===== 세 가지 방법 카드 ===== */
 .mcard{padding:24px 22px;margin-bottom:18px;min-height:56vh;}
 .mhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
-.mtitle{font-size:clamp(20px,4.6vw,25px);color:var(--ink);line-height:1.25;}
-.mbadge{font-size:12.5px;font-weight:800;padding:5px 13px;border-radius:999px;white-space:nowrap;}
-.mdesc{font-size:clamp(15px,3.6vw,17.5px);color:var(--text);line-height:1.6;margin-bottom:16px;}
+.mtitle{font-size:clamp(22px,5vw,27px);color:var(--ink);line-height:1.25;}
+.mbadge{font-size:14px;font-weight:800;padding:5px 13px;border-radius:999px;white-space:nowrap;}
+.mdesc{font-size:clamp(16.5px,4vw,19px);color:var(--text);line-height:1.6;margin-bottom:16px;}
 .mshot{background:var(--surface-2);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:8px;}
 .mshot svg{display:block;width:100%;height:auto;border-radius:10px;box-shadow:0 6px 16px -10px rgba(80,45,10,.25);}
-.mshot .cap{font-size:12px;color:var(--sub);text-align:center;margin-top:9px;}
+.mshot .cap{font-size:14px;color:var(--sub);text-align:center;margin-top:9px;}
 details.macc{border-top:1px dashed var(--line);margin-top:6px;}
-details.macc>summary{cursor:pointer;font-weight:700;color:var(--primary-d);font-size:15px;list-style:none;padding:12px 2px 4px;}
+details.macc>summary{cursor:pointer;font-weight:700;color:var(--primary-d);font-size:16.5px;list-style:none;padding:12px 2px 4px;}
 details.macc>summary::-webkit-details-marker{display:none;}
 details.macc[open]>summary{color:var(--ink);}
 .macc-body{padding:8px 2px 4px;}
 .prow{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:6px;}
-.plab{font-size:12.5px;font-weight:700;color:var(--primary-d);}
-.cpbtn{border:none;cursor:pointer;font-family:inherit;font-weight:800;font-size:13px;color:#fff;background:var(--primary);padding:8px 16px;border-radius:11px;box-shadow:0 6px 14px -6px var(--primary);}
-.ppre{white-space:pre-wrap;word-break:break-word;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:14px 15px;font-size:13px;line-height:1.6;color:var(--text);font-family:'Pretendard',sans-serif;margin:0;}
+.plab{font-size:14px;font-weight:700;color:var(--primary-d);}
+.cpbtn{border:none;cursor:pointer;font-family:inherit;font-weight:800;font-size:15px;color:#fff;background:var(--primary);padding:8px 16px;border-radius:11px;box-shadow:0 6px 14px -6px var(--primary);}
+.ppre{white-space:pre-wrap;word-break:break-word;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:16px 17px;font-size:16px;line-height:1.6;color:var(--text);font-family:'Pretendard',sans-serif;margin:0;}
 /* ===== misc ===== */
-.note{font-size:13px;color:var(--sub);background:var(--surface-2);border-radius:12px;padding:12px 15px;}
+.note{font-size:16px;color:var(--sub);background:var(--surface-2);border-radius:12px;padding:12px 15px;}
 footer{padding:30px 0 50px;color:var(--sub);font-size:13px;text-align:center;}
 .placeholder{color:var(--sub);text-align:center;padding:50px;font-weight:600;}
 
@@ -636,7 +636,7 @@ details.simdetail[open]>summary::before{content:"▾  ";}
   <div id="scaffold-content">
 <div class="card" style="border:2px solid var(--primary);background:linear-gradient(135deg,var(--primary-l),#fff)">
   <h3 style="font-size:18px;margin-bottom:4px">📦 공공데이터(CSV·XLSX) → Gem용 준비 5단계</h3>
-  <p style="font-size:14px;color:var(--text);margin-bottom:14px;font-weight:600">핵심: "전체를 다 올리지 말고, 질문에 답할 수 있을 만큼만 요약해서 올린다."</p>
+  <p style="font-size:16px;color:var(--text);margin-bottom:14px;font-weight:600">핵심: "전체를 다 올리지 말고, 질문에 답할 수 있을 만큼만 요약해서 올린다."</p>
   <div class="grid g2" style="gap:12px">
     <div class="kp"><strong>1. 줄이기 (필터)</strong><p>필요한 지역·기간·컬럼만. 전국 전부 말고 우리 시·구, 전 기간 말고 최근치, 안 쓰는 열 삭제.</p></div>
     <div class="kp"><strong>2. 요약·집계 (어려우면 AI에게)</strong><p>행이 많으면 피벗테이블 만들 필요 없이 <b>Gemini에게 “지역별 평균(또는 중위값)으로 묶어 줘”</b>라고 부탁. 순위도 “Top 5만 뽑아 줘”처럼. 그래도 많으면 1번처럼 우리 동네만 남겨 줄이기.</p></div>
@@ -645,13 +645,13 @@ details.simdetail[open]>summary::before{content:"▾  ";}
     <div class="kp"><strong>5. 나머지는 검색에</strong><p>요약에 없는 세부·최신값은 Gem의 Google 검색 그라운딩이 보강(출처 확인 전제).</p></div>
   </div>
 </div>
-<div class="card"><h3 style="font-size:17px;margin-bottom:8px">😵 왜 어려울까?</h3><p style="font-size:14.5px;color:var(--text)">중학생은 함수를 처음 배우기 때문에, 공공데이터포털에서 받은 원본 파일이 한 화면에 깔끔하게 정리돼 있을 거라 기대하지만 실제로는 빈칸(결측치), 말도 안 되게 큰 값(이상치), &#x27;서울특별시&#x27;와 &#x27;서울시&#x27;처럼 같은 뜻인데 다르게 적힌 표기, &#x27;2023-05-01&#x27;과 &#x27;2023.5.1&#x27;처럼 뒤섞인 날짜 형식이 한꺼번에 들어 있습니다. 어디가 잘못됐는지 눈으로 한 줄씩 찾는 것 자체가 오래 걸리고, 빈칸을 0으로 채워야 할지 평균으로 채워야 할지 같은 판단이 어렵습니다. 또 함수 이름과 괄호 안 인자 순서를 외워야 하고, 글자 표기를 통일하려면 TRIM, SUBSTITUTE 같은 낯선 함수를 조합해야 해서 한 셀만 틀려도 그래프 전체가 이상해집니다. 데이터가 7개 컬럼 곱하기 수십 행이라 손으로 다 고치다 보면 분석·디자인씽킹이라는 진짜 활동에 쓸 시간이 사라집니다. 그래서 무엇이 문제인지 찾아 주고, 어떤 함수를 어떤 순서로 쓰면 되는지 옆에서 알려 주는 비계(scaffolding)가 필요합니다.</p></div>
+<div class="card"><h3 style="font-size:17px;margin-bottom:8px">😵 왜 어려울까?</h3><p style="font-size:16px;color:var(--text)">중학생은 함수를 처음 배우기 때문에, 공공데이터포털에서 받은 원본 파일이 한 화면에 깔끔하게 정리돼 있을 거라 기대하지만 실제로는 빈칸(결측치), 말도 안 되게 큰 값(이상치), &#x27;서울특별시&#x27;와 &#x27;서울시&#x27;처럼 같은 뜻인데 다르게 적힌 표기, &#x27;2023-05-01&#x27;과 &#x27;2023.5.1&#x27;처럼 뒤섞인 날짜 형식이 한꺼번에 들어 있습니다. 어디가 잘못됐는지 눈으로 한 줄씩 찾는 것 자체가 오래 걸리고, 빈칸을 0으로 채워야 할지 평균으로 채워야 할지 같은 판단이 어렵습니다. 또 함수 이름과 괄호 안 인자 순서를 외워야 하고, 글자 표기를 통일하려면 TRIM, SUBSTITUTE 같은 낯선 함수를 조합해야 해서 한 셀만 틀려도 그래프 전체가 이상해집니다. 데이터가 7개 컬럼 곱하기 수십 행이라 손으로 다 고치다 보면 분석·디자인씽킹이라는 진짜 활동에 쓸 시간이 사라집니다. 그래서 무엇이 문제인지 찾아 주고, 어떤 함수를 어떤 순서로 쓰면 되는지 옆에서 알려 주는 비계(scaffolding)가 필요합니다.</p></div>
 
 <h3 class="section-title" style="font-size:21px;margin:6px 0 6px">🧭 세 가지 전처리 방법</h3>
 <p class="section-lead" style="margin-bottom:12px">같은 데이터를 정리하는 세 가지 길. <b>위로 갈수록 더 많이 배우고, 아래로 갈수록 더 빠릅니다.</b> 핵심만 보이고, 프롬프트 등 자세한 내용은 <b>▸를 눌러</b> 펼치세요.</p>
 <div class="card" style="background:linear-gradient(135deg,#FFF1F0,#fff);border-left:6px solid var(--warn);margin-bottom:16px;padding:18px 20px">
   <h3 style="font-size:16px;color:var(--warn);margin-bottom:6px">⚠️ 강사 유의 · ‘사고의 외주화’를 경계하세요</h3>
-  <p style="font-size:14px;color:var(--text);line-height:1.6">자동화될수록 학생이 ‘왜 이렇게 고치는지’ 판단을 건너뛰기 쉽습니다. <b>① AI가 바꾼 부분을 학생이 검토하게, ② 숫자는 원본·출처와 대조하게</b> 하세요. 처음엔 1·2번으로 사고를 기르고, 3번은 빠른 길로.</p>
+  <p style="font-size:16px;color:var(--text);line-height:1.6">자동화될수록 학생이 ‘왜 이렇게 고치는지’ 판단을 건너뛰기 쉽습니다. <b>① AI가 바꾼 부분을 학생이 검토하게, ② 숫자는 원본·출처와 대조하게</b> 하세요. 처음엔 1·2번으로 사고를 기르고, 3번은 빠른 길로.</p>
 </div>
 <div class="card mcard">
   <div class="mhead"><h3 class="mtitle">1. 학생이 Gemini와 토론하며 직접 전처리</h3><span class="mbadge" style="color:#1B7A3A;background:var(--secondary-l)">학습 ●●● · 자동화 ●○○</span></div>
@@ -664,7 +664,7 @@ details.simdetail[open]>summary::before{content:"▾  ";}
 <rect x="22" y="164" width="356" height="70" rx="15" fill="#EEF1F5"/><text x="38" y="186" font-size="13.5" fill="#2A2A33">맞아 👍 빈칸 세는 함수는 뭘까?</text><text x="38" y="204" font-size="13.5" fill="#2A2A33">힌트: COUNT… 로 시작해.</text><text x="38" y="223" font-size="12.5" font-weight="700" fill="#1B7A3A">숫자는 내가 안 채워줘, 출처 확인은 네가!</text>
 <rect x="22" y="248" width="456" height="24" rx="12" fill="#F4F6F8" stroke="#E3E8EE"/><text x="38" y="264" font-size="12" fill="#9AA6B2">메시지 입력…</text></svg><div class="cap">예시 화면 · Gemini가 정답 대신 질문·힌트로 코칭</div></div>
   <details class="macc"><summary>▸ 자세히 · 예시 프롬프트 보기</summary>
-    <div class="macc-body"><p style="font-size:13px;color:var(--sub);line-height:1.6;margin-bottom:10px">핵심: AI가 대신 해주지 않게 합니다. 학생이 직접 함수를 입력하고, AI는 “맞는지/힌트”만. 숫자는 학생이 출처로 확인.</p><div class="prow"><span class="plab">📝 예시 프롬프트 (Gemini에 붙여넣기)</span><button onclick="copyPrompt(this)" class="cpbtn">📋 복사하기</button></div>
+    <div class="macc-body"><p style="font-size:16px;color:var(--sub);line-height:1.6;margin-bottom:10px">핵심: AI가 대신 해주지 않게 합니다. 학생이 직접 함수를 입력하고, AI는 “맞는지/힌트”만. 숫자는 학생이 출처로 확인.</p><div class="prow"><span class="plab">📝 예시 프롬프트 (Gemini에 붙여넣기)</span><button onclick="copyPrompt(this)" class="cpbtn">📋 복사하기</button></div>
       <pre class="ppre">나는 중학생이야. 지금 '스쿨존 교통사고' 표를 직접 정리하려고 해.
 너는 답을 바로 알려주지 말고, 내가 스스로 하도록 돕는 선생님 역할을 해 줘.
 - 빈칸, 이상치, 표기 흔들림 중 하나씩 골라 먼저 "어디가 문제일 것 같아?"라고 나한테 질문해 줘.
@@ -695,7 +695,7 @@ details.simdetail[open]>summary::before{content:"▾  ";}
 <text x="336" y="152" font-size="10" fill="#2A2A33">• 사고건수 빈칸 1칸</text><text x="336" y="168" font-size="10" fill="#2A2A33">• 40 = 이상치?</text><text x="336" y="184" font-size="10" fill="#2A2A33">• 지점명 공백 불일치</text>
 <text x="336" y="208" font-size="9.5" fill="#9AA6B2">고치는 함수도 알려줄게요</text></svg><div class="cap">예시 화면 · 오른쪽 사이드패널에 부탁 → 문제 목록</div></div>
   <details class="macc"><summary>▸ 자세히 · 예시 프롬프트 보기</summary>
-    <div class="macc-body"><p style="font-size:13px;color:var(--sub);line-height:1.6;margin-bottom:10px">시트 오른쪽 위 Gemini 아이콘으로 사이드패널을 열고, 아래 프롬프트를 붙여넣으세요. (셀에 =AI() 함수를 직접 쓰는 방법은 아래 ‘함수 표’ 참고)</p><div class="prow"><span class="plab">📝 예시 프롬프트 (Gemini에 붙여넣기)</span><button onclick="copyPrompt(this)" class="cpbtn">📋 복사하기</button></div>
+    <div class="macc-body"><p style="font-size:16px;color:var(--sub);line-height:1.6;margin-bottom:10px">시트 오른쪽 위 Gemini 아이콘으로 사이드패널을 열고, 아래 프롬프트를 붙여넣으세요. (셀에 =AI() 함수를 직접 쓰는 방법은 아래 ‘함수 표’ 참고)</p><div class="prow"><span class="plab">📝 예시 프롬프트 (Gemini에 붙여넣기)</span><button onclick="copyPrompt(this)" class="cpbtn">📋 복사하기</button></div>
       <pre class="ppre">이 시트의 '스쿨존 교통사고' 표에서 빈칸, 이상치, 표기 흔들림이 있는 곳을 모두 찾아 줘.
 - 어느 행, 어느 열이 문제인지 짚어 주고, 각각 어떤 함수로 고치면 되는지 예시도 알려 줘.
 - 사상자수가 비면 '중상자수와 경상자수의 합'으로 채우는 식을 알려 줘.
@@ -714,7 +714,7 @@ details.simdetail[open]>summary::before{content:"▾  ";}
 <text x="38" y="198" font-size="11" fill="#2A2A33">도담초 정문 앞 · 4건 · 15-16시</text><text x="38" y="216" font-size="11" fill="#2A2A33">도담중 후문 · 2건 · 08-09시</text>
 <text x="38" y="240" font-size="11" font-weight="700" fill="#C00000">⚠ 사고건수 빈칸 → ‘확인 필요’ 표시</text></svg><div class="cap">예시 화면 · 파일 올리고 가드레일 프롬프트로 정리</div></div>
   <details class="macc"><summary>▸ 자세히 · 가드레일 프롬프트 보기</summary>
-    <div class="macc-body"><p style="font-size:13px;color:var(--sub);line-height:1.6;margin-bottom:10px">gemini.google.com에 파일을 올린 뒤 아래 프롬프트로 시키고, <b>결과는 사람이 검토</b>하세요.</p><div class="prow"><span class="plab">📝 예시 프롬프트 (Gemini에 붙여넣기)</span><button onclick="copyPrompt(this)" class="cpbtn">📋 복사하기</button></div>
+    <div class="macc-body"><p style="font-size:16px;color:var(--sub);line-height:1.6;margin-bottom:10px">gemini.google.com에 파일을 올린 뒤 아래 프롬프트로 시키고, <b>결과는 사람이 검토</b>하세요.</p><div class="prow"><span class="plab">📝 예시 프롬프트 (Gemini에 붙여넣기)</span><button onclick="copyPrompt(this)" class="cpbtn">📋 복사하기</button></div>
       <pre class="ppre">첨부한 '스쿨존 교통사고' 파일을 아래 규칙대로 정리해 줘.
 1) 빈칸: 사상자수가 비면 '중상자수와 경상자수의 합'으로 채우고, 사고건수처럼 모르는 빈칸은 지어내지 말고 '확인 필요'로 표시.
 2) 이상치: 사고건수 평균보다 비정상적으로 큰 값과, 사상자수가 합과 다른 행을 표시(원본 숫자는 바꾸지 말 것).
@@ -724,15 +724,15 @@ details.simdetail[open]>summary::before{content:"▾  ";}
   </details>
 </div>
 
-<div class="card"><h3 style="font-size:17px;margin-bottom:10px">🔧 시트에서 Gemini 켜고 쓰기</h3><ol style="margin:0;padding-left:20px;font-size:14px;color:var(--text);line-height:1.9"><li>Google 계정으로 로그인한 뒤, 모둠이 정리할 공공데이터를 Google Sheets에 업로드합니다. (드라이브에 올린 CSV/XLSX를 더블클릭하고 &#x27;Google 스프레드시트로 열기&#x27;)</li><li>화면 오른쪽 위의 별 모양(또는 &#x27;Gemini&#x27;) 아이콘을 눌러 Gemini 사이드패널을 엽니다. 패널이 안 보이면 상단 메뉴 &#x27;도구 &gt; Gemini&#x27; 또는 확장 프로그램 영역에서 Gemini를 켭니다. (학교 계정은 관리자가 Gemini를 켜 둬야 보입니다. 안 보이면 강사에게 요청)</li><li>사이드패널이 열리면 아래 입력창에 우리말로 부탁을 적습니다. 예: &#x27;이 시트에서 빈칸이 있는 행을 모두 찾아 줘&#x27;. Gemini가 어떤 셀이 비었는지, 어떤 함수를 쓰면 되는지 알려 줍니다.</li><li>셀 안에서 직접 AI를 쓰려면 빈 셀에 &#x27;=AI(&#x27; 를 입력합니다. 표기 통일·요약 같은 작업을 함수처럼 쓸 수 있습니다. (=AI 함수는 계정·지역에 따라 &#x27;AI&#x27;, &#x27;AI.TABLE&#x27; 등으로 보일 수 있고, 안 보이면 사이드패널 채팅으로 같은 일을 부탁합니다.)</li><li>=AI 함수가 만든 결과는 추천값일 뿐이므로, 그대로 두지 말고 마우스로 셀을 복사한 뒤 &#x27;값으로 붙여넣기(Ctrl+Shift+V)&#x27;를 해서 진짜 데이터로 고정합니다. 그래야 그래프와 함수가 흔들리지 않습니다.</li><li>마지막으로 사이드패널에 &#x27;지금까지 무엇을 어떻게 정리했는지 3줄로 요약해 줘&#x27;라고 부탁해, 정리 과정을 학습지(데이터 분류 기준 정리표)에 기록합니다.</li></ol></div>
+<div class="card"><h3 style="font-size:17px;margin-bottom:10px">🔧 시트에서 Gemini 켜고 쓰기</h3><ol style="margin:0;padding-left:20px;font-size:16px;color:var(--text);line-height:1.9"><li>Google 계정으로 로그인한 뒤, 모둠이 정리할 공공데이터를 Google Sheets에 업로드합니다. (드라이브에 올린 CSV/XLSX를 더블클릭하고 &#x27;Google 스프레드시트로 열기&#x27;)</li><li>화면 오른쪽 위의 별 모양(또는 &#x27;Gemini&#x27;) 아이콘을 눌러 Gemini 사이드패널을 엽니다. 패널이 안 보이면 상단 메뉴 &#x27;도구 &gt; Gemini&#x27; 또는 확장 프로그램 영역에서 Gemini를 켭니다. (학교 계정은 관리자가 Gemini를 켜 둬야 보입니다. 안 보이면 강사에게 요청)</li><li>사이드패널이 열리면 아래 입력창에 우리말로 부탁을 적습니다. 예: &#x27;이 시트에서 빈칸이 있는 행을 모두 찾아 줘&#x27;. Gemini가 어떤 셀이 비었는지, 어떤 함수를 쓰면 되는지 알려 줍니다.</li><li>셀 안에서 직접 AI를 쓰려면 빈 셀에 &#x27;=AI(&#x27; 를 입력합니다. 표기 통일·요약 같은 작업을 함수처럼 쓸 수 있습니다. (=AI 함수는 계정·지역에 따라 &#x27;AI&#x27;, &#x27;AI.TABLE&#x27; 등으로 보일 수 있고, 안 보이면 사이드패널 채팅으로 같은 일을 부탁합니다.)</li><li>=AI 함수가 만든 결과는 추천값일 뿐이므로, 그대로 두지 말고 마우스로 셀을 복사한 뒤 &#x27;값으로 붙여넣기(Ctrl+Shift+V)&#x27;를 해서 진짜 데이터로 고정합니다. 그래야 그래프와 함수가 흔들리지 않습니다.</li><li>마지막으로 사이드패널에 &#x27;지금까지 무엇을 어떻게 정리했는지 3줄로 요약해 줘&#x27;라고 부탁해, 정리 과정을 학습지(데이터 분류 기준 정리표)에 기록합니다.</li></ol></div>
 
 <h3 class="section-title" style="font-size:19px;margin:24px 0 6px">🧪 일부러 지저분하게 만든 원본 데이터</h3>
 <p class="section-lead" style="margin-bottom:14px">빈칸·이상치·표기 흔들림이 섞인 <b>원본 100행</b> 중 일부예요. 학생이 직접 찾아내는 게 첫 활동입니다. <span style="color:var(--answer);font-weight:700">빨간 칸 = 빈 값</span></p>
 <div class="card" style="border:2px solid var(--secondary);background:linear-gradient(135deg,var(--secondary-l),#fff);text-align:center;margin-bottom:14px;padding:22px 18px">
   <h3 style="font-size:19px;color:var(--ink);margin-bottom:4px">📄 이 원본으로 바로 연습하기 (Google Sheets)</h3>
-  <p style="font-size:13.5px;color:var(--sub);margin-bottom:14px">아래 표 그대로 담은 실습 시트입니다. <b>[파일 &gt; 사본 만들기]</b>로 복사한 뒤, 우측 Gemini 사이드패널·=AI()로 빈칸·이상치·표기 통일을 연습하세요.</p>
-  <a href="https://docs.google.com/spreadsheets/d/1EyhwhYFruoJQQZL1pZXp4jxxUgBD14EGDiSUFiV1KTc/copy" target="_blank" rel="noopener" style="display:inline-block;background:var(--secondary);color:#fff;font-weight:800;font-size:16px;padding:13px 28px;border-radius:14px;box-shadow:0 8px 20px -6px var(--secondary)">📄 연습 시트 사본 만들기</a>
-  <a href="https://docs.google.com/spreadsheets/d/1EyhwhYFruoJQQZL1pZXp4jxxUgBD14EGDiSUFiV1KTc/edit?usp=sharing" target="_blank" rel="noopener" style="display:block;font-size:12px;color:#1a73e8;font-weight:600;margin-top:12px;word-break:break-all;text-decoration:underline">🔗 https://docs.google.com/spreadsheets/d/1EyhwhYFruoJQQZL1pZXp4jxxUgBD14EGDiSUFiV1KTc</a>
+  <p style="font-size:16px;color:var(--sub);margin-bottom:14px">아래 표 그대로 담은 실습 시트입니다. <b>[파일 &gt; 사본 만들기]</b>로 복사한 뒤, 우측 Gemini 사이드패널·=AI()로 빈칸·이상치·표기 통일을 연습하세요.</p>
+  <a href="https://docs.google.com/spreadsheets/d/1EyhwhYFruoJQQZL1pZXp4jxxUgBD14EGDiSUFiV1KTc/copy" target="_blank" rel="noopener" style="display:inline-block;margin:8px 6px 0;background:var(--secondary);color:#fff;font-weight:800;font-size:17px;padding:13px 26px;border-radius:14px;box-shadow:0 8px 20px -6px var(--secondary)">📄 연습 시트 사본 만들기</a>
+  <a href="https://docs.google.com/spreadsheets/d/1EyhwhYFruoJQQZL1pZXp4jxxUgBD14EGDiSUFiV1KTc/edit?usp=sharing" target="_blank" rel="noopener" style="display:inline-block;margin:8px 6px 0;background:#fff;color:var(--secondary);font-weight:800;font-size:17px;padding:13px 26px;border-radius:14px;border:2px solid var(--secondary)">👁️ 원본 시트 보러가기</a>
 </div>
 <div class="card" style="overflow-x:auto;padding:14px"><table class="dtab ct"><thead><tr><th>발생연도</th><th>지점명</th><th>사고건수</th><th>사상자수</th><th>중상자수</th><th>경상자수</th><th>주요사고시간대</th></tr></thead><tbody><tr><td class="">2023</td><td class="">도담초 정문 앞 횡단보도</td><td class="">4</td><td class="">5</td><td class="">1</td><td class="">4</td><td class="">오후 3시</td></tr><tr><td class="">2023년</td><td class="">도담초 정문  앞 횡단보도</td><td class="cell-bad">(빈칸)</td><td class="">3</td><td class="">1</td><td class="">2</td><td class="">08-09시</td></tr><tr><td class="">2023</td><td class="">도담동 행복어린이집 앞 사거리</td><td class="">2</td><td class="">2</td><td class="">0</td><td class="">2</td><td class="">16시~17시</td></tr><tr><td class="">2023</td><td class="">새봄구청 별관 앞 어린이보호구역</td><td class="">40</td><td class="">3</td><td class="">1</td><td class="">2</td><td class="">15-16시</td></tr><tr><td class="">2022</td><td class="">도담중 후문 골목 진입로</td><td class="">2</td><td class="cell-bad">(빈칸)</td><td class="">0</td><td class="">2</td><td class="">8시경</td></tr><tr><td class="">2022.07.01</td><td class="">도담시장 입구 횡단보도</td><td class="">3</td><td class="">3</td><td class="">0</td><td class="">5</td><td class="">17-18시</td></tr><tr><td class="">2022</td><td class="">도담초 정문 앞 횡단보도</td><td class="">3</td><td class="">4</td><td class="">1</td><td class="">3</td><td class="cell-bad">(빈칸)</td></tr><tr><td class="">2021</td><td class="">한들천 산책로 진입 횡단보도</td><td class="">2</td><td class="">2</td><td class="">1</td><td class="">1</td><td class="">오후3시</td></tr></tbody></table></div>
 
@@ -742,7 +742,7 @@ details.simdetail[open]>summary::before{content:"▾  ";}
   <div>
     <h4 style="font-size:16px;margin-bottom:2px">빈칸(결측치) 찾아 표시하기</h4>
     <div class="ba"><div class="b">😵 2번째 행 사고건수가 비어 있고, 5번째 행 사상자수가 비어 있고, 7번째 행 주요사고시간대가 비어 있어 어디가 빠졌는지 눈으로 다 찾기 힘들다.</div><div class="arr">→</div><div class="a">✅ 사고건수 1칸, 사상자수 1칸, 주요사고시간대 1칸이 비어 있다는 것을 모두 찾아내 노란색으로 표시하고, 어디를 채워야 할지 목록으로 정리했다.</div></div>
-    <div style="font-size:13.5px;color:var(--text);margin-top:9px"><b>학생이 하는 일</b> · 사이드패널에 빈칸을 찾아 달라고 부탁하고, 알려 준 함수 =COUNTBLANK 와 =COUNTIF 로 각 열에 빈칸이 몇 개인지 센 다음, 빈 셀을 노란색으로 칠해 표시한다.</div>
+    <div style="font-size:16px;color:var(--text);margin-top:9px"><b>학생이 하는 일</b> · 사이드패널에 빈칸을 찾아 달라고 부탁하고, 알려 준 함수 =COUNTBLANK 와 =COUNTIF 로 각 열에 빈칸이 몇 개인지 센 다음, 빈 셀을 노란색으로 칠해 표시한다.</div>
     <div class="gem-help"><b>💬 시트 안 Gemini로 비계 제공</b><br>사이드패널 프롬프트: &#x27;이 시트에서 빈칸이 있는 셀을 모두 찾아 어느 행 몇 번째 열인지 알려 주고, 각 열의 빈칸 개수를 세는 함수도 알려 줘.&#x27;</div>
   </div>
 </div><div class="step">
@@ -750,7 +750,7 @@ details.simdetail[open]>summary::before{content:"▾  ";}
   <div>
     <h4 style="font-size:16px;margin-bottom:2px">결측치 어떻게 채울지 판단하고 채우기</h4>
     <div class="ba"><div class="b">😵 사고건수가 빈 행은 0으로 둘지 평균으로 둘지 모르겠고, 사상자수가 빈 행은 중상자수+경상자수로 계산할 수 있는데 방법을 모른다.</div><div class="arr">→</div><div class="a">✅ 사상자수 빈칸은 중상+경상 합(2명)으로 채우고, 사고건수 빈칸은 함부로 추측하지 않고 &#x27;확인 필요&#x27;로 표시해 출처 확인 대상으로 남겼다. 왜 그렇게 정했는지 학습지에 기록했다.</div></div>
-    <div style="font-size:13.5px;color:var(--text);margin-top:9px"><b>학생이 하는 일</b> · 빈칸의 의미를 Gemini에게 물어 채우는 기준을 정하고, 사상자수 빈칸은 =E6+F6 처럼 중상자수+경상자수로 계산해 채운다. 사고건수 빈칸은 &#x27;값 없음&#x27;으로 표시하거나 출처 확인 대상으로 남긴다.</div>
+    <div style="font-size:16px;color:var(--text);margin-top:9px"><b>학생이 하는 일</b> · 빈칸의 의미를 Gemini에게 물어 채우는 기준을 정하고, 사상자수 빈칸은 =E6+F6 처럼 중상자수+경상자수로 계산해 채운다. 사고건수 빈칸은 &#x27;값 없음&#x27;으로 표시하거나 출처 확인 대상으로 남긴다.</div>
     <div class="gem-help"><b>💬 시트 안 Gemini로 비계 제공</b><br>사이드패널 프롬프트: &#x27;교통사고 데이터에서 사고건수가 빈칸일 때 0과 평균 중 무엇으로 채우는 게 맞아? 사상자수는 중상자수+경상자수로 채워도 될까? 중학생도 이해하게 이유와 함께 알려 줘.&#x27;</div>
   </div>
 </div><div class="step">
@@ -758,7 +758,7 @@ details.simdetail[open]>summary::before{content:"▾  ";}
   <div>
     <h4 style="font-size:16px;margin-bottom:2px">이상치(말도 안 되는 값) 찾아내고 검산하기</h4>
     <div class="ba"><div class="b">😵 4번째 행 사고건수가 40으로 다른 행(2~4)보다 터무니없이 크고, 6번째 행은 사상자수 3인데 경상자수가 5라 합계가 안 맞아 어디가 틀렸는지 헷갈린다.</div><div class="arr">→</div><div class="a">✅ 사고건수 40은 4로 잘못 입력된 이상치로 보고 출처 확인 후 4로 수정 표시하고, 사상자수 합계가 안 맞는 행(경상자수 5는 3의 오타로 추정)을 찾아 빨간색으로 표시해 다시 확인 대상으로 남겼다.</div></div>
-    <div style="font-size:13.5px;color:var(--text);margin-top:9px"><b>학생이 하는 일</b> · =AVERAGE 로 사고건수 평균을 내 40이 평균보다 훨씬 큰 이상치임을 확인하고, =D2=E2+F2 로 사상자수=중상+경상 검산식을 모든 행에 채워 FALSE가 나오는 행을 찾는다.</div>
+    <div style="font-size:16px;color:var(--text);margin-top:9px"><b>학생이 하는 일</b> · =AVERAGE 로 사고건수 평균을 내 40이 평균보다 훨씬 큰 이상치임을 확인하고, =D2=E2+F2 로 사상자수=중상+경상 검산식을 모든 행에 채워 FALSE가 나오는 행을 찾는다.</div>
     <div class="gem-help"><b>💬 시트 안 Gemini로 비계 제공</b><br>사이드패널 프롬프트: &#x27;사고건수 열에서 평균보다 비정상적으로 큰 값을 이상치로 찾아 주고, 사상자수가 중상자수+경상자수와 다른 행도 찾아 줘. 각각 어떤 함수로 검사하는지도 알려 줘.&#x27;</div>
   </div>
 </div><div class="step">
@@ -766,7 +766,7 @@ details.simdetail[open]>summary::before{content:"▾  ";}
   <div>
     <h4 style="font-size:16px;margin-bottom:2px">표기 불일치 통일하기 (지점명·연도)</h4>
     <div class="ba"><div class="b">😵 1행과 2행 지점명이 &#x27;도담초 정문 앞 횡단보도&#x27;와 &#x27;도담초 정문  앞 횡단보도&#x27;(공백 차이)라 다른 곳처럼 집계되고, 발생연도가 &#x27;2023&#x27;, &#x27;2023년&#x27;, &#x27;2022.07.01&#x27;로 뒤죽박죽이다.</div><div class="arr">→</div><div class="a">✅ &#x27;도담초 정문 앞 횡단보도&#x27;가 한 가지 표기로 통일돼 같은 지점으로 정확히 집계되고, 발생연도가 모두 2021·2022·2023 네 자리 숫자로 정리돼 연도별 비교가 가능해졌다.</div></div>
-    <div style="font-size:13.5px;color:var(--text);margin-top:9px"><b>학생이 하는 일</b> · 지점명은 =TRIM(SUBSTITUTE(...)) 로 공백을 정리해 같은 지점끼리 표기를 맞추고, 발생연도는 =AI 함수로 모두 4자리 숫자 연도로 통일한 뒤 값으로 붙여넣기 한다.</div>
+    <div style="font-size:16px;color:var(--text);margin-top:9px"><b>학생이 하는 일</b> · 지점명은 =TRIM(SUBSTITUTE(...)) 로 공백을 정리해 같은 지점끼리 표기를 맞추고, 발생연도는 =AI 함수로 모두 4자리 숫자 연도로 통일한 뒤 값으로 붙여넣기 한다.</div>
     <div class="gem-help"><b>💬 시트 안 Gemini로 비계 제공</b><br>셀 함수: =AI(&quot;이 값에서 연도만 뽑아 네 자리 숫자로 바꿔 줘. 예: 2023년-&gt;2023, 2022.07.01-&gt;2022&quot;, A2)  /  사이드패널: &#x27;지점명 표기가 공백 때문에 다르게 잡히는 행을 같은 이름으로 묶어 줘.&#x27;</div>
   </div>
 </div><div class="step">
@@ -774,7 +774,7 @@ details.simdetail[open]>summary::before{content:"▾  ";}
   <div>
     <h4 style="font-size:16px;margin-bottom:2px">시간대 형식 통일하고 정리 결과 요약하기</h4>
     <div class="ba"><div class="b">😵 주요사고시간대가 &#x27;오후 3시&#x27;, &#x27;16시~17시&#x27;, &#x27;8시경&#x27;, &#x27;오후3시&#x27;처럼 형식이 다 달라서 같은 시간대끼리 묶어 셀 수 없다.</div><div class="arr">→</div><div class="a">✅ 주요사고시간대가 모두 &#x27;15-16시&#x27;, &#x27;08-09시&#x27;, &#x27;17-18시&#x27;처럼 같은 형식으로 정리돼 등교·하교 시간대별로 묶어 셀 수 있게 되었고, Gemini가 &#x27;도담초 정문 앞 횡단보도가 가장 위험하고 하교 시간대에 사고가 몰린다&#x27;는 요약을 만들어 줘 다음 활동(원인 분석·문제 재정의)으로 바로 이어갈 수 있다.</div></div>
-    <div style="font-size:13.5px;color:var(--text);margin-top:9px"><b>학생이 하는 일</b> · =AI 함수로 모든 시간 표기를 &#x27;HH-HH시&#x27; 한 가지 형식으로 통일하고 값으로 고정한 뒤, 정리가 끝난 표 전체를 Gemini에게 요약시켜 인사이트 도출의 출발점으로 삼는다.</div>
+    <div style="font-size:16px;color:var(--text);margin-top:9px"><b>학생이 하는 일</b> · =AI 함수로 모든 시간 표기를 &#x27;HH-HH시&#x27; 한 가지 형식으로 통일하고 값으로 고정한 뒤, 정리가 끝난 표 전체를 Gemini에게 요약시켜 인사이트 도출의 출발점으로 삼는다.</div>
     <div class="gem-help"><b>💬 시트 안 Gemini로 비계 제공</b><br>셀 함수: =AI(&quot;이 시간 표기를 &#x27;HH-HH시&#x27; 형식으로 통일해 줘. 예: 오후 3시-&gt;15-16시, 8시경-&gt;08-09시&quot;, G2)  /  요약: =AI(&quot;이 표에서 사고가 가장 많은 지점 3곳과 위험 시간대를 중학생이 이해하게 2문장으로 요약해 줘&quot;, A1:G11)</div>
   </div>
 </div>
@@ -782,7 +782,7 @@ details.simdetail[open]>summary::before{content:"▾  ";}
 <h3 class="section-title" style="font-size:19px;margin:24px 0 6px">∑ 전처리·분석에 쓰는 함수</h3>
 <div class="card" style="overflow-x:auto;padding:14px"><table class="dtab ct" style="table-layout:auto"><thead><tr><th style="width:34%">함수</th><th style="width:30%">무슨 일을 하나</th><th>예시</th></tr></thead><tbody><tr><td><span class="formula">=COUNTBLANK(C2:C11)</span></td><td>빈칸(결측치)이 몇 개인지 세어 준다. 원리: 범위 안에서 비어 있는 셀의 개수만 합산한다.</td><td>사고건수 열의 결측치 개수를 한 번에 확인: =COUNTBLANK(C2:C11)</td></tr><tr><td><span class="formula">=COUNTIF(G2:G11,&quot;&quot;)</span></td><td>특정 조건(여기서는 빈칸)에 맞는 셀을 센다. 원리: 범위에서 조건과 같은 셀만 골라 개수를 센다.</td><td>주요사고시간대가 비어 있는 행 수: =COUNTIF(G2:G11,&quot;&quot;)</td></tr><tr><td><span class="formula">=TRIM(SUBSTITUTE(B2,&quot;  &quot;,&quot; &quot;))</span></td><td>글자 앞뒤·중간의 불필요한 공백을 없애 표기를 통일한다. 원리: SUBSTITUTE로 두 칸 공백을 한 칸으로 바꾸고, TRIM으로 양끝 공백을 제거한다.</td><td>&#x27;도담초 정문  앞 횡단보도&#x27;처럼 공백이 섞인 지점명 정리: =TRIM(SUBSTITUTE(B2,&quot;  &quot;,&quot; &quot;))</td></tr><tr><td><span class="formula">=AVERAGE(C2:C11)</span></td><td>평균을 내서 이상치(너무 크거나 작은 값)를 판단하는 기준선을 만든다. 원리: 숫자 값을 모두 더해 개수로 나눈다.</td><td>사고건수 평균과 비교해 40 같은 값이 이상치인지 판단: =AVERAGE(C2:C11)</td></tr><tr><td><span class="formula">=D2=E2+F2</span></td><td>사상자수 = 중상자수 + 경상자수 가 맞는지 셀끼리 검산해 논리 이상치를 잡는다. 원리: 두 식의 결과가 같으면 TRUE(참), 다르면 FALSE(거짓)를 돌려준다.</td><td>각 행의 합계가 맞는지 한 줄로 검산: =D2=E2+F2 (FALSE가 나오는 행을 다시 확인)</td></tr><tr><td><span class="formula">=AI(&quot;이 텍스트를 표준 시간대 형식 &#x27;HH-HH시&#x27;로 바꿔 줘. 예: 오후3시-&gt;15-16시&quot;, G2)</span></td><td>Sheets 안에서 Gemini를 함수처럼 호출해 들쭉날쭉한 표기를 통일된 형식으로 바꾼다. 원리: 큰따옴표 안 지시문대로 옆 셀(G2) 내용을 AI가 변환해 돌려준다.</td><td>&#x27;오후 3시&#x27;, &#x27;15시경&#x27;, &#x27;15:00&#x27;을 모두 &#x27;15-16시&#x27;로: =AI(&quot;이 시간 표기를 &#x27;HH-HH시&#x27; 형식으로 통일해 줘&quot;, G2)</td></tr><tr><td><span class="formula">=AI(&quot;이 지역명을 &#x27;시/도 시/군/구&#x27; 표준 표기로 정리해 줘. 예: 서울시-&gt;서울특별시&quot;, A2)</span></td><td>&#x27;서울시/서울특별시&#x27;처럼 같은 뜻 다른 표기를 표준 명칭으로 통일한다. 원리: AI가 지시문 기준에 맞춰 셀 값을 다듬어 돌려준다.</td><td>지역 표기 통일: =AI(&quot;행정구역 표준 명칭으로 바꿔 줘&quot;, A2)</td></tr><tr><td><span class="formula">=AI(&quot;이 표의 사고 다발지점 상위 3곳과 가장 위험한 시간대를 중학생이 이해하게 2문장으로 요약해 줘&quot;, A1:G11)</span></td><td>정리가 끝난 표 전체를 Gemini가 한국어 두 문장으로 요약해, 인사이트 도출과 발표 준비를 돕는다. 원리: 범위 전체를 AI에 넘겨 지시문대로 핵심을 뽑아낸다.</td><td>분석 요약 자동 생성: =AI(&quot;가장 사고가 많은 지점과 시간대를 2문장으로 요약&quot;, A1:G11)</td></tr></tbody></table></div>
 
-<div class="card" style="background:#FFFDF5"><h3 style="font-size:16px;color:#B8860B;margin-bottom:8px">💡 강사 TIP</h3><ul style="margin:0;padding-left:18px;font-size:14px;color:var(--text);line-height:1.8"><li>Gemini가 만들어 준 값은 &#x27;추천&#x27;일 뿐이라 항상 사람이 한 번 더 확인합니다. 특히 사고건수·사상자수 같은 숫자는 함부로 채우지 말고, 출처(공공데이터포털 원본)를 다시 보고 맞는지 검산합니다. 교재 TIP대로 데이터는 추측이 아니라 사실로 말해야 합니다.</li><li>=AI 함수 결과는 셀을 복사해 &#x27;값으로 붙여넣기(Ctrl+Shift+V)&#x27;로 고정하세요. 그대로 두면 시트를 열 때마다 답이 바뀌어 그래프가 흔들립니다.</li><li>원본은 절대 지우지 말고 시트를 복사해 &#x27;raw원본&#x27;과 &#x27;정리본&#x27;으로 나눠 작업하세요. 잘못 고쳤을 때 되돌릴 수 있습니다.</li><li>이상치를 발견하면 바로 지우지 말고 노란색·빨간색으로 표시만 한 뒤 모둠과 의논해 &#x27;오타인지, 진짜 큰 값인지&#x27;를 함께 판단합니다.</li><li>Gemini에게 부탁할 때는 &#x27;무엇을, 어떤 형식으로&#x27; 바꿔 달라고 예시까지 적으면(예: 오후 3시-&gt;15-16시) 훨씬 정확하게 정리해 줍니다.</li><li>데이터에 개인정보(이름·주소·전화번호)가 들어 있으면 다루지 않고 지웁니다. 또 정리한 표를 발표에 쓸 때는 출처(공공데이터포털, 한국도로교통공단)를 반드시 함께 적습니다.</li><li>학교 계정에서 Gemini 사이드패널이나 =AI 함수가 안 보이면 관리자 설정 때문일 수 있으니 강사에게 요청하고, 그동안은 COUNTBLANK·TRIM·SUBSTITUTE 같은 기본 함수로 같은 작업을 진행합니다.</li></ul></div>
+<div class="card" style="background:#FFFDF5"><h3 style="font-size:16px;color:#B8860B;margin-bottom:8px">💡 강사 TIP</h3><ul style="margin:0;padding-left:18px;font-size:16px;color:var(--text);line-height:1.8"><li>Gemini가 만들어 준 값은 &#x27;추천&#x27;일 뿐이라 항상 사람이 한 번 더 확인합니다. 특히 사고건수·사상자수 같은 숫자는 함부로 채우지 말고, 출처(공공데이터포털 원본)를 다시 보고 맞는지 검산합니다. 교재 TIP대로 데이터는 추측이 아니라 사실로 말해야 합니다.</li><li>=AI 함수 결과는 셀을 복사해 &#x27;값으로 붙여넣기(Ctrl+Shift+V)&#x27;로 고정하세요. 그대로 두면 시트를 열 때마다 답이 바뀌어 그래프가 흔들립니다.</li><li>원본은 절대 지우지 말고 시트를 복사해 &#x27;raw원본&#x27;과 &#x27;정리본&#x27;으로 나눠 작업하세요. 잘못 고쳤을 때 되돌릴 수 있습니다.</li><li>이상치를 발견하면 바로 지우지 말고 노란색·빨간색으로 표시만 한 뒤 모둠과 의논해 &#x27;오타인지, 진짜 큰 값인지&#x27;를 함께 판단합니다.</li><li>Gemini에게 부탁할 때는 &#x27;무엇을, 어떤 형식으로&#x27; 바꿔 달라고 예시까지 적으면(예: 오후 3시-&gt;15-16시) 훨씬 정확하게 정리해 줍니다.</li><li>데이터에 개인정보(이름·주소·전화번호)가 들어 있으면 다루지 않고 지웁니다. 또 정리한 표를 발표에 쓸 때는 출처(공공데이터포털, 한국도로교통공단)를 반드시 함께 적습니다.</li><li>학교 계정에서 Gemini 사이드패널이나 =AI 함수가 안 보이면 관리자 설정 때문일 수 있으니 강사에게 요청하고, 그동안은 COUNTBLANK·TRIM·SUBSTITUTE 같은 기본 함수로 같은 작업을 진행합니다.</li></ul></div>
 </div>
 </section>
 
