@@ -1117,19 +1117,24 @@ document.addEventListener('keydown',function(e){
   var L={chatgpt:'ChatGPT',gemini:'Gemini',claude:'Claude',xai:'xAI',etc:'그 외'};
   var lastState={questions:[],feedback:[],poll:{}};
   var pendQ=[], pendF=[];
+  var myBump={}, bumpBase=null, bumpExp=0;
   function esc(s){var e=document.createElement('div');e.textContent=s||'';return e.innerHTML;}
+  function srvTot(st){var t=0;Object.keys(L).forEach(function(k){t+=(st.poll[k]||0);});return t;}
   function row(it){var del=it.id?'<button class="del" onclick="sotDel(\''+it.id+'\',this)">✕ 삭제</button>':'<span class="del" style="opacity:.55">전송 중…</span>';return '<div class="sot-item"><span>'+esc(it.text)+'</span>'+del+'</div>';}
   function listHtml(items,pend){var seen={};items.forEach(function(it){seen[it.text]=1;});for(var k=pend.length-1;k>=0;k--){if(seen[pend[k]])pend.splice(k,1);}var all=items.concat(pend.map(function(t){return {id:'',text:t};}));return all.length?all.map(row).join(''):'<div class="sot-empty">아직 없습니다. 첫 번째로 남겨 보세요!</div>';}
   function render(){
     var st=lastState;
     var pr=document.getElementById('poll-results');
-    if(pr){var tot=Object.keys(L).reduce(function(a,k){return a+(st.poll[k]||0);},0);
-      pr.innerHTML=tot?'<div style="font-size:15px;color:var(--sub);margin-bottom:6px">응답 '+tot+'건 (복수 응답 포함)</div>'+Object.keys(L).map(function(k){var c=st.poll[k]||0,pct=tot?Math.round(c/tot*100):0;return '<div class="sot-bar"><span class="lab">'+L[k]+'</span><span class="track"><span class="fill" style="width:'+pct+'%"></span></span><span class="cnt">'+c+'</span></div>';}).join(''):'';}
+    if(pr){
+      var c={};Object.keys(L).forEach(function(k){c[k]=(st.poll[k]||0)+(myBump[k]||0);});
+      var tot=0,mx=1;Object.keys(L).forEach(function(k){tot+=c[k];if(c[k]>mx)mx=c[k];});
+      pr.innerHTML='<div style="font-size:15px;color:var(--sub);margin-bottom:8px">'+(tot?('총 '+tot+'표 (복수 선택 포함)'):'아직 응답이 없어요. 첫 응답을 남겨 보세요!')+'</div>'+Object.keys(L).map(function(k){var pct=Math.round(c[k]/mx*100);return '<div class="sot-bar"><span class="lab">'+L[k]+'</span><span class="track"><span class="fill" style="width:'+pct+'%"></span></span><span class="cnt">'+c[k]+'</span></div>';}).join('');
+    }
     var ql=document.getElementById('q-list');if(ql)ql.innerHTML=listHtml(st.questions||[],pendQ);
     var fl=document.getElementById('f-list');if(fl)fl.innerHTML=listHtml(st.feedback||[],pendF);
   }
   var busy=false;
-  window.sotLoad=function(){if(busy)return;busy=true;fetch(API+'/state?t='+Date.now()).then(function(r){return r.json();}).then(function(st){lastState=st;render();}).catch(function(){}).finally(function(){busy=false;});};
+  window.sotLoad=function(){if(busy)return;busy=true;fetch(API+'/state?t='+Date.now()).then(function(r){return r.json();}).then(function(st){lastState=st;if(bumpBase!==null&&srvTot(st)>=bumpBase+bumpExp){myBump={};bumpExp=0;bumpBase=null;}render();}).catch(function(){}).finally(function(){busy=false;});};
   window.sotSubmit=function(kind,btn){
     var ta=document.getElementById(kind==='question'?'q-input':'f-input'),t=ta.value.trim();if(!t){ta.focus();return;}
     btn.disabled=true;(kind==='question'?pendQ:pendF).push(t);render();ta.value='';
@@ -1137,8 +1142,12 @@ document.addEventListener('keydown',function(e){
   };
   window.sotVote=function(btn){
     var o=[].slice.call(document.querySelectorAll('#poll-opts input:checked')).map(function(i){return i.value;});if(!o.length){alert('하나 이상 선택해 주세요.');return;}
-    btn.disabled=true;
-    fetch(API+'/vote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({options:o})}).then(function(r){return r.json();}).then(function(){btn.textContent='✅ 제출됨! (결과는 곧 갱신)';document.querySelectorAll('#poll-opts input:checked').forEach(function(i){i.checked=false;});setTimeout(function(){btn.textContent='제출하기';btn.disabled=false;},2500);setTimeout(sotLoad,1800);setTimeout(sotLoad,9000);}).catch(function(){alert('제출 실패');btn.disabled=false;});
+    if(bumpBase===null)bumpBase=srvTot(lastState);
+    o.forEach(function(k){myBump[k]=(myBump[k]||0)+1;bumpExp++;});
+    render();
+    document.querySelectorAll('#poll-opts input:checked').forEach(function(i){i.checked=false;});
+    btn.disabled=true;btn.textContent='✅ 제출됨!';
+    fetch(API+'/vote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({options:o})}).then(function(r){return r.json();}).then(function(){setTimeout(function(){btn.textContent='제출하기';btn.disabled=false;},2000);setTimeout(sotLoad,1800);setTimeout(sotLoad,9000);}).catch(function(){o.forEach(function(k){myBump[k]=Math.max(0,(myBump[k]||0)-1);bumpExp--;});render();btn.textContent='제출하기';btn.disabled=false;alert('제출 실패');});
   };
   window.sotDel=function(id,btn){if(!id)return;if(!confirm('이 항목을 삭제할까요?'))return;var it=btn.closest('.sot-item');if(it)it.style.opacity='.4';fetch(API+'/item?id='+encodeURIComponent(id),{method:'DELETE'}).then(function(){if(it)it.remove();setTimeout(sotLoad,1500);}).catch(function(){if(it)it.style.opacity='1';alert('삭제 실패');});};
   var timer=null;
